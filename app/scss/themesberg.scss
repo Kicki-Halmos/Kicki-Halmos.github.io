@@ -12,7 +12,6 @@ $font-stack-body: Titillium Web;
     margin: 0px;
     margin: collapse;
     position: fixed;
-    display: flex;
     justify-content: center;
     padding: 0px;
     z-index: 0;
@@ -41,28 +40,46 @@ $font-stack-body: Titillium Web;
 
 .footer {
 
+    background-color: white;
     width: 100%;
     height: 100px;
     left: 0;
     bottom: 0;
     margin-top: auto;
     margin: collapse;
-    position: absolute;
+    position: fixed;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     padding: 0px;
+    z-index: 0;
 }
 
-#bar_2 {
+
+
+#contact{
+    width: 100%;
     position: relative;
+    text-align: center;
+    margin: 0px;
+    font-family: $font-stack-header;
+    font-size: 1.2em;
+
+}
+
+.footer >#bar_2 {
+    position: sticky;
     width: 100%;
     height: 20px;
     background-color: $accent-color;
     align-self: flex-start;
     bottom: 0px;
     margin: collapse;
+    
 
 }
+
+
 
 #wrapper {
     position: fixed;
@@ -189,31 +206,29 @@ img:hover,
     box-shadow: 1px 1px 10px 10px rgb(248, 147, 164);
 }
 
-#1[data]:hover:after {
-    content: attr(data);
-    padding: 4px 8px;
-    color: $accent-color;
-    position: absolute;
-    left: 20%;
-    top: 50%;
-    white-space: nowrap;
-    z-index: 2;
-    border-radius: 5px ;
-    background: white;
-  }
 
-a[data]:hover:after {
-    content: attr(data);
-    padding: 4px 8px;
-    color: $accent-color;
-    position: absolute;
-    left: 40%;
-    top: 50%;
-    white-space: nowrap;
-    z-index: 2;
-    border-radius: 5px ;
-    background: white;
-  }
+/*a.tip span {
+    display: none
+}
+a.tip:hover span {
+    padding: 0;
+    display: inline-block;
+    z-index: 100;
+    left: 0px;
+    margin: auto;
+    width: 250px;
+    position: relative;
+    top: -120px;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    border: none;
+    box-sizing: border-box;
+    opacity: 0.85;
+    
+}*/
+
+
 
 #portfolio:hover,
 #music:hover,
