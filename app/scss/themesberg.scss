@@ -1,0 +1,245 @@
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+
+$accent-color: rgba(234, 19, 99, 1);
+$font-stack-header: Crimson text;
+$font-stack-body: Titillium Web;
+
+.navbar {
+
+    display: flex;
+    width: 100%;
+    height: 100px;
+    margin: 0px;
+    margin: collapse;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    padding: 0px;
+    z-index: 0;
+
+
+}
+
+#title {
+    position: relative;
+    align-self: flex-end;
+    margin: 0px;
+    font-family: $font-stack-header;
+    font-size: 3em;
+
+}
+
+.navbar>#bar {
+    position: relative;
+    width: 100%;
+    height: 20px;
+    background-color: $accent-color;
+    align-self: flex-end;
+    margin-bottom: 0px;
+    margin: collapse;
+}
+
+.footer {
+
+    width: 100%;
+    height: 100px;
+    left: 0;
+    bottom: 0;
+    margin-top: auto;
+    margin: collapse;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    padding: 0px;
+}
+
+#bar_2 {
+    position: relative;
+    width: 100%;
+    height: 20px;
+    background-color: $accent-color;
+    align-self: flex-start;
+    bottom: 0px;
+    margin: collapse;
+
+}
+
+#wrapper {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    margin: collapse;
+    flex-flow: column nowrap;
+    justify-content: center;
+
+
+}
+
+
+.grid {
+    display: grid;
+    grid-template-rows: auto auto auto auto auto auto auto;
+    max-width: 980px;
+    min-width: 600px;
+    margin: 0 auto;
+    width:980px;
+    height: 400px;
+    row-gap: 20px;
+
+}
+
+/*.grid_acc {
+    display: grid;
+    grid-template-rows: 2fr 1fr 1fr 1fr 1fr 1fr;
+    max-width: 980px;
+    margin: 0 auto;
+    height: 400px;
+    row-gap: 20px;
+
+}*/
+
+.grid div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    font: $font-stack-body;
+
+}
+
+.grid_acc div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    font: $font-stack-body;
+
+}
+
+.close{
+    grid-row: 1fr;
+}
+
+#about{
+    grid-row: 1 / 3;
+}
+
+#portfolio {
+    grid-row: 1fr;
+    color: $accent-color;
+    position: relative;
+    border: 1px solid #7A819A;
+
+
+}
+#portfolio_accordion{
+    position: relative;
+    grid-row-start: 4;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
+    grid-auto-flow: column;
+    justify-items: center;
+    gap: 10px;
+    text-align: center;
+
+    
+}
+#empty_border{
+    
+    width: 320px;
+    height: 174.750px;
+    border: 1px solid $accent-color;
+    margin: 1px;
+}
+
+
+#music {
+    grid-row: 1fr;
+    color: $accent-color;
+    position: relative;
+    border: 1px solid #7A819A;
+
+
+}
+
+#cv {
+    grid-row: 1fr;
+    color: $accent-color;
+    position: relative;
+    border: 1px solid #7A819A;
+
+
+}
+
+img{
+    width: 320px;
+}
+
+.hide{
+    display: none;
+}
+
+#portfolio:hover,
+#music:hover,
+#cv:hover {
+    color: rgb(248, 147, 164);
+    cursor: pointer;
+}
+
+.open{
+    grid-row: 2fr;
+    -webkit-animation: open 1s normal forwards ease-in-out;
+           -moz-animation: open 1s normal forwards ease-in-out;
+                animation: open 1s normal forwards ease-in-out;
+        -webkit-transform-origin: 50% 0%;
+           -moz-transform-origin: 50% 0%;
+                transform-origin: 50% 0%;
+               
+    }
+
+.close{
+    
+        grid-row: 2fr;
+        
+       
+          -webkit-animation: close 1s normal forwards ease-in-out;
+             -moz-animation: close 1s normal forwards ease-in-out;
+                  animation: close 1s normal forwards ease-in-out;
+          -webkit-transform-origin: 100% 0%;
+             -moz-transform-origin: 100% 0%;
+                  transform-origin: 100% 0%;
+                  
+      
+}    
+
+@-webkit-keyframes open {
+    from { transform: scaleY(0) 
+    }
+    to { transform: scaleY(1)
+     }
+}
+@-moz-keyframes open {
+    from { transform: scaleY(0) }
+    to { transform: scaleY(1) }
+}
+@keyframes open {
+    from { transform: scaleY(0) }
+    to { transform: scaleY(1) }
+}
+
+@-webkit-keyframes close {
+    from { transform: scaleY(1) }
+    to { transform: scaleY(0) }
+}
+@-moz-keyframes close {
+    from { transform: scaleY(1) }
+    to { transform: scaleY(0) }
+}
+@keyframes close {
+    from { transform: scaleY(1) }
+    to { transform: scaleY(0) }
+}
+
