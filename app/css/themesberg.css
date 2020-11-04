@@ -7298,6 +7298,34 @@ img {
 .hide {
   display: none; }
 
+img:hover,
+#empty_border:hover {
+  box-shadow: 1px 1px 10px 10px #f893a4; }
+
+#1[data]:hover:after {
+  content: attr(data);
+  padding: 4px 8px;
+  color: #ea1363;
+  position: absolute;
+  left: 20%;
+  top: 50%;
+  white-space: nowrap;
+  z-index: 2;
+  border-radius: 5px;
+  background: white; }
+
+a[data]:hover:after {
+  content: attr(data);
+  padding: 4px 8px;
+  color: #ea1363;
+  position: absolute;
+  left: 40%;
+  top: 50%;
+  white-space: nowrap;
+  z-index: 2;
+  border-radius: 5px;
+  background: white; }
+
 #portfolio:hover,
 #music:hover,
 #cv:hover {
