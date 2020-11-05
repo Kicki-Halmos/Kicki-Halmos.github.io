@@ -1,373 +1,93 @@
-@import '../../node_modules/bootstrap/scss/bootstrap.scss';
-
 $accent-color: rgba(234, 19, 99, 1);
 $font-stack-header: Crimson text;
 $font-stack-body: Titillium Web;
 
-
-html{
-  position:relative; 
-  min-height: 100%;
-}
-
-html,body{
-  margin:0;
-  padding:0;
-}
-.pageContentWrapper{
-  margin-bottom:120px;
-}
- 
-
-.navbar {
-
-    display: flex;
+.grid_container {
     width: 100%;
-    height: 100px;
-    margin: 0px;
-    margin: collapse;
-    position: fixed;
+    height: 100vh;
+    display: grid;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin:collapse;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr 0.15fr 1fr 1fr 1fr 0.15fr 0.5fr;
+    gap: 5px 5px;
+    grid-template-areas: 
+    "header header header header header header header"
+    "bar bar bar bar bar bar bar"
+    ". content content content content content . "
+    ". content content content content content . "
+    ". content content content content content . "
+    "bar2 bar2 bar2 bar2 bar2 bar2 bar2"
+    "footer footer footer footer footer footer footer";
+    font-family: $font-stack-body;
+    font-size: 1.3em;
+    font-weight: bolder;
+   
+}
+
+.header {
+    grid-area: header;
+    display: grid;
     justify-content: center;
-    padding: 0px;
-    left: 0;
-    z-index: 0;
-
-
-}
-
-#title {
-    position: relative;
-    align-self: flex-end;
-    margin: 0px;
     font-family: $font-stack-header;
-    font-size: 3em;
-
-}
-
-.navbar>#bar {
-    position: relative;
-    width: 100%;
-    height: 20px;
-    background-color: $accent-color;
-    align-self: flex-end;
-    margin-bottom: 0px;
-    margin: collapse;
+    font-size: 2em;
+    font-weight: normal;
+    
 }
 
 .footer {
-    position: absolute;
-    background-color: white;
-    display: flex;
-    width: 100%;
-    height: 120px;
-    bottom: 0;
-    left: 0;
-    margin: collapse;
-
-    flex-direction: column;
-    justify-content: center;
-    padding: 0px;
-   
-    
-    
+    grid-area: footer;  
 }
 
-
-
-#contact{
-    position: relative;
-    text-align: center;
-    margin: 0px;
-    margin: collapse;
-    font-family: $font-stack-header;
-    font-size: 1.2em;
-
-}
-
-.footer >#bar_2 {
-    position: relative;
-    width: 100%;
-    height: 20px;
-    background-color: $accent-color;
-    align-self: flex-start;
-    margin-top: -55px;
-    bottom: 0px;
-    margin: collapse;
-    
-
-}
-
-
-
-#wrapper {
-    position: fixed;
-    display: flex;
-    width: 100%;
-    height: 100%;
-    top: 0px;
-    margin: collapse;
-    flex-flow: column nowrap;
-    justify-content: center;
-    
-
-
-}
-
-
-.grid {
+.content {
+    grid-area: content;  
     display: grid;
-    position: fixed;
-    grid-template-rows: minmax(50px, 1fr) ();
-    max-width: 980px;
-    min-width: 600px;
-    align-self:center;
-    width: 980px;
-    
-    row-gap: 20px;
-    
-
-}
-
-/*.grid_acc {
-    display: grid;
-    grid-template-rows: 2fr 1fr 1fr 1fr 1fr 1fr;
-    max-width: 980px;
-    margin: 0 auto;
-    height: 400px;
-    row-gap: 20px;
-
-}*/
-
-.grid div {
-    display: flex;
-    justify-content: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto auto auto auto auto;
     align-items: center;
-    padding: 5px;
-    font: $font-stack-body;
-
-}
-
-
-
-
-
-#about {
-    grid-row: 1 / 3;
-}
-
-#portfolio {
     
-    color: $accent-color;
-    position: relative;
-    border: 1px solid #7A819A;
-    
-
 }
 
-#portfolio_accordion {
-    position: relative;
-    grid-row-start: 4;
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-template-rows: auto auto;
-    grid-auto-flow: column;
-    justify-items: center;
-    gap: 10px;
+#about{
+    grid-row: 1/3;
+    grid-column: 1/4;
     text-align: center;
-
-  
-}
-
-#empty_border {
-
-    width: 320px;
-    height: 174.750px;
-    border: 1px solid $accent-color;
-    margin: 1px;
-}
-
-
-#music {
-   
-    color: $accent-color;
-    position: relative;
-    border: 1px solid #7A819A;
-
+    
     
 }
-#music_accordion {
-    position: relative;
-    grid-row-start: 5;
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-template-rows: auto auto;
-    grid-auto-flow: column;
-    justify-items: center;
-    gap: 10px;
+
+#portfolio{
+    grid-row: 3;
+    grid-column: 1/4;
     text-align: center;
-
-  
-}
-
-#cv {
-    grid-row: 1fr;
+    border: 1px solid grey;
     color: $accent-color;
-    position: relative;
-    border: 1px solid #7A819A;
-   
-
 }
-#cv_accordion {
-    position: relative;
-    grid-row-start: 5;
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-template-rows: auto auto;
-    grid-auto-flow: column;
-    justify-items: center;
-    gap: 10px;
+
+#music{
+    grid-row: 4;
+    grid-column: 1/4;
     text-align: center;
-
-  
+    border: 1px solid grey;
+    color: $accent-color;
 }
-
-img {
-    width: 320px;
-}
-
-.hide {
-    display: none;
-}
-
-img:hover,
-#empty_border:hover {
-    box-shadow: 1px 1px 10px 10px rgb(248, 147, 164);
+#cv{
+    grid-row: 5;
+    grid-column: 1/4;
+    text-align: center;
+    border: 1px solid grey;
+    color: $accent-color;
 }
 
 
-/*a.tip span {
-    display: none
-}
-a.tip:hover span {
-    padding: 0;
-    display: inline-block;
-    z-index: 100;
-    left: 0px;
-    margin: auto;
-    width: 250px;
-    position: relative;
-    top: -120px;
-    background-color: white;
-    color: black;
-    border-radius: 5px;
-    border: none;
-    box-sizing: border-box;
-    opacity: 0.85;
+.bar {
+    grid-area: bar;
+    background-color: $accent-color;
     
-}*/
-
-
-
-#portfolio:hover,
-#music:hover,
-#cv:hover {
-    color: rgb(248, 147, 164);
-    cursor: pointer;
 }
 
-
-
-   /* .open {
-        grid-row: 2fr;
-        transition-property: grid-row;
-        -webkit-animation: open 1s normal forwards ease-in-out;
-        -moz-animation: open 1s normal forwards ease-in-out;
-        animation: open 1s normal forwards ease-in-out;
-        
-
-    }
-
-    .close {
-
-        grid-row: 2fr;
-        transition-property: grid-row;
-
-        -webkit-animation: close 1s normal forwards ease-in-out;
-        -moz-animation: close 1s normal forwards ease-in-out;
-        animation: close 1s normal forwards ease-in-out;
-      
-        
-
-    }
-
-    @-webkit-keyframes open {
-        from {
-            transition: 0%;
-            
-        }
-
-        to {
-            transition: 100%;
-           
-        }
-    }
-
-    @-moz-keyframes open {
-        from {
-            transition: 0%;
-            
-        }
-
-        to {
-            transition: 100%;
-           
-        }
-    }
-
-    @keyframes open {
-        from {
-            transition: 0%;
-            
-        }
-
-        to {
-            transition: 100%;
-           
-        }
-    }
-
-    @-webkit-keyframes close {
-        from {
-            transition: 100%;
-            
-        }
-
-        to {
-            transition: 0%;
-           
-        }
-    }
-
-    @-moz-keyframes close {
-        from {
-            transition: 100%;
-            
-        }
-
-        to {
-            transition: 0%;
-           
-        }
-    }
-
-    @keyframes close {
-        from {
-            transition: 100%;
-            
-        }
-
-        to {
-            transition: 0%  ;
-           
-        }
-    }*/
+.bar2{
+    grid-area: bar2;
+    background-color: $accent-color;
+}
