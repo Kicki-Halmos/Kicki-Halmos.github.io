@@ -7168,8 +7168,7 @@ html, body {
   padding: 0; }
 
 .pageContentWrapper {
-  margin-bottom: 120px;
-  /* Height of footer*/ }
+  margin-bottom: 120px; }
 
 .navbar {
   display: flex;
@@ -7200,6 +7199,7 @@ html, body {
   margin: collapse; }
 
 .footer {
+  position: absolute;
   background-color: white;
   display: flex;
   width: 100%;
@@ -7207,7 +7207,6 @@ html, body {
   bottom: 0;
   left: 0;
   margin: collapse;
-  position: absolute;
   flex-direction: column;
   justify-content: center;
   padding: 0px; }
@@ -7242,12 +7241,12 @@ html, body {
 
 .grid {
   display: grid;
-  grid-template-rows: auto auto auto auto auto auto auto;
+  position: fixed;
+  grid-template-rows: minmax(50px, 1fr);
   max-width: 980px;
   min-width: 600px;
-  margin: 0 auto;
+  align-self: center;
   width: 980px;
-  height: 400px;
   row-gap: 20px; }
 
 /*.grid_acc {
@@ -7266,14 +7265,10 @@ html, body {
   padding: 5px;
   font: Titillium Web; }
 
-.close {
-  grid-row: 1fr; }
-
 #about {
   grid-row: 1 / 3; }
 
 #portfolio {
-  grid-row: 1fr;
   color: #ea1363;
   position: relative;
   border: 1px solid #7A819A; }
@@ -7296,7 +7291,6 @@ html, body {
   margin: 1px; }
 
 #music {
-  grid-row: 1fr;
   color: #ea1363;
   position: relative;
   border: 1px solid #7A819A; }
@@ -7365,56 +7359,97 @@ a.tip:hover span {
   color: #f893a4;
   cursor: pointer; }
 
-.open {
-  grid-row: 2fr;
-  -webkit-animation: open 1s normal forwards ease-in-out;
-  -moz-animation: open 1s normal forwards ease-in-out;
-  animation: open 1s normal forwards ease-in-out;
-  -webkit-transform-origin: 50% 0%;
-  -moz-transform-origin: 50% 0%;
-  transform-origin: 50% 0%; }
+/* .open {
+        grid-row: 2fr;
+        transition-property: grid-row;
+        -webkit-animation: open 1s normal forwards ease-in-out;
+        -moz-animation: open 1s normal forwards ease-in-out;
+        animation: open 1s normal forwards ease-in-out;
+        
 
-.close {
-  grid-row: 2fr;
-  -webkit-animation: close 1s normal forwards ease-in-out;
-  -moz-animation: close 1s normal forwards ease-in-out;
-  animation: close 1s normal forwards ease-in-out;
-  -webkit-transform-origin: 100% 0%;
-  -moz-transform-origin: 100% 0%;
-  transform-origin: 100% 0%; }
+    }
 
-@-webkit-keyframes open {
-  from {
-    transform: scaleY(0); }
-  to {
-    transform: scaleY(1); } }
+    .close {
 
-@-moz-keyframes open {
-  from {
-    transform: scaleY(0); }
-  to {
-    transform: scaleY(1); } }
+        grid-row: 2fr;
+        transition-property: grid-row;
 
-@keyframes open {
-  from {
-    transform: scaleY(0); }
-  to {
-    transform: scaleY(1); } }
+        -webkit-animation: close 1s normal forwards ease-in-out;
+        -moz-animation: close 1s normal forwards ease-in-out;
+        animation: close 1s normal forwards ease-in-out;
+      
+        
 
-@-webkit-keyframes close {
-  from {
-    transform: scaleY(1); }
-  to {
-    transform: scaleY(0); } }
+    }
 
-@-moz-keyframes close {
-  from {
-    transform: scaleY(1); }
-  to {
-    transform: scaleY(0); } }
+    @-webkit-keyframes open {
+        from {
+            transition: 0%;
+            
+        }
 
-@keyframes close {
-  from {
-    transform: scaleY(1); }
-  to {
-    transform: scaleY(0); } }
+        to {
+            transition: 100%;
+           
+        }
+    }
+
+    @-moz-keyframes open {
+        from {
+            transition: 0%;
+            
+        }
+
+        to {
+            transition: 100%;
+           
+        }
+    }
+
+    @keyframes open {
+        from {
+            transition: 0%;
+            
+        }
+
+        to {
+            transition: 100%;
+           
+        }
+    }
+
+    @-webkit-keyframes close {
+        from {
+            transition: 100%;
+            
+        }
+
+        to {
+            transition: 0%;
+           
+        }
+    }
+
+    @-moz-keyframes close {
+        from {
+            transition: 100%;
+            
+        }
+
+        to {
+            transition: 0%;
+           
+        }
+    }
+
+    @keyframes close {
+        from {
+            transition: 100%;
+            
+        }
+
+        to {
+            transition: 0%  ;
+           
+        }
+    }*/
