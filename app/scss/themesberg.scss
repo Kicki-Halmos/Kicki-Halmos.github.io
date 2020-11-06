@@ -51,7 +51,7 @@ $font-stack-body: Titillium Web;
 .content {
     grid-area: content;  
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-template-rows: minmax(50px, 50px) minmax(50px, 50px) auto auto auto auto auto auto;
     align-items: center;
     
@@ -71,8 +71,7 @@ $font-stack-body: Titillium Web;
     text-align: center;
     border: 1px solid grey;
     color: $accent-color;
-    grid-template-columns: auto auto auto;
-    grid-template-rows: auto auto;
+   
 }
 
 #portfolio_content.open{
@@ -176,7 +175,7 @@ $font-stack-body: Titillium Web;
     display: grid;  
     position: relative;
     grid-template-columns: auto;
-    grid-template-rows: auto auto auto auto auto auto auto;
+    grid-template-rows: auto auto;
     grid-auto-flow: column;
     justify-items: center;
     gap: 10px;
@@ -192,7 +191,7 @@ $font-stack-body: Titillium Web;
 #cv_content.close{
     display: grid;
     position: relative;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto;
     grid-template-rows: auto auto;
     grid-auto-flow: column;
     justify-items: center;
@@ -206,12 +205,18 @@ $font-stack-body: Titillium Web;
     transform-origin: 100% 0%;
 }
 
+
+
 #cv_content {
     display: none;
 }
 
 img {
     width: 320px;
+}
+
+iframe{
+    max-width: 320px;
 }
 #empty_border {
 
@@ -252,10 +257,12 @@ a:hover {
     from {
         transform: scaleY(0);
         opacity: 0;
+        height: 0;
     }
     to{
         transform: scaleY(1);
         opacity: 1;
+        height: auto;
     }
 }
 
