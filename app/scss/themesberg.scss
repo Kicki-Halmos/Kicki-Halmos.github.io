@@ -13,218 +13,542 @@ $dark: (accent-color: rgb(160, 153, 156),
 @mixin themable($theme-name, $theme-map) {
     .#{$theme-name} {
 
-            $font-stack-header: Crimson text;
-            $font-stack-body: Titillium Web;
+        $font-stack-header: Crimson text;
+        $font-stack-body: Titillium Web;
 
-            .body {
-                background-color: map-get($map: $theme-map, $key:body-background);
-                color: map-get($map: $theme-map, $key:body-color);
+        .body {
+            background-color: map-get($map: $theme-map, $key:body-background);
+            color: map-get($map: $theme-map, $key:body-color);
+        }
+
+
+        .grid_container {
+            position: relative;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            top: -8px;
+            left: -8px;
+            margin: collapse;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: 100px 20px auto auto auto 20px 100px;
+            gap: 5px 5px;
+            grid-template-areas:
+                "header header header header header header header header header"
+                "bar bar bar bar bar bar bar bar bar"
+                ". content content content content content content content . "
+                ". content content content content content content content . "
+                ". content content content content content content content . "
+                "bar2 bar2 bar2 bar2 bar2 bar2 bar2 bar2 bar2"
+                "footer footer footer footer footer footer footer footer footer";
+            font-family: $font-stack-body;
+            font-size: 1.1em;
+            font-weight: bolder;
+
+        }
+
+        .header {
+            grid-area: header;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            align-content: center;
+
+            font-family: $font-stack-header;
+            font-size: 2em;
+            font-weight: normal;
+        }
+
+        p#title {
+            justify-self: center;
+            grid-column: 3/4;
+
+        }
+
+        select#theme {
+            color: map-get($map: $theme-map, $key:body-background);
+            grid-column: 5/6;
+            align-self: center;
+            justify-self: end;
+            margin: 5px;
+            padding: 5px;
+            display: block;
+            font-family: $font-stack-body;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            appearance: none;
+            max-width: 50%;
+            height: 25%;
+            box-sizing: border-box;
+            font-size: 0.9rem;
+            font-weight: bolder;
+            border: 1px solid map-get($map: $theme-map, $key:border-color);
+            background-color: map-get($map: $theme-map, $key:border-color);
+
+        }
+
+        select#theme:hover {
+            cursor: pointer;
+        }
+
+        select#theme:focus {
+
+            outline: none;
+        }
+
+        select#theme::-ms-expand {
+            display: none;
+        }
+
+        option {
+            font-family: $font-stack-body;
+            font-size: 0.9rem;
+            background-color: map-get($map: $theme-map, $key:border-color);
+        }
+
+        option#dark {
+            color: black;
+        }
+
+        .footer {
+            grid-area: footer;
+            display: grid;
+            justify-content: center;
+            align-content: center;
+            font-family: $font-stack-header;
+            font-size: 1em;
+            font-weight: normal;
+        }
+
+        .content {
+            grid-area: content;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 50px 50px auto auto auto auto auto auto;
+            align-items: center;
+            row-gap: 5px;
+            
+
+        }
+
+        div#sidebar{
+            display: none;
+        }
+
+        #about {
+            grid-row: 1/3;
+            grid-column: 1/4;
+            text-align: center;
+            margin: 20px 0px 20px;
+           
+
+        }
+
+        #portfolio {
+            margin: 0px 0px 5px;
+            
+            padding: 0;
+            grid-column: 1/4;
+            text-align: center;
+            border: 1px solid map-get($map: $theme-map, $key:border-color);
+            color: map-get($map: $theme-map, $key:accent-color);
+
+        }
+
+        #portfolio_content.open {
+            display: grid;
+            position: relative;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: auto auto;
+            grid-auto-flow: column;
+            justify-items: center;
+            gap: 10px;
+            text-align: center;
+            -webkit-animation: open 1s normal forwards ease-in-out;
+            -moz-animation: open 1s normal forwards ease-in-out;
+            animation: open 1s normal forwards ease-in-out;
+            -webkit-transform-origin: 100% 0%;
+            -moz-transform-origin: 100% 0%;
+            transform-origin: 100% 0%;
+
+        }
+
+        #portfolio_content.close {
+            display: grid;
+            position: relative;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: auto auto;
+            grid-auto-flow: column;
+            justify-items: center;
+            gap: 10px;
+            text-align: center;
+            -webkit-animation: close 1s normal forwards ease-in-out;
+            -moz-animation: close 1s normal forwards ease-in-out;
+            animation: close 1s normal forwards ease-in-out;
+            -webkit-transform-origin: 100% 0%;
+            -moz-transform-origin: 100% 0%;
+            transform-origin: 100% 0%;
+
+        }
+
+        #portfolio_content {
+            display: none;
+        }
+
+
+
+
+        #music {
+
+            grid-column: 1/4;
+            text-align: center;
+            border: 1px solid map-get($map: $theme-map, $key:border-color);
+            color: map-get($map: $theme-map, $key:accent-color);
+        }
+
+        #music_content.open {
+            display: grid;
+            position: relative;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: auto auto;
+            grid-auto-flow: column;
+            justify-items: center;
+            gap: 10px;
+            text-align: center;
+            -webkit-animation: open 1s normal forwards ease-in-out;
+            -moz-animation: open 1s normal forwards ease-in-out;
+            animation: open 1s normal forwards ease-in-out;
+            -webkit-transform-origin: 100% 0%;
+            -moz-transform-origin: 100% 0%;
+            transform-origin: 100% 0%;
+
+        }
+
+        #music_content.close {
+            display: grid;
+            position: relative;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: auto auto;
+            grid-auto-flow: column;
+            justify-items: center;
+            gap: 10px;
+            text-align: center;
+            -webkit-animation: close 1s normal forwards ease-in-out;
+            -moz-animation: close 1s normal forwards ease-in-out;
+            animation: close 1s normal forwards ease-in-out;
+            -webkit-transform-origin: 100% 0%;
+            -moz-transform-origin: 100% 0%;
+            transform-origin: 100% 0%;
+        }
+
+        #music_content {
+            display: none;
+        }
+
+        #cv {
+
+            grid-column: 1/4;
+            text-align: center;
+            border: 1px solid map-get($map: $theme-map, $key:border-color);
+            color: map-get($map: $theme-map, $key:accent-color);
+        }
+
+        #cv_content.open {
+            display: grid;
+            position: relative;
+            grid-template-columns: auto;
+            grid-template-rows: auto auto;
+            grid-auto-flow: column;
+            justify-items: center;
+            gap: 10px;
+            text-align: center;
+            -webkit-animation: open 1s normal forwards ease-in-out;
+            -moz-animation: open 1s normal forwards ease-in-out;
+            animation: open 1s normal forwards ease-in-out;
+            -webkit-transform-origin: 100% 0%;
+            -moz-transform-origin: 100% 0%;
+            transform-origin: 100% 0%;
+
+        }
+
+        #cv_content.close {
+            display: grid;
+            position: relative;
+            grid-template-columns: auto;
+            grid-template-rows: auto auto;
+            grid-auto-flow: column;
+            justify-items: center;
+            gap: 10px;
+            text-align: center;
+            -webkit-animation: close 1s normal forwards ease-in-out;
+            -moz-animation: close 1s normal forwards ease-in-out;
+            animation: close 1s normal forwards ease-in-out;
+            -webkit-transform-origin: 100% 0%;
+            -moz-transform-origin: 100% 0%;
+            transform-origin: 100% 0%;
+        }
+
+
+
+        #cv_content {
+            display: none;
+        }
+
+        img {
+
+            max-width: 100%;
+
+        }
+
+        .logos {
+            max-width: 30px;
+            margin: 10px;
+            color: map-get($map: $theme-map, $key:accent-color);
+
+        }
+
+        iframe {
+            max-width: 100%;
+
+        }
+
+        #empty_border {
+
+            width: 320px;
+            min-width: 200px;
+            height: 174.750px;
+            border: 1px solid map-get($map: $theme-map, $key:accent-color);
+            margin: 1px;
+        }
+
+
+        .bar {
+            grid-area: bar;
+            background-color: map-get($map: $theme-map, $key:accent-color);
+
+        }
+
+        .bar2 {
+            grid-area: bar2;
+            background-color: map-get($map: $theme-map, $key:accent-color);
+        }
+
+        a {
+            color: map-get($map: $theme-map, $key:accent-color);
+
+        }
+
+
+
+        #portfolio:hover,
+        #music:hover,
+        #cv:hover,
+        a:hover {
+            color: map-get($map: $theme-map, $key:hover-color);
+            cursor: pointer;
+        }
+
+        @-webkit-keyframes open {
+            from {
+                transform: scaleX(0);
+                opacity: 0;
+                
             }
 
+            to {
+                transform: scaleX(1);
+                opacity: 1;
+                
+            }
+        }
+
+        @-moz-keyframes open {
+            from {
+                transform: scaleX(0);
+                opacity: 0;
+            }
+
+            to {
+                transform: scaleX(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes open {
+            from {
+                transform: scaleX(0);
+                opacity: 0;
+            }
+
+            to {
+                transform: scaleX(1);
+                opacity: 1;
+            }
+        }
+
+        @-webkit-keyframes close {
+            from {
+                transform: scaleY(1);
+                opacity: 1;
+            }
+
+            to {
+                transform: scaleY(0);
+                opacity: 0;
+            }
+        }
+
+        @-moz-keyframes close {
+            from {
+                transform: scaleY(1);
+                opacity: 1;
+            }
+
+            to {
+                transform: scaleY(0);
+                opacity: 0;
+            }
+        }
+
+        @keyframes close {
+            from {
+                transform: scaleY(1);
+                opacity: 1;
+            }
+
+            to {
+                transform: scaleY(0);
+                opacity: 0;
+            }
+        }
+
+        @media only screen and (max-width: 600px) {
 
             .grid_container {
-                position: relative;
-                padding: 0;
-                width: 100vw;
-                height: 100vh;
-                display: grid;
-                top: -8px;
-                left: -8px;
-                margin: collapse;
-                grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-                grid-template-rows: 100px 20px auto auto auto 20px 100px;
+
+
+
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+                grid-template-rows: 0.2fr 10px 1fr 1fr 1fr 10px 0.2fr;
                 gap: 5px 5px;
                 grid-template-areas:
-                    "header header header header header header header header header"
-                    "bar bar bar bar bar bar bar bar bar"
-                    ". content content content content content content content . "
-                    ". content content content content content content content . "
-                    ". content content content content content content content . "
-                    "bar2 bar2 bar2 bar2 bar2 bar2 bar2 bar2 bar2"
-                    "footer footer footer footer footer footer footer footer footer";
-                font-family: $font-stack-body;
-                font-size: 1.1em;
-                font-weight: bolder;
+                    "header header header header header"
+                    "bar bar bar bar bar"
+                    "content content content content content "
+                    "content content content content content "
+                    "content content content content content "
+                    "bar2 bar2 bar2 bar2 bar2";
+                font-size: 1em;
+
 
             }
 
             .header {
-                grid-area: header;
-                display: grid;
-                grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+                grid-template-columns: 1fr 1fr 1fr;
                 align-content: center;
-
-                font-family: $font-stack-header;
-                font-size: 2em;
-                font-weight: normal;
+                font-size: 1.3em;
             }
 
             p#title {
-                justify-self: center;
-                grid-column: 3/4;
+                grid-column: 2/3;
 
             }
 
             select#theme {
-                color: map-get($map: $theme-map, $key:body-background);
-                grid-column: 5/6;
-                align-self: center;
-                justify-self: end;
-                margin: 5px;
-                display: block;
-                font-family: $font-stack-body;
-                -moz-appearance: none;
-                -webkit-appearance: none;
-                appearance: none;
+                grid-column: 3/4;
                 max-width: 50%;
-                height: 20%;
-                box-sizing: border-box;
-                font-size: 0.9rem;
-                font-weight: bolder;
-                border: 1px solid map-get($map: $theme-map, $key:border-color);
-                background-color: map-get($map: $theme-map, $key:border-color);
-
+                height: 30%;
+                font-size: 0.8rem;
+                align-self: center;
+                padding: 0px;
             }
 
-            select#theme:focus {
-
-                outline: none;
-            }
-
-            select#theme::-ms-expand {
-                display: none;
-            }
-
-            option {
-                font-family: $font-stack-body;
-                font-size: 0.9rem;
-            }
-
-            option#dark {
-                color: black;
-            }
-
-            .footer {
-                grid-area: footer;
-                display: grid;
-                justify-content: center;
-                align-content: center;
-                font-family: $font-stack-header;
-                font-size: 1em;
-                font-weight: normal;
+            .footer{
+                display:none;
             }
 
             .content {
-                grid-area: content;
-                display: grid;
-                grid-template-columns: 1fr;
-                grid-template-rows: minmax(50px, 50px) minmax(50px, 50px) auto auto auto auto auto auto;
-                align-items: center;
-                row-gap: 5px;
+                grid-template-columns: 80px 1fr 1fr 1fr;
+                grid-template-rows: 200px 100px auto auto auto auto auto;
+                align-items: start;
+                padding: 5px;
 
             }
 
             #about {
-                grid-row: 1/3;
-                grid-column: 1/4;
+                grid-row: 1/2;
+                grid-column: 1/5;
                 text-align: center;
                 margin-top: 10px;
 
             }
 
             #portfolio {
-
-                grid-column: 1/4;
-                text-align: center;
-                border: 1px solid map-get($map: $theme-map, $key:border-color);
+              
+                align-self: start;
+                grid-column: 1/2;
+                grid-row: 2/3;
+                
+                border: transparent;
                 color: map-get($map: $theme-map, $key:accent-color);
+                
 
             }
 
             #portfolio_content.open {
-                display: grid;
-                position: relative;
-                grid-template-columns: 1fr 1fr 1fr;
-                grid-template-rows: auto auto;
-                grid-auto-flow: column;
-                justify-items: center;
-                gap: 10px;
-                text-align: center;
-                -webkit-animation: open 1s normal forwards ease-in-out;
-                -moz-animation: open 1s normal forwards ease-in-out;
-                animation: open 1s normal forwards ease-in-out;
-                -webkit-transform-origin: 100% 0%;
-                -moz-transform-origin: 100% 0%;
-                transform-origin: 100% 0%;
-
+               
+                margin-top: 10px;
+                grid-column:2/5; 
+                grid-row: 2; 
+                display: block;
+                
+                 
             }
 
             #portfolio_content.close {
-                display: grid;
-                position: relative;
-                grid-template-columns: 1fr 1fr 1fr;
-                grid-template-rows: auto auto;
-                grid-auto-flow: column;
-                justify-items: center;
-                gap: 10px;
-                text-align: center;
-                -webkit-animation: close 1s normal forwards ease-in-out;
-                -moz-animation: close 1s normal forwards ease-in-out;
-                animation: close 1s normal forwards ease-in-out;
-                -webkit-transform-origin: 100% 0%;
-                -moz-transform-origin: 100% 0%;
-                transform-origin: 100% 0%;
-
+               
+                
+                grid-column:2/5; 
+                grid-row: 2; 
+                display: block;
+                
+                
             }
 
             #portfolio_content {
                 display: none;
             }
 
-
-
-
             #music {
-
-                grid-column: 1/4;
-                text-align: center;
-                border: 1px solid map-get($map: $theme-map, $key:border-color);
-                color: map-get($map: $theme-map, $key:accent-color);
+                
+                align-self: center;
+                grid-column: 1/2;
+                grid-row: 2/3;
+                
+                border: transparent;
             }
 
             #music_content.open {
+                
                 display: grid;
-                position: relative;
-                grid-template-columns: 1fr 1fr 1fr;
-                grid-template-rows: auto auto;
+                grid-template-columns: 1fr auto;
+                grid-template-rows: auto auto auto auto auto auto;
                 grid-auto-flow: column;
                 justify-items: center;
-                gap: 10px;
-                text-align: center;
-                -webkit-animation: open 1s normal forwards ease-in-out;
-                -moz-animation: open 1s normal forwards ease-in-out;
-                animation: open 1s normal forwards ease-in-out;
-                -webkit-transform-origin: 100% 0%;
-                -moz-transform-origin: 100% 0%;
-                transform-origin: 100% 0%;
-
+                grid-column:2/5; 
+                grid-row: 2; 
             }
 
             #music_content.close {
+                
                 display: grid;
-                position: relative;
-                grid-template-columns: 1fr 1fr 1fr;
-                grid-template-rows: auto auto;
+                grid-template-columns: 1fr auto;
+                grid-template-rows: auto auto auto auto auto auto;
                 grid-auto-flow: column;
                 justify-items: center;
                 gap: 10px;
-                text-align: center;
-                -webkit-animation: close 1s normal forwards ease-in-out;
-                -moz-animation: close 1s normal forwards ease-in-out;
-                animation: close 1s normal forwards ease-in-out;
-                -webkit-transform-origin: 100% 0%;
-                -moz-transform-origin: 100% 0%;
-                transform-origin: 100% 0%;
+                grid-column:2/5; 
+                grid-row: 2; 
             }
 
             #music_content {
@@ -232,46 +556,36 @@ $dark: (accent-color: rgb(160, 153, 156),
             }
 
             #cv {
-
-                grid-column: 1/4;
-                text-align: center;
-                border: 1px solid map-get($map: $theme-map, $key:border-color);
-                color: map-get($map: $theme-map, $key:accent-color);
+                padding: 5px;
+                align-self: end ;
+                grid-column: 1/2;
+                grid-row: 2/3;
+                
+                border: transparent;
             }
 
             #cv_content.open {
+                padding: 5px;
                 display: grid;
-                position: relative;
-                grid-template-columns: auto;
-                grid-template-rows: auto auto;
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto auto auto auto auto;
                 grid-auto-flow: column;
                 justify-items: center;
                 gap: 10px;
-                text-align: center;
-                -webkit-animation: open 1s normal forwards ease-in-out;
-                -moz-animation: open 1s normal forwards ease-in-out;
-                animation: open 1s normal forwards ease-in-out;
-                -webkit-transform-origin: 100% 0%;
-                -moz-transform-origin: 100% 0%;
-                transform-origin: 100% 0%;
-
+                grid-column:2/5; 
+                grid-row: 2; 
             }
 
             #cv_content.close {
+                padding: 5px;
                 display: grid;
-                position: relative;
-                grid-template-columns: auto;
-                grid-template-rows: auto auto;
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto auto auto auto auto;
                 grid-auto-flow: column;
                 justify-items: center;
                 gap: 10px;
-                text-align: center;
-                -webkit-animation: close 1s normal forwards ease-in-out;
-                -moz-animation: close 1s normal forwards ease-in-out;
-                animation: close 1s normal forwards ease-in-out;
-                -webkit-transform-origin: 100% 0%;
-                -moz-transform-origin: 100% 0%;
-                transform-origin: 100% 0%;
+                grid-column:2/5; 
+                grid-row: 2; 
             }
 
 
@@ -298,163 +612,17 @@ $dark: (accent-color: rgb(160, 153, 156),
 
             }
 
-            #empty_border {
 
-                width: 320px;
-                min-width: 200px;
-                height: 174.750px;
-                border: 1px solid map-get($map: $theme-map, $key:accent-color);
-                margin: 1px;
-            }
+        }
 
 
-            .bar {
-                grid-area: bar;
-                background-color: map-get($map: $theme-map, $key:accent-color);
-
-            }
-
-            .bar2 {
-                grid-area: bar2;
-                background-color: map-get($map: $theme-map, $key:accent-color);
-            }
-
-            a {
-                color: map-get($map: $theme-map, $key:accent-color);
-
-            }
-
-
-
-            #portfolio:hover,
-            #music:hover,
-            #cv:hover,
-            a:hover {
-                color: map-get($map: $theme-map, $key:hover-color);
-                cursor: pointer;
-            }
-
-            @-webkit-keyframes open {
-                from {
-                    transform: scaleY(0);
-                    opacity: 0;
-                    height: 0;
-                }
-
-                to {
-                    transform: scaleY(1);
-                    opacity: 1;
-                    height: auto;
-                }
-            }
-
-            @-moz-keyframes open {
-                from {
-                    transform: scaleY(0);
-                    opacity: 0;
-                }
-
-                to {
-                    transform: scaleY(1);
-                    opacity: 1;
-                }
-            }
-
-            @keyframes open {
-                from {
-                    transform: scaleY(0);
-                    opacity: 0;
-                }
-
-                to {
-                    transform: scaleY(1);
-                    opacity: 1;
-                }
-            }
-
-            @-webkit-keyframes close {
-                from {
-                    transform: scaleY(1);
-                    opacity: 1;
-                }
-
-                to {
-                    transform: scaleY(0);
-                    opacity: 0;
-                }
-            }
-
-            @-moz-keyframes close {
-                from {
-                    transform: scaleY(1);
-                    opacity: 1;
-                }
-
-                to {
-                    transform: scaleY(0);
-                    opacity: 0;
-                }
-            }
-
-            @keyframes close {
-                from {
-                    transform: scaleY(1);
-                    opacity: 1;
-                }
-
-                to {
-                    transform: scaleY(0);
-                    opacity: 0;
-                }
-            }
-
-            @media only screen and (max-width: 600px){
-
-                .grid_container {
-                    position: relative;
-                    padding: 0;
-                    width: 100vw;
-                    height: 100vh;
-                    display: grid;
-                    top: -8px;
-                    left: -8px;
-                    margin: collapse;
-                    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-                    grid-template-rows: 0.2fr 10px 1fr 1fr 1fr 10px 0.2fr;
-                    gap: 5px 5px;
-                    grid-template-areas:
-                        "header header header header header"
-                        "bar bar bar bar bar"
-                        "content content . . . "
-                        "content content . . . "
-                        "content content . . . "
-                        "bar2 bar2 bar2 bar2 bar2"
-                        "footer footer footer footer footer";
-                    font-family: $font-stack-body;
-                    font-size: 1.1em;
-                    font-weight: bolder;
-    
-                }
-
-               .header{
-                   font-size: 1.1rem;
-
-                }
-
-                select#theme{
-                    max-width: 50%;
-                    height: 35%;
-                    font-size: 0.7rem;
-                }
-
-            }
-        
     }
 }
 
 @include themable(dark, $dark);
 
 @include themable(light, $light);
+
 
 /*$accent-color: rgb(160, 153, 156);
     $border-color: rgb(236, 236, 236);

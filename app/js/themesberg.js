@@ -11,13 +11,14 @@ document.addEventListener("DOMContentLoaded", function (e) {
     let cv_content = document.getElementById("cv_content");
     //cv_content.style.setProperty("display", "none");
     portfolio.addEventListener("click", function (e) {
-        console.log(portfolio);
-        console.log(portfolio_content)
+        
         portfolio.classList.toggle("animation");
         if (portfolio.classList.contains("animation")) {
             portfolio_content.classList.add("open");
             //portfolio_content.style.removeProperty("display", "none");
-            portfolio_content.classList.remove("close");
+            //portfolio_content.classList.remove("close");
+           
+            console.log(music);
 
         } else {
             portfolio_content.classList.add("close");
@@ -26,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
             //portfolio_content.style.setProperty("display", "none")
         }
+        
 
 
     });
@@ -38,6 +40,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
             music_content.classList.add("open");
             //music_content.style.removeProperty("display", "none");
             music_content.classList.remove("close");
+           
 
         } else {
             music_content.classList.add("close");
@@ -56,6 +59,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
             cv_content.classList.add("open");
             //cv_content.style.removeProperty("display", "none");
             cv_content.classList.remove("close");
+           
 
         } else {
             cv_content.classList.add("close");
@@ -72,6 +76,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
             portfolio_content.classList.remove("close");
             music_content.classList.remove("close");
             cv_content.classList.remove("close");
+           
         }, 1000);
     }
 
