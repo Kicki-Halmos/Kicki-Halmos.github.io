@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bootstrap 5 tutorial by Themesberg</title>
+    <title>Kicki Halmos</title>
     <link rel="stylesheet" href="css/themesberg.css">
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200&display=swap" rel="stylesheet">
@@ -12,12 +12,19 @@
 
 </head>
 
-<body>
+<body class="light">
     <div class="grid_container">
         <div class="header">
             <p id="title">Kicki Halmos</p>
+
+            <select name="theme" id="theme">
+                <option value="">Theme</option>
+                <option id="light" value="light">light</option>
+                <option id="dark" value="dark">dark</option> 
+            </select> </div> 
+            <div class="bar">
+                   
         </div>
-        <div class="bar"></div>
         <div class="content">
             <div id="about">
                 "Här ska det stå lite bio om mig "
@@ -37,7 +44,7 @@
                     <br>
                     Group assignment Frontend 1
                     <br>
-                    Click image to get to Github repo
+
                 </p>
                 <a href="https://kicki-halmos.github.io/Yatzy" />
                 <img src="img/Screen Shot 2020-11-01 at 22.33.57.png" id="img_yatzy" alt="">
@@ -49,12 +56,12 @@
                     <br>
                     Individual assignment Frontend 1
                     <br>
-                    Click box to get to Github repo
+
                 </p>
 
 
                 <a href="https://kicki-halmos.github.io/Quiz/">
-                    <p id="empty_border"></p>
+                    <img src="img/Screen Shot 2020-11-06 at 14.48.19.png" alt="">
 
                 </a>
                 <p>
@@ -62,7 +69,7 @@
                     <br>
                     Group assignment Frontend 2
                     <br>
-                    Click image to get to Github repo
+
                 </p>
 
                 <a href="https://github.com/Kicki-Halmos/Acme_Events">
@@ -80,33 +87,50 @@
                     <br>
                     Solo project
                     <br>
-                    <a
-                        href="https://open.spotify.com/artist/3egKljtAbR7CjQCcvTfGld?si=f2VZuo6yS6aT6UJZXmGqCQ">Spotify</a>
-                    <a href="https://www.facebook.com/kikikimusic/">Facebook</a> <a
-                        href="https://www.youtube.com/c/Kikikimusic/featured">YouTube</a>
+                    <a href="https://open.spotify.com/artist/3egKljtAbR7CjQCcvTfGld?si=f2VZuo6yS6aT6UJZXmGqCQ">
+                        <img class="logos" src="logos/FAVPNG_spotify-logo_FH7NtAeu.png" alt="">
+                    </a>
+                    <a href="https://www.facebook.com/kikikimusic/">
+                        <img class="logos" src="logos/FAVPNG_facebook-clip-art_naAKivLH.png" alt="">
+                    </a> <a href="https://www.youtube.com/c/Kikikimusic/featured">
+                        <img class="logos" src="logos/pngegg.png" alt="">
+                    </a>
                 </p>
-                <iframe width="320" src="https://www.youtube.com/embed/nzT_NRj2lXc" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
+                <div class="video-responsive">
+                    <iframe width="320" src="https://www.youtube.com/embed/nzT_NRj2lXc" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
                 <p>
                     Masquer
                     <br>
                     Duo project
                     <br>
+                    <a href="https://open.spotify.com/artist/3egKljtAbR7CjQCcvTfGld?si=f2VZuo6yS6aT6UJZXmGqCQ">
+                        <img class="logos" src="logos/FAVPNG_spotify-logo_FH7NtAeu.png" alt="">
+                    </a>
+                    <a href="https://www.facebook.com/kikikimusic/">
+                        <img class="logos" src="logos/FAVPNG_facebook-clip-art_naAKivLH.png" alt="">
+                    </a> <a href="https://www.youtube.com/c/Kikikimusic/featured">
+                        <img class="logos" src="logos/pngegg.png" alt="">
+                    </a>
                 </p>
-                <iframe width="320" src="https://www.youtube.com/embed/WCLuaBcRKLY" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
+                <div class="video-responsive">
+                    <iframe width="320" src="https://www.youtube.com/embed/WCLuaBcRKLY" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
 
                 <p>
                     Film music
                     <br>
                     Click here to get to a Spotify playlist with film music productions made by Kicki Halmos
                 </p>
-
-                <iframe width="320" src="https://www.youtube.com/embed/Cy52IZh7Hwk" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
+                <div class="video-responsive">
+                    <iframe width="320" src="https://www.youtube.com/embed/Cy52IZh7Hwk" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
 
             </div>
             <div id="cv">
