@@ -345,7 +345,11 @@ $dark: (accent-color: white,
         #portfolio:hover,
         #music:hover,
         #cv:hover,
-        a:hover {
+        a:hover, 
+        #portfolio_mobile:hover,
+        #music_mobile:hover,
+        #cv_mobile:hover
+        {
             color: map-get($map: $theme-map, $key:hover-color);
             cursor: pointer;
         }

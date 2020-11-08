@@ -250,7 +250,10 @@
 .dark #portfolio:hover,
 .dark #music:hover,
 .dark #cv:hover,
-.dark a:hover {
+.dark a:hover,
+.dark #portfolio_mobile:hover,
+.dark #music_mobile:hover,
+.dark #cv_mobile:hover {
   color: #f893a4;
   cursor: pointer; }
 
@@ -668,7 +671,10 @@
 .light #portfolio:hover,
 .light #music:hover,
 .light #cv:hover,
-.light a:hover {
+.light a:hover,
+.light #portfolio_mobile:hover,
+.light #music_mobile:hover,
+.light #cv_mobile:hover {
   color: #f893a4;
   cursor: pointer; }
 

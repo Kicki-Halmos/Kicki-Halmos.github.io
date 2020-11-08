@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
     let body = document.getElementById("body");
 
     theme.addEventListener("click", function(){
-        if(theme.value == dark){
+        if(theme.value == "dark"){
             body.classList.add("dark");
             body.classList.remove("light");
         }
@@ -92,8 +92,49 @@ document.addEventListener("DOMContentLoaded", function (e) {
             body.classList.add("light");
             body.classList.remove("dark");
         }
-    })
+    });
 
+    let portfolio_mobile = document.getElementById("portfolio_mobile");
+    let music_mobile = document.getElementById("music_mobile");
+    let cv_mobile = document.getElementById("cv_mobile");
+    
+
+    portfolio_mobile.addEventListener("click", function(){
+        console.log(portfolio_mobile);
+        /*portfolio.classList.toggle("animation");
+        if (portfolio.classList.contains("animation")) {
+            portfolio_content.classList.add("open");
+            cv_content.style.setProperty("display", "none");
+            music_content.style.setProperty("display", "none");
+           
+            
+
+        } else {
+            portfolio_content.classList.add("close");
+            portfolio_content.classList.remove("open");
+            timeOutRemoveClose();
+
+            //portfolio_content.style.setProperty("display", "none")
+        }*/
+
+    });
+
+    music_mobile.addEventListener("click", function(){
+        console.log("music");
+        music.classList.toggle("animation");
+        if (music.classList.contains("animation")) {
+            music_content.classList.add("open");
+            cv_content.style.setProperty("display", "none");
+            portfolio_content.style.setProperty("display", "none");
+           
+            
+
+        } else {
+            portfolio_content.classList.add("close");
+            portfolio_content.classList.remove("open");
+            timeOutRemoveClose();
+        }
+    });
 
 
 });
