@@ -49,8 +49,8 @@ $dark: (accent-color: white,
             font-family: $font-stack-body;
             font-size: 1.1em;
             font-weight: bolder;
-            background-color:map-get($map: $theme-map, $key: body-background);
-            color:map-get($map: $theme-map, $key: body-color);
+            background-color: map-get($map: $theme-map, $key: body-background);
+            color: map-get($map: $theme-map, $key: body-color);
 
         }
 
@@ -95,6 +95,7 @@ $dark: (accent-color: white,
 
         select#theme:hover {
             cursor: pointer;
+            color: map-get($map: $theme-map, $key: hover-color);
         }
 
         select#theme:focus {
@@ -133,7 +134,7 @@ $dark: (accent-color: white,
             grid-template-rows: 50px 50px auto auto auto auto auto auto;
             align-items: center;
             row-gap: 5px;
-           
+
 
         }
 
@@ -152,7 +153,7 @@ $dark: (accent-color: white,
 
         #portfolio {
             margin: 0px 0px 5px;
-            
+
             background-color: map-get($map: $theme-map, $key:side-color);
             padding: 0;
             grid-column: 1/4;
@@ -209,7 +210,7 @@ $dark: (accent-color: white,
 
             grid-column: 1/4;
             text-align: center;
-           /* border: 1px solid map-get($map: $theme-map, $key:border-color);*/
+            /* border: 1px solid map-get($map: $theme-map, $key:border-color);*/
             color: map-get($map: $theme-map, $key:accent-color);
             background-color: map-get($map: $theme-map, $key:side-color);
         }
@@ -321,7 +322,7 @@ $dark: (accent-color: white,
 
         }
 
-      
+
 
 
         .bar {
@@ -345,11 +346,7 @@ $dark: (accent-color: white,
         #portfolio:hover,
         #music:hover,
         #cv:hover,
-        a:hover, 
-        #portfolio_mobile:hover,
-        #music_mobile:hover,
-        #cv_mobile:hover
-        {
+        a:hover {
             color: map-get($map: $theme-map, $key:hover-color);
             cursor: pointer;
         }
@@ -433,7 +430,7 @@ $dark: (accent-color: white,
             .grid_container {
 
 
-                display:grid;
+                display: grid;
                 grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
                 grid-template-rows: 0.2fr 10px 1fr 1fr 1fr 10px 0.2fr;
                 gap: 5px 5px;
@@ -449,7 +446,7 @@ $dark: (accent-color: white,
 
             }
 
-          
+
 
             .header {
                 grid-template-columns: 1fr 1fr 1fr;
@@ -470,7 +467,7 @@ $dark: (accent-color: white,
                 align-self: center;
                 padding: 0px;
                 color: map-get($map: $theme-map, $key:accent-color);
-                border: transparent;
+               
             }
 
             .footer {
@@ -479,7 +476,7 @@ $dark: (accent-color: white,
 
             .content {
                 grid-template-columns: 80px 1fr 1fr 1fr;
-                grid-template-rows: 200px 100px auto auto auto auto auto;
+                grid-template-rows: 190px auto auto auto auto auto auto;
                 align-items: start;
                 justify-items: start;
                 padding: 5px;
@@ -593,17 +590,25 @@ $dark: (accent-color: white,
                 display: none;
             }
 
-         div#sidebar{
-             width: 100%;
-             height: 100%;
-            display: grid;
-            grid-area: 4 / 1 / 8 / 2;
-            align-content: start;
-            padding-left: 5px;
-            background-color:map-get($map: $theme-map, $key: side-color);
-            color: map-get($map: $theme-map, $key:accent-color);
-            bottom: 0px;
-         }
+            div#sidebar {
+                width: 100%;
+                height: 100%;
+                display: grid;
+                grid-area: 4 / 1 / 8 / 2;
+                align-content: start;
+                padding-left: 5px;
+                background-color: map-get($map: $theme-map, $key: side-color);
+                color: map-get($map: $theme-map, $key:accent-color);
+                bottom: 0px;
+                z-index: 0;
+            }
+
+            #portfolio_mobile:hover,
+            #music_mobile:hover,
+            #cv_mobile:hover {
+                color: map-get($map: $theme-map, $key: hover-color);
+                cursor: pointer;
+            }
 
             img {
 

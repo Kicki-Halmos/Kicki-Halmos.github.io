@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", function (e) {
+
+    
     let portfolio = document.getElementById("portfolio");
     let portfolio_content = document.getElementById("portfolio_content");
     //portfolio_content.style.setProperty("display", "none");
@@ -71,6 +73,75 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
     });
 
+    let portfolio_mobile = document.getElementById("portfolio_mobile");
+    let music_mobile = document.getElementById("music_mobile");
+    let cv_mobile = document.getElementById("cv_mobile");
+    
+
+    portfolio_mobile.addEventListener("click", function(){
+        
+        
+        portfolio_mobile.classList.toggle("animation");
+        if (portfolio_mobile.classList.contains("animation")) {
+            portfolio_content.classList.add("open");
+            portfolio_content.style.removeProperty("display", "none");
+            cv_content.style.setProperty("display", "none");
+            music_content.style.setProperty("display", "none");
+            music_mobile.classList.remove("animation");
+            cv_mobile.classList.remove("animation");
+           
+            
+
+        } else {
+            portfolio_content.classList.add("close");
+            portfolio_content.classList.remove("open");
+            timeOutRemoveClose();
+
+            //portfolio_content.style.setProperty("display", "none")
+        }
+
+    });
+
+    music_mobile.addEventListener("click", function(){
+        console.log(music_mobile);
+        music_mobile.classList.toggle("animation");
+        if (music_mobile.classList.contains("animation")) {
+            music_content.classList.add("open");
+            music_content.style.removeProperty("display", "none");
+            cv_content.style.setProperty("display", "none");
+            portfolio_content.style.setProperty("display", "none");
+            cv_mobile.classList.remove("animation");
+            portfolio_mobile.classList.remove("animation");
+           
+            
+
+        } else {
+            music_content.classList.add("close");
+            music_content.classList.remove("open");
+            timeOutRemoveClose();
+        }
+    });
+
+    cv_mobile.addEventListener("click", function(){
+        
+        cv_mobile.classList.toggle("animation");
+        if (cv_mobile.classList.contains("animation")) {
+            cv_content.classList.add("open");
+            cv_content.style.removeProperty("display", "none");
+            music_content.style.setProperty("display", "none");
+            portfolio_content.style.setProperty("display", "none");
+            music_mobile.classList.remove("animation");
+            portfolio_mobile.classList.remove("animation");
+           
+            
+
+        } else {
+            cv_content.classList.add("close");
+            cv_content.classList.remove("open");
+            timeOutRemoveClose();
+        }
+    });
+
     function timeOutRemoveClose(){
         setTimeout(function() {
             portfolio_content.classList.remove("close");
@@ -94,47 +165,9 @@ document.addEventListener("DOMContentLoaded", function (e) {
         }
     });
 
-    let portfolio_mobile = document.getElementById("portfolio_mobile");
-    let music_mobile = document.getElementById("music_mobile");
-    let cv_mobile = document.getElementById("cv_mobile");
-    
+  
 
-    portfolio_mobile.addEventListener("click", function(){
-        console.log(portfolio_mobile);
-        /*portfolio.classList.toggle("animation");
-        if (portfolio.classList.contains("animation")) {
-            portfolio_content.classList.add("open");
-            cv_content.style.setProperty("display", "none");
-            music_content.style.setProperty("display", "none");
-           
-            
-
-        } else {
-            portfolio_content.classList.add("close");
-            portfolio_content.classList.remove("open");
-            timeOutRemoveClose();
-
-            //portfolio_content.style.setProperty("display", "none")
-        }*/
-
-    });
-
-    music_mobile.addEventListener("click", function(){
-        console.log("music");
-        music.classList.toggle("animation");
-        if (music.classList.contains("animation")) {
-            music_content.classList.add("open");
-            cv_content.style.setProperty("display", "none");
-            portfolio_content.style.setProperty("display", "none");
-           
-            
-
-        } else {
-            portfolio_content.classList.add("close");
-            portfolio_content.classList.remove("open");
-            timeOutRemoveClose();
-        }
-    });
+   
 
 
 });

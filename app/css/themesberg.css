@@ -55,7 +55,8 @@
   background-color: #535353; }
 
 .dark select#theme:hover {
-  cursor: pointer; }
+  cursor: pointer;
+  color: #f893a4; }
 
 .dark select#theme:focus {
   outline: none; }
@@ -250,10 +251,7 @@
 .dark #portfolio:hover,
 .dark #music:hover,
 .dark #cv:hover,
-.dark a:hover,
-.dark #portfolio_mobile:hover,
-.dark #music_mobile:hover,
-.dark #cv_mobile:hover {
+.dark a:hover {
   color: #f893a4;
   cursor: pointer; }
 
@@ -326,13 +324,12 @@
     font-size: 0.8rem;
     align-self: center;
     padding: 0px;
-    color: white;
-    border: transparent; }
+    color: white; }
   .dark .footer {
     display: none; }
   .dark .content {
     grid-template-columns: 80px 1fr 1fr 1fr;
-    grid-template-rows: 200px 100px auto auto auto auto auto;
+    grid-template-rows: 190px auto auto auto auto auto auto;
     align-items: start;
     justify-items: start;
     padding: 5px; }
@@ -409,7 +406,13 @@
     padding-left: 5px;
     background-color: #535353;
     color: white;
-    bottom: 0px; }
+    bottom: 0px;
+    z-index: 0; }
+  .dark #portfolio_mobile:hover,
+  .dark #music_mobile:hover,
+  .dark #cv_mobile:hover {
+    color: #f893a4;
+    cursor: pointer; }
   .dark img {
     max-width: 100%; }
   .dark .logos {
@@ -476,7 +479,8 @@
   background-color: #bdf5bd; }
 
 .light select#theme:hover {
-  cursor: pointer; }
+  cursor: pointer;
+  color: #f893a4; }
 
 .light select#theme:focus {
   outline: none; }
@@ -671,10 +675,7 @@
 .light #portfolio:hover,
 .light #music:hover,
 .light #cv:hover,
-.light a:hover,
-.light #portfolio_mobile:hover,
-.light #music_mobile:hover,
-.light #cv_mobile:hover {
+.light a:hover {
   color: #f893a4;
   cursor: pointer; }
 
@@ -747,13 +748,12 @@
     font-size: 0.8rem;
     align-self: center;
     padding: 0px;
-    color: #ea1363;
-    border: transparent; }
+    color: #ea1363; }
   .light .footer {
     display: none; }
   .light .content {
     grid-template-columns: 80px 1fr 1fr 1fr;
-    grid-template-rows: 200px 100px auto auto auto auto auto;
+    grid-template-rows: 190px auto auto auto auto auto auto;
     align-items: start;
     justify-items: start;
     padding: 5px; }
@@ -830,7 +830,13 @@
     padding-left: 5px;
     background-color: #bdf5bd;
     color: #ea1363;
-    bottom: 0px; }
+    bottom: 0px;
+    z-index: 0; }
+  .light #portfolio_mobile:hover,
+  .light #music_mobile:hover,
+  .light #cv_mobile:hover {
+    color: #f893a4;
+    cursor: pointer; }
   .light img {
     max-width: 100%; }
   .light .logos {
