@@ -1,14 +1,18 @@
 $light: (accent-color: rgba(234, 19, 99, 1),
     border-color: grey,
     hover-color: rgb(248, 147, 164),
-    body-background: white,
-    body-color: black);
+    body-background: rgb(255, 255, 255),
+    body-color: black,
+    side-color: rgb(189, 245, 189),
+    bar-color: rgba(234, 19, 99, 1));
 
-$dark: (accent-color: rgb(160, 153, 156),
-    border-color:rgb(236, 236, 236),
+$dark: (accent-color: white,
+    border-color: rgb(83, 83, 83),
     hover-color: rgb(248, 147, 164),
     body-background: black,
-    body-color: rgb(238, 227, 227));
+    body-color: rgb(238, 227, 227),
+    side-color: rgb(83, 83, 83),
+    bar-color: black);
 
 @mixin themable($theme-name, $theme-map) {
     .#{$theme-name} {
@@ -45,6 +49,8 @@ $dark: (accent-color: rgb(160, 153, 156),
             font-family: $font-stack-body;
             font-size: 1.1em;
             font-weight: bolder;
+            background-color:map-get($map: $theme-map, $key: body-background);
+            color:map-get($map: $theme-map, $key: body-color);
 
         }
 
@@ -66,7 +72,7 @@ $dark: (accent-color: rgb(160, 153, 156),
         }
 
         select#theme {
-            color: map-get($map: $theme-map, $key:body-background);
+            color: map-get($map: $theme-map, $key:accent-color);
             grid-column: 5/6;
             align-self: center;
             justify-self: end;
@@ -82,8 +88,8 @@ $dark: (accent-color: rgb(160, 153, 156),
             box-sizing: border-box;
             font-size: 0.9rem;
             font-weight: bolder;
-            border: 1px solid map-get($map: $theme-map, $key:border-color);
-            background-color: map-get($map: $theme-map, $key:border-color);
+            border: transparent;
+            background-color: map-get($map: $theme-map, $key:side-color);
 
         }
 
@@ -127,11 +133,11 @@ $dark: (accent-color: rgb(160, 153, 156),
             grid-template-rows: 50px 50px auto auto auto auto auto auto;
             align-items: center;
             row-gap: 5px;
-            
+           
 
         }
 
-        div#sidebar{
+        div#sidebar {
             display: none;
         }
 
@@ -140,17 +146,18 @@ $dark: (accent-color: rgb(160, 153, 156),
             grid-column: 1/4;
             text-align: center;
             margin: 20px 0px 20px;
-           
+
 
         }
 
         #portfolio {
             margin: 0px 0px 5px;
             
+            background-color: map-get($map: $theme-map, $key:side-color);
             padding: 0;
             grid-column: 1/4;
             text-align: center;
-            border: 1px solid map-get($map: $theme-map, $key:border-color);
+            /*border: 1px solid map-get($map: $theme-map, $key:border-color);*/
             color: map-get($map: $theme-map, $key:accent-color);
 
         }
@@ -202,8 +209,9 @@ $dark: (accent-color: rgb(160, 153, 156),
 
             grid-column: 1/4;
             text-align: center;
-            border: 1px solid map-get($map: $theme-map, $key:border-color);
+           /* border: 1px solid map-get($map: $theme-map, $key:border-color);*/
             color: map-get($map: $theme-map, $key:accent-color);
+            background-color: map-get($map: $theme-map, $key:side-color);
         }
 
         #music_content.open {
@@ -249,8 +257,9 @@ $dark: (accent-color: rgb(160, 153, 156),
 
             grid-column: 1/4;
             text-align: center;
-            border: 1px solid map-get($map: $theme-map, $key:border-color);
+            /*border: 1px solid map-get($map: $theme-map, $key:border-color);*/
             color: map-get($map: $theme-map, $key:accent-color);
+            background-color: map-get($map: $theme-map, $key:side-color);
         }
 
         #cv_content.open {
@@ -312,25 +321,18 @@ $dark: (accent-color: rgb(160, 153, 156),
 
         }
 
-        #empty_border {
-
-            width: 320px;
-            min-width: 200px;
-            height: 174.750px;
-            border: 1px solid map-get($map: $theme-map, $key:accent-color);
-            margin: 1px;
-        }
+      
 
 
         .bar {
             grid-area: bar;
-            background-color: map-get($map: $theme-map, $key:accent-color);
+            background-color: map-get($map: $theme-map, $key:bar-color);
 
         }
 
         .bar2 {
             grid-area: bar2;
-            background-color: map-get($map: $theme-map, $key:accent-color);
+            background-color: map-get($map: $theme-map, $key:bar-color);
         }
 
         a {
@@ -352,13 +354,13 @@ $dark: (accent-color: rgb(160, 153, 156),
             from {
                 transform: scaleX(0);
                 opacity: 0;
-                
+
             }
 
             to {
                 transform: scaleX(1);
                 opacity: 1;
-                
+
             }
         }
 
@@ -427,7 +429,7 @@ $dark: (accent-color: rgb(160, 153, 156),
             .grid_container {
 
 
-
+                display:grid;
                 grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
                 grid-template-rows: 0.2fr 10px 1fr 1fr 1fr 10px 0.2fr;
                 gap: 5px 5px;
@@ -442,6 +444,8 @@ $dark: (accent-color: rgb(160, 153, 156),
 
 
             }
+
+          
 
             .header {
                 grid-template-columns: 1fr 1fr 1fr;
@@ -461,16 +465,19 @@ $dark: (accent-color: rgb(160, 153, 156),
                 font-size: 0.8rem;
                 align-self: center;
                 padding: 0px;
+                color: map-get($map: $theme-map, $key:accent-color);
+                border: transparent;
             }
 
-            .footer{
-                display:none;
+            .footer {
+                display: none;
             }
 
             .content {
                 grid-template-columns: 80px 1fr 1fr 1fr;
                 grid-template-rows: 200px 100px auto auto auto auto auto;
                 align-items: start;
+                justify-items: start;
                 padding: 5px;
 
             }
@@ -484,35 +491,39 @@ $dark: (accent-color: rgb(160, 153, 156),
             }
 
             #portfolio {
-              
+                width: 100%;
+                height: 100%;
                 align-self: start;
+                text-align: start;
                 grid-column: 1/2;
                 grid-row: 2/3;
-                
+
                 border: transparent;
                 color: map-get($map: $theme-map, $key:accent-color);
-                
+                background-color: rgb(250, 235, 235);
+                display: none;
+
 
             }
 
             #portfolio_content.open {
-               
-                margin-top: 10px;
-                grid-column:2/5; 
-                grid-row: 2; 
+
+                margin-top: -15px;
+                grid-column: 2/5;
+                grid-row: 2;
                 display: block;
-                
-                 
+
+
             }
 
             #portfolio_content.close {
-               
-                
-                grid-column:2/5; 
-                grid-row: 2; 
+
+                margin-top: -15px;
+                grid-column: 2/5;
+                grid-row: 2;
                 display: block;
-                
-                
+
+
             }
 
             #portfolio_content {
@@ -520,35 +531,28 @@ $dark: (accent-color: rgb(160, 153, 156),
             }
 
             #music {
-                
+
                 align-self: center;
                 grid-column: 1/2;
                 grid-row: 2/3;
-                
+                text-align: start;
                 border: transparent;
+                display: none;
             }
 
             #music_content.open {
-                
-                display: grid;
-                grid-template-columns: 1fr auto;
-                grid-template-rows: auto auto auto auto auto auto;
-                grid-auto-flow: column;
-                justify-items: center;
-                grid-column:2/5; 
-                grid-row: 2; 
+                margin-top: -15px;
+                grid-column: 2/5;
+                grid-row: 2;
+                display: block;
             }
 
             #music_content.close {
-                
-                display: grid;
-                grid-template-columns: 1fr auto;
-                grid-template-rows: auto auto auto auto auto auto;
-                grid-auto-flow: column;
-                justify-items: center;
-                gap: 10px;
-                grid-column:2/5; 
-                grid-row: 2; 
+
+                margin-top: -15px;
+                grid-column: 2/5;
+                grid-row: 2;
+                display: block;
             }
 
             #music_content {
@@ -556,36 +560,27 @@ $dark: (accent-color: rgb(160, 153, 156),
             }
 
             #cv {
-                padding: 5px;
-                align-self: end ;
+
+                align-self: end;
                 grid-column: 1/2;
                 grid-row: 2/3;
-                
+                text-align: start;
                 border: transparent;
+                display: none;
             }
 
             #cv_content.open {
-                padding: 5px;
-                display: grid;
-                grid-template-columns: 1fr;
-                grid-template-rows: auto auto auto auto auto auto;
-                grid-auto-flow: column;
-                justify-items: center;
-                gap: 10px;
-                grid-column:2/5; 
-                grid-row: 2; 
+
+                grid-column: 2/5;
+                grid-row: 2;
+                display: block;
             }
 
             #cv_content.close {
-                padding: 5px;
-                display: grid;
-                grid-template-columns: 1fr;
-                grid-template-rows: auto auto auto auto auto auto;
-                grid-auto-flow: column;
-                justify-items: center;
-                gap: 10px;
-                grid-column:2/5; 
-                grid-row: 2; 
+
+                grid-column: 2/5;
+                grid-row: 2;
+                display: block;
             }
 
 
@@ -593,6 +588,18 @@ $dark: (accent-color: rgb(160, 153, 156),
             #cv_content {
                 display: none;
             }
+
+         div#sidebar{
+             width: 100%;
+             height: 100%;
+            display: grid;
+            grid-area: 4 / 1 / 8 / 2;
+            align-content: start;
+            padding-left: 5px;
+            background-color:map-get($map: $theme-map, $key: side-color);
+            color: map-get($map: $theme-map, $key:accent-color);
+            bottom: 0px;
+         }
 
             img {
 
