@@ -80,6 +80,20 @@ document.addEventListener("DOMContentLoaded", function (e) {
         }, 1000);
     }
 
+    let theme = document.getElementById("theme");
+    let body = document.getElementById("body");
+
+    theme.addEventListener("click", function(){
+        if(theme.value == dark){
+            body.classList.add("dark");
+            body.classList.remove("light");
+        }
+        else{
+            body.classList.add("light");
+            body.classList.remove("dark");
+        }
+    })
+
 
 
 });
