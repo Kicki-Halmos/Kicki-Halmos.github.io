@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function (e) {
 
-    
     let portfolio = document.getElementById("portfolio");
     let portfolio_content = document.getElementById("portfolio_content");
     //portfolio_content.style.setProperty("display", "none");
@@ -142,6 +141,55 @@ document.addEventListener("DOMContentLoaded", function (e) {
         }
     });
 
+    let theme = document.getElementById("theme");
+    let body = document.getElementById("body");
+    let light = document.getElementById("light");
+    light.style.setProperty("display", "none");
+    let dark = document.getElementById("dark");
+    dark.style.setProperty("display", "none");
+
+    theme.addEventListener("click", function(){
+        light.classList.toggle("visible");
+        if(light.classList.contains("visible")){
+        light.style.removeProperty("display", "none");
+        dark.style.removeProperty("display", "none");
+        }
+        else{
+            light.style.setProperty("display", "none");
+            dark.style.setProperty("display", "none");
+        }
+      
+    });
+
+    light.addEventListener("click", function(){
+        body.classList.remove("dark");
+        body.classList.add("light");
+        
+    });
+
+    dark.addEventListener("click", function(){
+        body.classList.remove("light");
+        body.classList.add("dark");
+    });
+
+    let info = document.getElementById("info");
+    info.style.setProperty("display", "none");
+    let nackademin = document.getElementById("nackademin");
+    let content = document.getElementById("id_content");  
+    
+    nackademin.addEventListener("click", function(){
+    console.log("hej");
+     content.style.setProperty("display", "none");
+     info.style.removeProperty("display", "none");
+        
+    });
+
+    let back = document.getElementById("back");
+    back.addEventListener("click", function(){
+        info.style.setProperty("display", "none");
+        content.style.removeProperty("display", "none");
+    });
+
     function timeOutRemoveClose(){
         setTimeout(function() {
             portfolio_content.classList.remove("close");
@@ -151,19 +199,9 @@ document.addEventListener("DOMContentLoaded", function (e) {
         }, 1000);
     }
 
-    let theme = document.getElementById("theme");
-    let body = document.getElementById("body");
+ 
 
-    theme.addEventListener("click", function(){
-        if(theme.value == "dark"){
-            body.classList.add("dark");
-            body.classList.remove("light");
-        }
-        else{
-            body.classList.add("light");
-            body.classList.remove("dark");
-        }
-    });
+   
 
   
 
