@@ -203,7 +203,22 @@ document.addEventListener("DOMContentLoaded", function (e) {
         }, 1000);
     }
 
- 
+    let contact = document.getElementById("contact");
+    
+    contact.addEventListener("click", function(){
+        copyToClipboard("kickihalmos@gmail.com");
+    });
+
+    function copyToClipboard(text) {
+        var dummy = document.createElement("textarea");
+        dummy.value = text;
+        document.body.appendChild(dummy);
+        dummy.select();
+        document.execCommand("copy");
+        document.body.removeChild(dummy);
+    }
+    
+    
 
    
 

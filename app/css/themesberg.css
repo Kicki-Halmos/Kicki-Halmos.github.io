@@ -62,7 +62,8 @@
 
 .dark #theme:hover,
 .dark #nackademin:hover,
-.dark #back:hover {
+.dark #back:hover,
+.dark #contact:hover {
   cursor: pointer;
   color: #f893a4;
   /*background-color: rgb(7, 136, 115);*/ }
@@ -287,7 +288,7 @@
   margin: 2px 10px -5px;
   background-color: white;
   border: transparent;
-  border-radius: 20%; }
+  border-radius: 10%; }
 
 .dark iframe {
   max-width: 100%; }
@@ -535,7 +536,8 @@
 
 .light #theme:hover,
 .light #nackademin:hover,
-.light #back:hover {
+.light #back:hover,
+.light #contact:hover {
   cursor: pointer;
   color: #f893a4;
   /*background-color: rgb(7, 136, 115);*/ }
@@ -760,7 +762,7 @@
   margin: 2px 10px -5px;
   background-color: white;
   border: transparent;
-  border-radius: 20%; }
+  border-radius: 10%; }
 
 .light iframe {
   max-width: 100%; }

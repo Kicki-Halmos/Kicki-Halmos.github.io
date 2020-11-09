@@ -111,7 +111,8 @@ $dark: (accent-color: white,
 
         #theme:hover,
         #nackademin:hover,
-        #back:hover {
+        #back:hover,
+        #contact:hover {
             cursor: pointer;
             color: map-get($map: $theme-map, $key: hover-color);
             /*background-color: rgb(7, 136, 115);*/
@@ -393,9 +394,9 @@ $dark: (accent-color: white,
             max-width: 6%;
             margin: 2px 10px -5px;
             background-color: white;
-
+            
             border: transparent;
-            border-radius: 20%;
+            border-radius: 10%;
 
         }
 
