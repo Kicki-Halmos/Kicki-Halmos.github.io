@@ -199,12 +199,15 @@ $dark: (accent-color: white,
             font-size: 1rem;
             font-weight: bolder;
             background-color: map-get($map: $theme-map, $key: body-background);
-            color: map-get($map: $theme-map, $key: accent-color);
+            color: map-get($map: $theme-map, $key: hover-color);
         }
        
 
         #info{
-            grid-area: 3 / 2 / 6 / 8;
+            grid-area: 3 / 2 / 6 / 9;
+            overflow:scroll;
+            padding: 5px;
+            
         }
 
         #back{
@@ -215,7 +218,7 @@ $dark: (accent-color: white,
             font-size: 1rem;
             font-weight: bolder;
             background-color: map-get($map: $theme-map, $key: body-background);
-            color: map-get($map: $theme-map, $key: accent-color);
+            color: map-get($map: $theme-map, $key: hover-color);
         }
 
         #portfolio {
@@ -563,7 +566,7 @@ $dark: (accent-color: white,
 
             .content {
                 grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-                grid-template-rows: 33% 1fr 1fr minmax(0, 1fr);
+                grid-template-rows: 33% 1fr 1fr 1fr;
                 align-items: start;
                 justify-items: start;
                 padding: 5px;
@@ -577,6 +580,10 @@ $dark: (accent-color: white,
                 text-align: center;
 
 
+            }
+
+            #info{
+                grid-area: 3 / 1 / 6 / 6;
             }
 
             #portfolio {

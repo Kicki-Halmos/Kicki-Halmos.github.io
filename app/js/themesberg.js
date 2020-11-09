@@ -176,17 +176,21 @@ document.addEventListener("DOMContentLoaded", function (e) {
     info.style.setProperty("display", "none");
     let nackademin = document.getElementById("nackademin");
     let content = document.getElementById("id_content");  
+    let sidebar = document.getElementById("sidebar");
     
     nackademin.addEventListener("click", function(){
     console.log("hej");
      content.style.setProperty("display", "none");
+     sidebar.style.setProperty("display", "none");
      info.style.removeProperty("display", "none");
         
     });
 
     let back = document.getElementById("back");
+    
     back.addEventListener("click", function(){
         info.style.setProperty("display", "none");
+        sidebar.style.removeProperty("display", "none");
         content.style.removeProperty("display", "none");
     });
 
