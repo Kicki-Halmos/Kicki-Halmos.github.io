@@ -5,7 +5,7 @@
 
 .dark .body {
   background-color: black;
-  color: #eee3e3; }
+  color: white; }
 
 .dark .grid_container {
   position: relative;
@@ -21,7 +21,7 @@
   font-size: 1.1em;
   font-weight: bolder;
   background-color: black;
-  color: #eee3e3; }
+  color: white; }
 
 .dark .header {
   grid-area: header;
@@ -283,12 +283,18 @@
   max-width: 100%; }
 
 .dark .logos {
-  align-self: end;
-  max-width: 6%;
-  margin: 2px 10px -5px;
-  background-color: white;
-  border: transparent;
-  border-radius: 10%; }
+  margin-bottom: 0px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between; }
+
+.dark .bx {
+  flex: 1;
+  color: white; }
+
+.dark .logos_git {
+  display: flex;
+  justify-content: center; }
 
 .dark iframe {
   max-width: 100%; }
@@ -603,7 +609,7 @@
   font-size: 1rem;
   font-weight: bolder;
   background-color: white;
-  color: #f893a4; }
+  color: #ea1363; }
 
 .light #info {
   grid-area: 3 / 2 / 6 / 9;
@@ -618,7 +624,7 @@
   font-size: 1rem;
   font-weight: bolder;
   background-color: white;
-  color: #f893a4; }
+  color: #ea1363; }
 
 .light #portfolio {
   margin: 0px 0px 5px;
@@ -757,12 +763,18 @@
   max-width: 100%; }
 
 .light .logos {
-  align-self: end;
-  max-width: 6%;
-  margin: 2px 10px -5px;
-  background-color: white;
-  border: transparent;
-  border-radius: 10%; }
+  margin-bottom: 0px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between; }
+
+.light .bx {
+  flex: 1;
+  color: #ea1363; }
+
+.light .logos_git {
+  display: flex;
+  justify-content: center; }
 
 .light iframe {
   max-width: 100%; }
