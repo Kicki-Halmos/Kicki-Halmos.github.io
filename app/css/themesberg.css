@@ -107,8 +107,8 @@
     font-family: Crimson text;
     font-weight: normal;
     font-size: 1rem; }
-  .dark #theme:focus #nackademin:focus,
-  .dark back:focus {
+  .dark #theme:focus, .dark #nackademin:focus,
+  .dark #back:focus {
     outline: none; }
   .dark p#light:hover,
   .dark p#dark:hover {
@@ -290,9 +290,8 @@
     /* Animation */
     margin: 0 auto; }
   .dark img:hover {
-    transform: scale(1.9);
-    /*animation: shake 0.8s;
-            animation-iteration-count: infinite;*/
+    animation: shake 1s;
+    animation-iteration-count: infinite;
     /*visibility: visible;*/ }
 
 @keyframes shake {
@@ -358,52 +357,50 @@
 
 @-webkit-keyframes open {
   from {
-    transform: scaleY(0);
-    opacity: 0;
-    transform: rotate(-180deg); }
+    /*transform: scaleY(0);*/
+    opacity: 0; }
   to {
-    transform: scaleY(1);
-    opacity: 1;
-    transform: rotate(180deg); } }
+    /*transform: scaleY(1);*/
+    opacity: 1; } }
 
 @-moz-keyframes open {
   from {
-    transform: scaleY(0);
+    /*transform: scaleY(0);*/
     opacity: 0; }
   to {
-    transform: scaleY(1);
+    /*transform: scaleY(1);*/
     opacity: 1; } }
 
 @keyframes open {
   from {
-    transform: scaleY(0);
+    /*transform: scaleY(0);*/
     opacity: 0; }
   to {
-    transform: scaleY(1);
+    /*transform: scaleY(1);*/
     opacity: 1; } }
 
 @-webkit-keyframes close {
   from {
-    transform: scaleY(1);
+    /*transform: scaleY(1);*/
     opacity: 1; }
   to {
-    transform: scaleY(0);
+    /*transform: scaleY(0);*/
     opacity: 0; } }
 
 @-moz-keyframes close {
   from {
-    transform: scaleY(1);
+    /*transform: scaleY(1);*/
     opacity: 1; }
   to {
-    transform: scaleY(0);
+    /*transform: scaleY(0);*/
     opacity: 0; } }
 
 @keyframes close {
   from {
-    transform: scaleY(1);
+    /*transform: scaleY(1);*/
     opacity: 1; }
   to {
-    transform: scaleY(0);
+    /*transform: scaleY(0);*/
     opacity: 0; } }
   @media only screen and (max-width: 600px) {
     .dark .grid_container {
@@ -625,8 +622,8 @@
     font-family: Crimson text;
     font-weight: normal;
     font-size: 1rem; }
-  .light #theme:focus #nackademin:focus,
-  .light back:focus {
+  .light #theme:focus, .light #nackademin:focus,
+  .light #back:focus {
     outline: none; }
   .light p#light:hover,
   .light p#dark:hover {
@@ -808,9 +805,8 @@
     /* Animation */
     margin: 0 auto; }
   .light img:hover {
-    transform: scale(1.9);
-    /*animation: shake 0.8s;
-            animation-iteration-count: infinite;*/
+    animation: shake 1s;
+    animation-iteration-count: infinite;
     /*visibility: visible;*/ }
 
 @keyframes shake {
@@ -876,52 +872,50 @@
 
 @-webkit-keyframes open {
   from {
-    transform: scaleY(0);
-    opacity: 0;
-    transform: rotate(-180deg); }
+    /*transform: scaleY(0);*/
+    opacity: 0; }
   to {
-    transform: scaleY(1);
-    opacity: 1;
-    transform: rotate(180deg); } }
+    /*transform: scaleY(1);*/
+    opacity: 1; } }
 
 @-moz-keyframes open {
   from {
-    transform: scaleY(0);
+    /*transform: scaleY(0);*/
     opacity: 0; }
   to {
-    transform: scaleY(1);
+    /*transform: scaleY(1);*/
     opacity: 1; } }
 
 @keyframes open {
   from {
-    transform: scaleY(0);
+    /*transform: scaleY(0);*/
     opacity: 0; }
   to {
-    transform: scaleY(1);
+    /*transform: scaleY(1);*/
     opacity: 1; } }
 
 @-webkit-keyframes close {
   from {
-    transform: scaleY(1);
+    /*transform: scaleY(1);*/
     opacity: 1; }
   to {
-    transform: scaleY(0);
+    /*transform: scaleY(0);*/
     opacity: 0; } }
 
 @-moz-keyframes close {
   from {
-    transform: scaleY(1);
+    /*transform: scaleY(1);*/
     opacity: 1; }
   to {
-    transform: scaleY(0);
+    /*transform: scaleY(0);*/
     opacity: 0; } }
 
 @keyframes close {
   from {
-    transform: scaleY(1);
+    /*transform: scaleY(1);*/
     opacity: 1; }
   to {
-    transform: scaleY(0);
+    /*transform: scaleY(0);*/
     opacity: 0; } }
   @media only screen and (max-width: 600px) {
     .light .grid_container {

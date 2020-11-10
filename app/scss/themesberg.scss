@@ -175,8 +175,8 @@ $dark: (accent-color: white,
         }
 
 
-        #theme:focus #nackademin:focus,
-        back:focus {
+        #theme:focus, #nackademin:focus,
+        #back:focus {
             outline: none;
         }
 
@@ -448,10 +448,10 @@ $dark: (accent-color: white,
         }
 
         img:hover{
-            transform: scale(1.9);
+            
            
-            /*animation: shake 0.8s;
-            animation-iteration-count: infinite;*/
+            animation: shake 1s;
+            animation-iteration-count: infinite;
             /*visibility: visible;*/
         }
 
@@ -544,77 +544,77 @@ $dark: (accent-color: white,
 
         @-webkit-keyframes open {
             from {
-                transform: scaleY(0);
+                /*transform: scaleY(0);*/
                 opacity: 0;
-                transform: rotate(-180deg);
+                
 
             }
 
             to {
-                transform: scaleY(1);
+                /*transform: scaleY(1);*/
                 opacity: 1;
-                transform: rotate(180deg);
+                
 
             }
         }
 
         @-moz-keyframes open {
             from {
-                transform: scaleY(0);
+                /*transform: scaleY(0);*/
                 opacity: 0;
 
             }
 
             to {
-                transform: scaleY(1);
+                /*transform: scaleY(1);*/
                 opacity: 1;
             }
         }
 
         @keyframes open {
             from {
-                transform: scaleY(0);
+                /*transform: scaleY(0);*/
                 opacity: 0;
             }
 
             to {
-                transform: scaleY(1);
+                /*transform: scaleY(1);*/
                 opacity: 1;
             }
         }
 
         @-webkit-keyframes close {
             from {
-                transform: scaleY(1);
+                /*transform: scaleY(1);*/
                 opacity: 1;
             }
 
             to {
-                transform: scaleY(0);
+                /*transform: scaleY(0);*/
                 opacity: 0;
             }
         }
 
         @-moz-keyframes close {
             from {
-                transform: scaleY(1);
+                /*transform: scaleY(1);*/
                 opacity: 1;
             }
 
             to {
-                transform: scaleY(0);
+                /*transform: scaleY(0);*/
                 opacity: 0;
             }
         }
 
         @keyframes close {
             from {
-                transform: scaleY(1);
+                /*transform: scaleY(1);*/
                 opacity: 1;
             }
 
             to {
-                transform: scaleY(0);
+                /*transform: scaleY(0);*/
                 opacity: 0;
             }
         }
