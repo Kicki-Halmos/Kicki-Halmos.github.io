@@ -218,13 +218,5 @@ document.addEventListener("DOMContentLoaded", function (e) {
         document.body.removeChild(dummy);
     }
     
-    
-
-   
-
-  
-
-   
-
 
 });

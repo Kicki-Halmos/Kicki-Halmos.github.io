@@ -1,3 +1,4 @@
+/*@import '../../node_modules/bootstrap/scss/bootstrap.scss';*/
 * {
     margin: 0;
     padding: 0;
@@ -7,12 +8,12 @@
 $light: (accent-color: rgba(234, 19, 99, 1),
     border-color: grey,
     hover-color: rgb(248, 147, 164),
-    body-background: rgb(255, 255, 255),
+    body-background: rgba(255, 255, 255, 0),
     body-color: black,
     side-color: rgb(189, 245, 189),
     bar-color: rgba(234, 19, 99, 1),
     theme-color: rgb(7, 136, 115),
-    span-line:  rgba(234, 19, 99, 1),
+    span-line: rgba(234, 19, 99, 1),
     nackademin: rgba(234, 19, 99, 1));
 
 $dark: (accent-color: white,
@@ -23,8 +24,9 @@ $dark: (accent-color: white,
     side-color: rgb(83, 83, 83),
     bar-color: black,
     theme-color: rgb(7, 136, 115),
-    span-line:  rgb(248, 147, 164),
-    nackademin:  rgb(248, 147, 164));
+    span-line: rgb(248, 147, 164),
+    nackademin: rgb(248, 147, 164));
+
 @mixin themable($theme-name, $theme-map) {
     .#{$theme-name} {
 
@@ -119,9 +121,62 @@ $dark: (accent-color: white,
             /*background-color: rgb(7, 136, 115);*/
         }
 
-        #theme:focus
-        #nackademin:focus, 
-        back:focus{
+        /*.btn-secondary{
+            background-color: map-get($map: $theme-map, $key:body-background);
+            color: map-get($map: $theme-map, $key: body-color);
+            border:none;
+            font-size: 1em;
+            font-family: $font-stack-header;
+        }*/
+
+        #contact {
+            font-family: $font-stack-header;
+            font-weight: normal;
+            position: relative;
+            display: inline-block;
+        }
+
+        #tooltip {
+            visibility: hidden;
+            width: 120px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            padding: 5px 0;
+            border-radius: 6px;
+
+            font-family: $font-stack-header;
+            font-weight: normal;
+            font-size: 0.9rem;
+
+            /* Position the tooltip text */
+            position: relative;
+            z-index: 0;
+            top: 20%;
+            left: 50%;
+            margin-left: -60px;
+
+            /* Fade in tooltip */
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+
+        #contact:hover+#tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        #tooltip {
+            visibility: hidden;
+            font-family: $font-stack-header;
+            font-weight: normal;
+            font-size: 1rem;
+        }
+
+
+        #theme:focus #nackademin:focus,
+        back:focus {
             outline: none;
         }
 
@@ -164,9 +219,8 @@ $dark: (accent-color: white,
             display: grid;
             justify-content: center;
             align-content: center;
-            font-family: $font-stack-header;
-            font-size: 1em;
-            font-weight: normal;
+
+
         }
 
         .content {
@@ -175,7 +229,7 @@ $dark: (accent-color: white,
             grid-template-columns: 1fr;
             grid-template-rows: 50px 50px auto auto auto auto auto auto;
             align-items: center;
-            /*row-gap: 5px;*/
+            row-gap: 5px;
 
 
         }
@@ -193,7 +247,7 @@ $dark: (accent-color: white,
 
         }
 
-        #nackademin{
+        #nackademin {
             -webkit-appearance: none;
             -moz-appearance: none;
             border: none;
@@ -203,16 +257,16 @@ $dark: (accent-color: white,
             background-color: map-get($map: $theme-map, $key: body-background);
             color: map-get($map: $theme-map, $key: nackademin);
         }
-       
 
-        #info{
+
+        #info {
             grid-area: 3 / 2 / 6 / 9;
-            overflow:scroll;
+            overflow: scroll;
             padding: 5px;
-            
+
         }
 
-        #back{
+        #back {
             -webkit-appearance: none;
             -moz-appearance: none;
             border: none;
@@ -224,13 +278,13 @@ $dark: (accent-color: white,
         }
 
         #portfolio {
-            margin: 0px 0px 5px;
+
 
             background-color: map-get($map: $theme-map, $key:side-color);
             padding: 0;
             grid-column: 1/4;
             text-align: center;
-            /*border: 1px solid map-get($map: $theme-map, $key:border-color);*/
+
             color: map-get($map: $theme-map, $key:accent-color);
 
         }
@@ -282,7 +336,7 @@ $dark: (accent-color: white,
 
             grid-column: 1/4;
             text-align: center;
-            /* border: 1px solid map-get($map: $theme-map, $key:border-color);*/
+
             color: map-get($map: $theme-map, $key:accent-color);
             background-color: map-get($map: $theme-map, $key:side-color);
         }
@@ -295,7 +349,7 @@ $dark: (accent-color: white,
             grid-auto-flow: column;
             justify-items: center;
             gap: 10px;
-            row-gap: 0px;
+
             text-align: center;
             -webkit-animation: open 1s normal forwards ease-in-out;
             -moz-animation: open 1s normal forwards ease-in-out;
@@ -314,7 +368,7 @@ $dark: (accent-color: white,
             grid-auto-flow: column;
             justify-items: center;
             gap: 10px;
-            row-gap: 0px;
+
             text-align: center;
             -webkit-animation: close 1s normal forwards ease-in-out;
             -moz-animation: close 1s normal forwards ease-in-out;
@@ -332,7 +386,7 @@ $dark: (accent-color: white,
 
             grid-column: 1/4;
             text-align: center;
-            /*border: 1px solid map-get($map: $theme-map, $key:border-color);*/
+
             color: map-get($map: $theme-map, $key:accent-color);
             background-color: map-get($map: $theme-map, $key:side-color);
         }
@@ -372,13 +426,13 @@ $dark: (accent-color: white,
             transform-origin: 100% 0%;
         }
 
-        span.line{
-            
+        span.line {
+
             color: map-get($map: $theme-map, $key: span-line);
-            
+
         }
 
-       
+
 
         #cv_content {
             display: none;
@@ -386,11 +440,55 @@ $dark: (accent-color: white,
 
         img {
 
-            max-width: 100%;
+            width: 100%;
+            transition: transform 0.2s; /* Animation */
+           
+            margin: 0 auto;
 
         }
 
-        .logos{
+        img:hover{
+            transform: scale(1.9);
+           
+            /*animation: shake 0.8s;
+            animation-iteration-count: infinite;*/
+            /*visibility: visible;*/
+        }
+
+      /*  img:hover + .hover_text{
+            visibility: visible;
+        }*/
+
+      
+          
+          @keyframes shake {
+            0% { transform: translate(1px, 1px) rotate(0deg); }
+            10% { transform: translate(-1px, -2px) rotate(-1deg); }
+            20% { transform: translate(-3px, 0px) rotate(1deg); }
+            30% { transform: translate(3px, 2px) rotate(0deg); }
+            40% { transform: translate(1px, -1px) rotate(1deg); }
+            50% { transform: translate(-1px, 2px) rotate(-1deg); }
+            60% { transform: translate(-3px, 1px) rotate(0deg); }
+            70% { transform: translate(3px, 1px) rotate(-1deg); }
+            80% { transform: translate(-1px, -1px) rotate(1deg); }
+            90% { transform: translate(1px, 2px) rotate(0deg); }
+            100% { transform: translate(1px, -2px) rotate(-1deg); }
+          }
+
+        .hover_text {
+            position: relative;
+            display: inline;
+            transition: top 5s;
+            
+            
+            background-color: grey;
+            transition: opacity 0.2s;
+            opacity: 1;
+            visibility: hidden;
+            color:white;
+        }
+
+        .logos {
             margin-bottom: 0px;
             display: flex;
             width: 100%;
@@ -398,15 +496,16 @@ $dark: (accent-color: white,
         }
 
         .bx {
-            flex:1;
-            color: map-get($map: $theme-map, $key: accent-color); 
+            flex: 1;
+            color: map-get($map: $theme-map, $key: accent-color);
         }
-        .logos_git{
+
+        .logos_git {
             display: flex;
             justify-content: center;
         }
 
-      
+
 
         iframe {
             max-width: 100%;
@@ -591,8 +690,12 @@ $dark: (accent-color: white,
 
             }
 
-            #info{
+            #info {
                 grid-area: 3 / 1 / 6 / 6;
+            }
+
+            .logos {
+                justify-content: space-around;
             }
 
             #portfolio {
@@ -687,14 +790,14 @@ $dark: (accent-color: white,
                 grid-row: 2;
                 display: block;
             }
-           
+
 
 
             #cv_content {
                 display: none;
             }
 
-          
+
 
             div#sidebar {
                 width: 100%;
