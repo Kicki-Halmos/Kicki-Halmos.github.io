@@ -1,25 +1,31 @@
 /*@import '../../node_modules/bootstrap/scss/bootstrap.scss';*/
+/*@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@200&family=Yeseva+One&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-$light: (accent-color: rgba(234, 19, 99, 1),
+$font-stack-header: Yeseva One;
+$font-stack-body: Public Sans;
+
+$light: (accent-color: rgb(255, 105, 74),
     border-color: grey,
-    hover-color: rgb(248, 147, 164),
-    body-background: rgba(255, 255, 255, 0),
+    hover-color: rgb(128, 52, 37),
+    body-background: white,
     body-color: black,
-    side-color: rgb(189, 245, 189),
-    bar-color: rgba(234, 19, 99, 1),
-    theme-color: rgb(7, 136, 115),
-    span-line: rgba(234, 19, 99, 1),
-    nackademin: rgba(234, 19, 99, 1));
+    side-color: rgb(255, 105, 74),
+    bar-color:  rgb(255, 105, 74),
+    theme-color:rgb(22, 27, 23),
+    span-line:  rgb(255, 105, 74),
+    nackademin: rgb(255, 105, 74));
 
 $dark: (accent-color: white,
     border-color: rgb(83, 83, 83),
     hover-color: rgb(248, 147, 164),
-    body-background: black,
+    body-background:#161B17,
     body-color: white,
     side-color: rgb(83, 83, 83),
     bar-color: black,
@@ -27,27 +33,131 @@ $dark: (accent-color: white,
     span-line: rgb(248, 147, 164),
     nackademin: rgb(248, 147, 164));
 
+@mixin animation_open ($name, $duration, $delay, $normal, $forwards, $ease-in-out) {
+    -webkit-animation: $name $duration $delay $normal $forwards $ease-in-out;
+    -moz-animation: $name $duration $delay $normal $forwards $ease-in-out;
+    animation: $name $duration $delay $normal $forwards $ease-in-out;
+    /*-webkit-transform-origin: 100% 0%;
+    -moz-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;*/
+
+
+
+}
+
+@-webkit-keyframes open {
+    from {
+        /*transform: scaleY(0);*/
+        opacity: 0;
+
+
+    }
+
+    to {
+        /*transform: scaleY(1);*/
+        opacity: 1;
+
+
+    }
+}
+
+@-moz-keyframes open {
+    from {
+        /*transform: scaleY(0);*/
+        opacity: 0;
+
+    }
+
+    to {
+        /*transform: scaleY(1);*/
+        opacity: 1;
+    }
+}
+
+@keyframes open {
+    from {
+        /*transform: scaleY(0);*/
+        opacity: 0;
+    }
+
+    to {
+        /*transform: scaleY(1);*/
+        opacity: 1;
+    }
+}
+
+/*@mixin animation_delay($name, $duration, $delay, $normal, $forwards, $ease-in-out)){
+
+}
+
+
+
+    /*-webkit-animation: close 0.8s normal forwards ease-in-out;
+    -moz-animation: close 0.8s normal forwards ease-in-out;
+    animation: close 0.8s normal forwards ease-in-out;
+    -webkit-transform-origin: 100% 0%;
+    -moz-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;*/
+
+@-webkit-keyframes close {
+    from {
+        /*transform: scaleY(1);*/
+        opacity: 1;
+    }
+
+    to {
+        /*transform: scaleY(0);*/
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes close {
+    from {
+        /*transform: scaleY(1);*/
+        opacity: 1;
+    }
+
+    to {
+        /*transform: scaleY(0);*/
+        opacity: 0;
+    }
+}
+
+@keyframes close {
+    from {
+        /*transform: scaleY(1);*/
+        opacity: 1;
+    }
+
+    to {
+        /*transform: scaleY(0);*/
+        opacity: 0;
+    }
+}
+
+
 @mixin themable($theme-name, $theme-map) {
     .#{$theme-name} {
 
         $font-stack-header: Crimson text;
         $font-stack-body: Titillium Web;
 
-        .body {
+       /* .body {
             background-color: map-get($map: $theme-map, $key:body-background);
             color: map-get($map: $theme-map, $key:body-color);
-        }
+        }*/
 
 
         .grid_container {
             position: relative;
             padding: 0;
+            
             width: 100vw;
             height: 100vh;
             display: grid;
             margin: collapse;
             grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-            grid-template-rows: 100px 20px auto auto auto 20px 100px;
+            grid-template-rows: 110px 10px auto auto auto 10px 80px;
 
             grid-template-areas:
                 "header header header header header header header header header"
@@ -57,9 +167,9 @@ $dark: (accent-color: white,
                 ". content content content content content content content . "
                 "bar2 bar2 bar2 bar2 bar2 bar2 bar2 bar2 bar2"
                 "footer footer footer footer footer footer footer footer footer";
-            font-family: $font-stack-body;
+            font-family: $font-stack-body, sans-serif;
             font-size: 1.1em;
-            font-weight: bolder;
+            font-weight: normal;
             background-color: map-get($map: $theme-map, $key: body-background);
             color: map-get($map: $theme-map, $key: body-color);
 
@@ -69,45 +179,55 @@ $dark: (accent-color: white,
 
             grid-area: header;
             display: grid;
-            grid-template-rows: 100px;
-            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: auto auto;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+           
 
 
-            font-family: $font-stack-header;
-            font-size: 2em;
-            font-weight: normal;
+          
+            
         }
 
-        p#title {
-            justify-self: center;
-            grid-column: 3/4;
-            align-self: center;
+        #title {
+            justify-self: start;
+            grid-column: 2/5;
+            grid-row: 1;
+            align-self:end;
+            color: map-get($map: $theme-map, $key: accent-color);
+            font-family: $font-stack-header;
+            font-size: 3em;
+            font-weight: bold;
 
+        }
+        #header_sub{
+            grid-column: 2/6;
+            grid-row: 2;
+            font-size: 1em;
         }
 
         #theme {
-            grid-column: 5/6;
+            grid-column: 9/10;
 
-            color: map-get($map: $theme-map, $key:accent-color);
+            color: map-get($map: $theme-map, $key:theme-color);
             box-sizing: border-box;
-            align-self: center;
+            align-self: end;
             justify-self: end;
-            text-align: center;
+            
             margin-left: 50px;
             font-family: $font-stack-body;
-            width: 50px;
-            min-height: 30%;
-            border: none;
-            font-size: 0.9rem;
+            width: 70px;
+            min-height: 45%;
+            border: 1px solid map-get($map: $theme-map, $key:theme-color);
+            font-size: 1em;
             font-weight: bolder;
-            background-color: map-get($map: $theme-map, $key:side-color);
-            display: grid;
+            background-color: map-get($map: $theme-map, $key:body-background);
+            /*display: grid;
             grid-template-columns: 50px;
             grid-template-rows: auto;
             align-content: center;
             z-index: 0;
             -webkit-appearance: none;
-            -moz-appearance: none;
+            -moz-appearance: none;*/
 
 
         }
@@ -167,161 +287,605 @@ $dark: (accent-color: white,
             opacity: 1;
         }
 
-        #tooltip {
+        
+        #tooltip::after {
+            content: " ";
+            position: absolute;
+            bottom: 100%;  /* At the top of the tooltip */
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent transparent #555 transparent;
+        }
+    
+
+    /*#tooltip {
             visibility: hidden;
             font-family: $font-stack-header;
             font-weight: normal;
             font-size: 1rem;
+        }*/
+
+
+    #theme:focus,
+    #nackademin:focus,
+    #back:focus {
+        outline: none;
+    }
+
+    p#light:hover,
+    p#dark:hover {
+        background-color: map-get($map: $theme-map, $key: theme-color);
+    }
+
+    p#light {
+
+        padding: 0px;
+        margin: 0px;
+
+        position: relative;
+        background-color: map-get($map: $theme-map, $key:side-color);
+        height: 100%;
+        width: 50px;
+        justify-self: start;
+
+
+    }
+
+    p#dark {
+
+        padding: 0px;
+        margin: 0px;
+
+        position: relative;
+        background-color: map-get($map: $theme-map, $key:side-color);
+        height: 100%;
+        width: 50px;
+        justify-self: start;
+
+
+
+    }
+
+    .footer {
+        grid-area: footer;
+        display: grid;
+        justify-content: center;
+        align-content: center;
+
+
+    }
+
+    .content {
+        grid-area: content;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto auto auto auto auto;
+        align-items: end;
+        row-gap: 5px;
+
+
+    }
+
+    div#sidebar {
+        display: none;
+    }
+
+    #about {
+        
+        padding: 0;
+        grid-column: 1/4;
+        text-align: center;
+        background-color: map-get($map: $theme-map, $key:accent-color);
+        color: map-get($map: $theme-map, $key:body-background);
+
+
+    }
+    #about_content.open{
+        display: grid;
+        position: relative;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        grid-auto-flow: column;
+        justify-items: center;
+        gap: 10px;
+        text-align: center;
+        @include animation_open(open, 0.8s, 0s, normal, forwards, ease-in-out);
+
+    }
+    #about_content.close{
+        display: grid;
+        position: relative;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto;
+        grid-auto-flow: column;
+        justify-items: center;
+        gap: 10px;
+        text-align: center;
+        @include animation_open(close, 0.8s, 0s, normal, forwards, ease-in-out);
+    }
+    #about_content {
+        display: none;
+    }
+
+    #nackademin {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        border: none;
+        font-family: $font-stack-body;
+        font-size: 1rem;
+        font-weight: bolder;
+        background-color: map-get($map: $theme-map, $key: body-background);
+        color: map-get($map: $theme-map, $key: nackademin);
+    }
+
+
+    #info {
+        grid-area: 3 / 2 / 6 / 9;
+        overflow: scroll;
+        padding: 5px;
+
+    }
+
+    #back {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        border: none;
+        font-family: $font-stack-body;
+        font-size: 1rem;
+        font-weight: bolder;
+        background-color: map-get($map: $theme-map, $key: body-background);
+        color: map-get($map: $theme-map, $key: nackademin);
+    }
+
+    #portfolio {
+
+
+        
+        padding: 0;
+        grid-column: 1/4;
+        text-align: center;
+        background-color: map-get($map: $theme-map, $key:accent-color);
+        color: map-get($map: $theme-map, $key:body-background);
+
+    }
+
+    #portfolio_content.open {
+        display: grid;
+        position: relative;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto auto;
+        grid-auto-flow: column;
+        justify-items: center;
+        gap: 10px;
+        text-align: center;
+        @include animation_open(open, 0.8s, 0s, normal, forwards, ease-in-out);
+
+
+    }
+
+    #portfolio_content.close {
+        display: grid;
+        position: relative;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto auto;
+        grid-auto-flow: column;
+        justify-items: center;
+        gap: 10px;
+        text-align: center;
+        @include animation_open(close, 0.8s, 0s, normal, forwards, ease-in-out);
+        /*@include animation_close(close, 0.8s, 0s, normal, forwards, ease-in-out);
+            -webkit-animation: close 0.8s normal forwards ease-in-out;
+            -moz-animation: close 0.8s normal forwards ease-in-out;
+            animation: close 0.8s normal forwards ease-in-out;
+            -webkit-transform-origin: 100% 0%;
+            -moz-transform-origin: 100% 0%;
+            transform-origin: 100% 0%;*/
+
+    }
+
+    #portfolio_content {
+        display: none;
+    }
+
+    /*#yatzy_text.open {
+            @include animation_open(open, 0.3s, 0s, normal, forwards, ease-in-out);
+            opacity: 0;
+
+        }
+        #quiz_text.open {
+            @include animation_open(open, 0.3s, 0.3s, normal, forwards, ease-in-out);
+            opacity: 0;
+            
+        }
+        #acme_text.open {
+            @include animation_open(open, 0.3s, 0.2s, normal, forwards, ease-in-out);
+            opacity: 0;
+        }
+        #yatzy_img.open{
+            @include animation_open(open, 0.3s, 0.4s, normal, forwards, ease-in-out);
+            opacity: 0;
+        }
+        #quiz_img.open{
+            @include animation_open(open, 0.3s, 0.1s, normal, forwards, ease-in-out);
+            opacity: 0;
+        }
+        #acme_img.open{
+            @include animation_open(open, 0.5s, 0.5s, normal, forwards, ease-in-out);
+            opacity: 0;
+        }*/
+
+
+
+
+    #music {
+
+        grid-column: 1/4;
+        text-align: center;
+
+        background-color: map-get($map: $theme-map, $key:accent-color);
+        color: map-get($map: $theme-map, $key:body-background);
+    }
+
+    #music_content.open {
+        display: grid;
+        position: relative;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto auto;
+        grid-auto-flow: column;
+        justify-items: center;
+        gap: 10px;
+        @include animation_open(open, 0.8s, 0s, normal, forwards, ease-in-out);
+
+        text-align: center;
+        /*
+            -webkit-animation: open 0.8s 0.5s normal forwards ease-in-out;
+            -moz-animation: open 0.8s 0.5s normal forwards ease-in-out;
+            animation: open 0.8s 0.5s normal forwards ease-in-out;
+            -webkit-transform-origin: 100% 0%;
+            -moz-transform-origin: 100% 0%;
+            transform-origin: 100% 0%;*/
+
+    }
+
+    #music_content.close {
+        display: grid;
+        position: relative;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto auto;
+        grid-auto-flow: column;
+        justify-items: center;
+        gap: 10px;
+
+        text-align: center;
+        @include animation_open(close, 0.8s, 0s, normal, forwards, ease-in-out);
+
+    }
+
+    #music_content {
+        display: none;
+    }
+
+    #cv {
+
+        grid-column: 1/4;
+        text-align: center;
+
+        background-color: map-get($map: $theme-map, $key:accent-color);
+        color: map-get($map: $theme-map, $key:body-background);
+    }
+
+    #cv_content.open {
+        display: grid;
+        position: relative;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        grid-auto-flow: column;
+        justify-items: center;
+        gap: 10px;
+        text-align: center;
+        @include animation_open(open, 0.8s, 0s, normal, forwards, ease-in-out);
+        /*-webkit-animation: open 0.8s normal forwards ease-in-out;
+            -moz-animation: open 0.8s normal forwards ease-in-out;
+            animation: open 0.8s normal forwards ease-in-out;
+            -webkit-transform-origin: 100% 0%;
+            -moz-transform-origin: 100% 0%;
+            transform-origin: 100% 0%;*/
+
+    }
+
+    #cv_content.close {
+        display: grid;
+        position: relative;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto;
+        grid-auto-flow: column;
+        justify-items: center;
+        gap: 10px;
+        text-align: center;
+        @include animation_open(close, 0.8s, 0s, normal, forwards, ease-in-out);
+        /*-webkit-animation: close 0.8s normal forwards ease-in-out;
+            -moz-animation: close 0.8s normal forwards ease-in-out;
+            animation: close 0.8s normal forwards ease-in-out;
+            -webkit-transform-origin: 100% 0%;
+            -moz-transform-origin: 100% 0%;
+            transform-origin: 100% 0%;*/
+    }
+
+    span.line {
+
+        color: map-get($map: $theme-map, $key: span-line);
+
+    }
+
+
+
+    #cv_content {
+        display: none;
+    }
+
+    img {
+
+        width: 100%;
+        transition: transform 0.2s;
+        /* Animation */
+
+        margin: 0 auto;
+
+    }
+
+    img:hover {
+
+
+        animation: shake 1s;
+        animation-iteration-count: infinite;
+        /*visibility: visible;*/
+    }
+
+    /*  img:hover + .hover_text{
+            visibility: visible;
+        }*/
+
+
+
+    @keyframes shake {
+        0% {
+            transform: translate(1px, 1px) rotate(0deg);
         }
 
-
-        #theme:focus, #nackademin:focus,
-        #back:focus {
-            outline: none;
+        10% {
+            transform: translate(-1px, -2px) rotate(-1deg);
         }
 
-        p#light:hover,
-        p#dark:hover {
-            background-color: map-get($map: $theme-map, $key: theme-color);
+        20% {
+            transform: translate(-3px, 0px) rotate(1deg);
         }
 
-        p#light {
-
-            padding: 0px;
-            margin: 0px;
-
-            position: relative;
-            background-color: map-get($map: $theme-map, $key:side-color);
-            height: 100%;
-            width: 50px;
-            justify-self: start;
-
-
+        30% {
+            transform: translate(3px, 2px) rotate(0deg);
         }
 
-        p#dark {
-
-            padding: 0px;
-            margin: 0px;
-
-            position: relative;
-            background-color: map-get($map: $theme-map, $key:side-color);
-            height: 100%;
-            width: 50px;
-            justify-self: start;
-
-
-
+        40% {
+            transform: translate(1px, -1px) rotate(1deg);
         }
 
-        .footer {
-            grid-area: footer;
+        50% {
+            transform: translate(-1px, 2px) rotate(-1deg);
+        }
+
+        60% {
+            transform: translate(-3px, 1px) rotate(0deg);
+        }
+
+        70% {
+            transform: translate(3px, 1px) rotate(-1deg);
+        }
+
+        80% {
+            transform: translate(-1px, -1px) rotate(1deg);
+        }
+
+        90% {
+            transform: translate(1px, 2px) rotate(0deg);
+        }
+
+        100% {
+            transform: translate(1px, -2px) rotate(-1deg);
+        }
+    }
+
+    .hover_text {
+        position: relative;
+        display: inline;
+        transition: top 5s;
+
+
+        background-color: grey;
+        transition: opacity 0.2s;
+        opacity: 1;
+        visibility: hidden;
+        color: white;
+    }
+
+    .logos {
+        margin-bottom: 0px;
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .bx {
+        flex: 1;
+        color: map-get($map: $theme-map, $key: accent-color);
+    }
+
+    .bx:hover {
+        animation: shake 0.8s;
+        animation-iteration-count: infinite;
+        
+    }
+
+    .logos_git {
+        display: flex;
+        justify-content: center;
+    }
+
+
+
+    iframe {
+        max-width: 100%;
+
+    }
+
+
+
+
+    .bar {
+        grid-area: bar;
+        background-color: map-get($map: $theme-map, $key:bar-color);
+
+    }
+
+    .bar2 {
+        grid-area: bar2;
+        background-color: map-get($map: $theme-map, $key:bar-color);
+    }
+
+    a {
+        color: map-get($map: $theme-map, $key:accent-color);
+        text-decoration: none;
+
+    }
+
+
+
+    #portfolio:hover,
+    #music:hover,
+    #cv:hover,
+    #about:hover,
+    a:hover {
+        color: map-get($map: $theme-map, $key:hover-color);
+        cursor: pointer;
+    }
+
+
+
+
+
+    @media only screen and (max-width: 600px) {
+
+        .grid_container {
+
+
             display: grid;
-            justify-content: center;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: 0.2fr 10px 1fr 1fr 1fr 10px 0.2fr;
+
+            grid-template-areas:
+                "header header header header header"
+                "bar bar bar bar bar"
+                "content content content content content "
+                "content content content content content "
+                "content content content content content "
+                "bar2 bar2 bar2 bar2 bar2"
+                "footer footer footer footer footer";
+            font-size: 1em;
+
+
+        }
+
+
+
+        .header {
+            grid-template-columns: 1fr 1fr 1fr;
             align-content: center;
+            font-size: 1.3em;
+        }
 
+        p#title {
+            grid-column: 2/3;
 
         }
 
-        .content {
-            grid-area: content;
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-template-rows: 50px 50px auto auto auto auto auto auto;
-            align-items: center;
-            row-gap: 5px;
+        #theme {
 
+            grid-column: 3/4;
 
-        }
-
-        div#sidebar {
-            display: none;
-        }
-
-        #about {
-            grid-row: 1/3;
-            grid-column: 1/4;
-            text-align: center;
-            margin: 20px 0px 20px;
-
-
-        }
-
-        #nackademin {
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            border: none;
-            font-family: $font-stack-body;
-            font-size: 1rem;
-            font-weight: bolder;
-            background-color: map-get($map: $theme-map, $key: body-background);
-            color: map-get($map: $theme-map, $key: nackademin);
-        }
-
-
-        #info {
-            grid-area: 3 / 2 / 6 / 9;
-            overflow: scroll;
-            padding: 5px;
-
-        }
-
-        #back {
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            border: none;
-            font-family: $font-stack-body;
-            font-size: 1rem;
-            font-weight: bolder;
-            background-color: map-get($map: $theme-map, $key: body-background);
-            color: map-get($map: $theme-map, $key: nackademin);
-        }
-
-        #portfolio {
-
-
-            background-color: map-get($map: $theme-map, $key:side-color);
-            padding: 0;
-            grid-column: 1/4;
-            text-align: center;
-
+            font-size: 0.8rem;
+            align-self: center;
+            padding: 0px;
             color: map-get($map: $theme-map, $key:accent-color);
 
         }
 
-        #portfolio_content.open {
-            display: grid;
-            position: relative;
-            grid-template-columns: 1fr 1fr 1fr;
-            grid-template-rows: auto auto;
-            grid-auto-flow: column;
-            justify-items: center;
-            gap: 10px;
+        #dark {
+            width: 50%;
+            left: 0px;
+        }
+
+
+
+        .content {
+            align-self: start;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: 33% 1fr 1fr 1fr;
+            align-items: start;
+            justify-items: start;
+            padding: 5px;
+            overflow: scroll;
+
+        }
+
+        #about {
+            grid-row: 1/2;
+            grid-column: 1/6;
             text-align: center;
-            -webkit-animation: open 1s normal forwards ease-in-out;
-            -moz-animation: open 1s normal forwards ease-in-out;
-            animation: open 1s normal forwards ease-in-out;
-            -webkit-transform-origin: 100% 0%;
-            -moz-transform-origin: 100% 0%;
-            transform-origin: 100% 0%;
+
+
+        }
+
+        #info {
+            grid-area: 3 / 1 / 6 / 6;
+        }
+
+        .logos {
+            justify-content: space-around;
+        }
+
+        #portfolio {
+            width: 100%;
+            height: 100%;
+            align-self: start;
+            text-align: start;
+            grid-column: 1/2;
+            grid-row: 2/3;
+
+            border: transparent;
+            color: map-get($map: $theme-map, $key:accent-color);
+            background-color: rgb(250, 235, 235);
+            display: none;
+
+
+        }
+
+        #portfolio_content.open {
+
+            /*margin-top: -15px;*/
+            grid-column: 2/6;
+            grid-row: 2;
+            display: block;
+
 
         }
 
         #portfolio_content.close {
-            display: grid;
-            position: relative;
-            grid-template-columns: 1fr 1fr 1fr;
-            grid-template-rows: auto auto;
-            grid-auto-flow: column;
-            justify-items: center;
-            gap: 10px;
-            text-align: center;
-            -webkit-animation: close 1s normal forwards ease-in-out;
-            -moz-animation: close 1s normal forwards ease-in-out;
-            animation: close 1s normal forwards ease-in-out;
-            -webkit-transform-origin: 100% 0%;
-            -moz-transform-origin: 100% 0%;
-            transform-origin: 100% 0%;
+
+            /*margin-top: -15px;*/
+            grid-column: 2/6;
+            grid-row: 2;
+            display: block;
+
 
         }
 
@@ -329,53 +893,29 @@ $dark: (accent-color: white,
             display: none;
         }
 
-
-
-
         #music {
 
-            grid-column: 1/4;
-            text-align: center;
-
-            color: map-get($map: $theme-map, $key:accent-color);
-            background-color: map-get($map: $theme-map, $key:side-color);
+            align-self: center;
+            grid-column: 1/2;
+            grid-row: 2/3;
+            text-align: start;
+            border: transparent;
+            display: none;
         }
 
         #music_content.open {
-            display: grid;
-            position: relative;
-            grid-template-columns: 1fr 1fr 1fr;
-            grid-template-rows: auto auto;
-            grid-auto-flow: column;
-            justify-items: center;
-            gap: 10px;
-
-            text-align: center;
-            -webkit-animation: open 1s normal forwards ease-in-out;
-            -moz-animation: open 1s normal forwards ease-in-out;
-            animation: open 1s normal forwards ease-in-out;
-            -webkit-transform-origin: 100% 0%;
-            -moz-transform-origin: 100% 0%;
-            transform-origin: 100% 0%;
-
+            /*margin-top: -15px;*/
+            grid-column: 2/6;
+            grid-row: 2;
+            display: block;
         }
 
         #music_content.close {
-            display: grid;
-            position: relative;
-            grid-template-columns: 1fr 1fr 1fr;
-            grid-template-rows: auto auto;
-            grid-auto-flow: column;
-            justify-items: center;
-            gap: 10px;
 
-            text-align: center;
-            -webkit-animation: close 1s normal forwards ease-in-out;
-            -moz-animation: close 1s normal forwards ease-in-out;
-            animation: close 1s normal forwards ease-in-out;
-            -webkit-transform-origin: 100% 0%;
-            -moz-transform-origin: 100% 0%;
-            transform-origin: 100% 0%;
+            /*margin-top: -15px;*/
+            grid-column: 2/6;
+            grid-row: 2;
+            display: block;
         }
 
         #music_content {
@@ -384,52 +924,26 @@ $dark: (accent-color: white,
 
         #cv {
 
-            grid-column: 1/4;
-            text-align: center;
-
-            color: map-get($map: $theme-map, $key:accent-color);
-            background-color: map-get($map: $theme-map, $key:side-color);
+            align-self: end;
+            grid-column: 1/2;
+            grid-row: 2/3;
+            text-align: start;
+            border: transparent;
+            display: none;
         }
 
         #cv_content.open {
-            display: grid;
-            position: relative;
-            grid-template-columns: 1fr;
-            grid-template-rows: auto auto;
-            grid-auto-flow: column;
-            justify-items: center;
-            gap: 10px;
-            text-align: center;
-            -webkit-animation: open 1s normal forwards ease-in-out;
-            -moz-animation: open 1s normal forwards ease-in-out;
-            animation: open 1s normal forwards ease-in-out;
-            -webkit-transform-origin: 100% 0%;
-            -moz-transform-origin: 100% 0%;
-            transform-origin: 100% 0%;
 
+            grid-column: 2/6;
+            grid-row: 2/5;
+            display: block;
         }
 
         #cv_content.close {
-            display: grid;
-            position: relative;
-            grid-template-columns: auto;
-            grid-template-rows: auto auto;
-            grid-auto-flow: column;
-            justify-items: center;
-            gap: 10px;
-            text-align: center;
-            -webkit-animation: close 1s normal forwards ease-in-out;
-            -moz-animation: close 1s normal forwards ease-in-out;
-            animation: close 1s normal forwards ease-in-out;
-            -webkit-transform-origin: 100% 0%;
-            -moz-transform-origin: 100% 0%;
-            transform-origin: 100% 0%;
-        }
 
-        span.line {
-
-            color: map-get($map: $theme-map, $key: span-line);
-
+            grid-column: 2/6;
+            grid-row: 2;
+            display: block;
         }
 
 
@@ -438,71 +952,32 @@ $dark: (accent-color: white,
             display: none;
         }
 
+
+
+        div#sidebar {
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-area: 4 / 1 / 8 / 2;
+            align-content: start;
+            padding-left: 5px;
+            background-color: map-get($map: $theme-map, $key: side-color);
+            color: map-get($map: $theme-map, $key:accent-color);
+            bottom: 0px;
+            z-index: 0;
+        }
+
+        #portfolio_mobile:hover,
+        #music_mobile:hover,
+        #cv_mobile:hover {
+            color: map-get($map: $theme-map, $key: hover-color);
+            cursor: pointer;
+        }
+
         img {
 
-            width: 100%;
-            transition: transform 0.2s; /* Animation */
-           
-            margin: 0 auto;
+            max-width: 100%;
 
-        }
-
-        img:hover{
-            
-           
-            animation: shake 1s;
-            animation-iteration-count: infinite;
-            /*visibility: visible;*/
-        }
-
-      /*  img:hover + .hover_text{
-            visibility: visible;
-        }*/
-
-      
-          
-          @keyframes shake {
-            0% { transform: translate(1px, 1px) rotate(0deg); }
-            10% { transform: translate(-1px, -2px) rotate(-1deg); }
-            20% { transform: translate(-3px, 0px) rotate(1deg); }
-            30% { transform: translate(3px, 2px) rotate(0deg); }
-            40% { transform: translate(1px, -1px) rotate(1deg); }
-            50% { transform: translate(-1px, 2px) rotate(-1deg); }
-            60% { transform: translate(-3px, 1px) rotate(0deg); }
-            70% { transform: translate(3px, 1px) rotate(-1deg); }
-            80% { transform: translate(-1px, -1px) rotate(1deg); }
-            90% { transform: translate(1px, 2px) rotate(0deg); }
-            100% { transform: translate(1px, -2px) rotate(-1deg); }
-          }
-
-        .hover_text {
-            position: relative;
-            display: inline;
-            transition: top 5s;
-            
-            
-            background-color: grey;
-            transition: opacity 0.2s;
-            opacity: 1;
-            visibility: hidden;
-            color:white;
-        }
-
-        .logos {
-            margin-bottom: 0px;
-            display: flex;
-            width: 100%;
-            justify-content: space-between;
-        }
-
-        .bx {
-            flex: 1;
-            color: map-get($map: $theme-map, $key: accent-color);
-        }
-
-        .logos_git {
-            display: flex;
-            justify-content: center;
         }
 
 
@@ -513,330 +988,10 @@ $dark: (accent-color: white,
         }
 
 
-
-
-        .bar {
-            grid-area: bar;
-            background-color: map-get($map: $theme-map, $key:bar-color);
-
-        }
-
-        .bar2 {
-            grid-area: bar2;
-            background-color: map-get($map: $theme-map, $key:bar-color);
-        }
-
-        a {
-            color: map-get($map: $theme-map, $key:accent-color);
-            text-decoration: none;
-
-        }
-
-
-
-        #portfolio:hover,
-        #music:hover,
-        #cv:hover,
-        a:hover {
-            color: map-get($map: $theme-map, $key:hover-color);
-            cursor: pointer;
-        }
-
-        @-webkit-keyframes open {
-            from {
-                /*transform: scaleY(0);*/
-                opacity: 0;
-                
-
-            }
-
-            to {
-                /*transform: scaleY(1);*/
-                opacity: 1;
-                
-
-            }
-        }
-
-        @-moz-keyframes open {
-            from {
-                /*transform: scaleY(0);*/
-                opacity: 0;
-
-            }
-
-            to {
-                /*transform: scaleY(1);*/
-                opacity: 1;
-            }
-        }
-
-        @keyframes open {
-            from {
-                /*transform: scaleY(0);*/
-                opacity: 0;
-            }
-
-            to {
-                /*transform: scaleY(1);*/
-                opacity: 1;
-            }
-        }
-
-        @-webkit-keyframes close {
-            from {
-                /*transform: scaleY(1);*/
-                opacity: 1;
-            }
-
-            to {
-                /*transform: scaleY(0);*/
-                opacity: 0;
-            }
-        }
-
-        @-moz-keyframes close {
-            from {
-                /*transform: scaleY(1);*/
-                opacity: 1;
-            }
-
-            to {
-                /*transform: scaleY(0);*/
-                opacity: 0;
-            }
-        }
-
-        @keyframes close {
-            from {
-                /*transform: scaleY(1);*/
-                opacity: 1;
-            }
-
-            to {
-                /*transform: scaleY(0);*/
-                opacity: 0;
-            }
-        }
-
-        @media only screen and (max-width: 600px) {
-
-            .grid_container {
-
-
-                display: grid;
-                grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-                grid-template-rows: 0.2fr 10px 1fr 1fr 1fr 10px 0.2fr;
-
-                grid-template-areas:
-                    "header header header header header"
-                    "bar bar bar bar bar"
-                    "content content content content content "
-                    "content content content content content "
-                    "content content content content content "
-                    "bar2 bar2 bar2 bar2 bar2"
-                    "footer footer footer footer footer";
-                font-size: 1em;
-
-
-            }
-
-
-
-            .header {
-                grid-template-columns: 1fr 1fr 1fr;
-                align-content: center;
-                font-size: 1.3em;
-            }
-
-            p#title {
-                grid-column: 2/3;
-
-            }
-
-            #theme {
-
-                grid-column: 3/4;
-
-                font-size: 0.8rem;
-                align-self: center;
-                padding: 0px;
-                color: map-get($map: $theme-map, $key:accent-color);
-
-            }
-
-            #dark {
-                width: 50%;
-                left: 0px;
-            }
-
-
-
-            .content {
-                grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-                grid-template-rows: 33% 1fr 1fr 1fr;
-                align-items: start;
-                justify-items: start;
-                padding: 5px;
-                overflow: scroll;
-
-            }
-
-            #about {
-                grid-row: 1/2;
-                grid-column: 1/6;
-                text-align: center;
-
-
-            }
-
-            #info {
-                grid-area: 3 / 1 / 6 / 6;
-            }
-
-            .logos {
-                justify-content: space-around;
-            }
-
-            #portfolio {
-                width: 100%;
-                height: 100%;
-                align-self: start;
-                text-align: start;
-                grid-column: 1/2;
-                grid-row: 2/3;
-
-                border: transparent;
-                color: map-get($map: $theme-map, $key:accent-color);
-                background-color: rgb(250, 235, 235);
-                display: none;
-
-
-            }
-
-            #portfolio_content.open {
-
-                /*margin-top: -15px;*/
-                grid-column: 2/6;
-                grid-row: 2;
-                display: block;
-
-
-            }
-
-            #portfolio_content.close {
-
-                /*margin-top: -15px;*/
-                grid-column: 2/6;
-                grid-row: 2;
-                display: block;
-
-
-            }
-
-            #portfolio_content {
-                display: none;
-            }
-
-            #music {
-
-                align-self: center;
-                grid-column: 1/2;
-                grid-row: 2/3;
-                text-align: start;
-                border: transparent;
-                display: none;
-            }
-
-            #music_content.open {
-                /*margin-top: -15px;*/
-                grid-column: 2/6;
-                grid-row: 2;
-                display: block;
-            }
-
-            #music_content.close {
-
-                /*margin-top: -15px;*/
-                grid-column: 2/6;
-                grid-row: 2;
-                display: block;
-            }
-
-            #music_content {
-                display: none;
-            }
-
-            #cv {
-
-                align-self: end;
-                grid-column: 1/2;
-                grid-row: 2/3;
-                text-align: start;
-                border: transparent;
-                display: none;
-            }
-
-            #cv_content.open {
-
-                grid-column: 2/6;
-                grid-row: 2/5;
-                display: block;
-            }
-
-            #cv_content.close {
-
-                grid-column: 2/6;
-                grid-row: 2;
-                display: block;
-            }
-
-
-
-            #cv_content {
-                display: none;
-            }
-
-
-
-            div#sidebar {
-                width: 100%;
-                height: 100%;
-                display: grid;
-                grid-area: 4 / 1 / 8 / 2;
-                align-content: start;
-                padding-left: 5px;
-                background-color: map-get($map: $theme-map, $key: side-color);
-                color: map-get($map: $theme-map, $key:accent-color);
-                bottom: 0px;
-                z-index: 0;
-            }
-
-            #portfolio_mobile:hover,
-            #music_mobile:hover,
-            #cv_mobile:hover {
-                color: map-get($map: $theme-map, $key: hover-color);
-                cursor: pointer;
-            }
-
-            img {
-
-                max-width: 100%;
-
-            }
-
-
-
-            iframe {
-                max-width: 100%;
-
-            }
-
-
-        }
-
-
     }
+
+
+}
 }
 
 @include themable(dark, $dark);

@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kicki Halmos</title>
     <link rel="stylesheet" href="css/themesberg.css">
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200&display=swap" rel="stylesheet">
+    
+    <!---<link href="https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap" rel="stylesheet">--->
+    <!---<link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200&display=swap" rel="stylesheet">--->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 
 
@@ -17,29 +18,31 @@
     <div class="grid_container">
         <div class="header">
             <p id="title">Kicki Halmos</p>
+            <span id="header_sub">
+            Music Producer <span class="line">//</span> Project Manager <span class="line">/</span> Librarian 
+            </span>
 
-            <button type="button" id="theme">
-                Theme
-                <p id="light" value="light">light</p>
-                <p id="dark" value="dark">dark</p>
-            </button>
+            <button type="button" id="theme" class="light">Theme</button>
 
         </div>
         <div class="bar"></div>
         <div id="id_content" class="content">
             <div id="about">
-                Music Producer <span class="line">|</span> Project Manager <span class="line">|</span> Librarian
-                <br>
-                <br>
-                Studying Full Stack Open Source Web Development at
-                <button type="button" id="nackademin">Nackademin</button>
+                about
+            </div>
+            <div id="about_content">
+                <p>
+                    Studying Full Stack Open Source Web Development at
+                    <button type="button" id="nackademin">Nackademin</button>
+                </p>
             </div>
             <div id="portfolio">
                 portfolio
             </div>
             <div id="portfolio_content">
+                
 
-                <p>
+                <p id="yatzy_text"> 
                     Yatzy
                     <br>
                     Group assignment Frontend 1
@@ -50,16 +53,16 @@
                         </a>
                     </span>
                 </p>
-                <div>
-                    <div id="flipcard">
-                        <a href="https://kicki-halmos.github.io/Yatzy">
+               
+                    
+                        <a id="yatzy_img" href="https://kicki-halmos.github.io/Yatzy">
 
                             <img src="img/Screen Shot 2020-11-01 at 22.33.57.png" id="yatzy" alt="image of yatzy website">
                             <p class="hover_text">Get to website</p>
                         </a>
-                    </div>
-                </div>
-                <p>
+                   
+              
+                <p id="quiz_text">
                     Quiz
                     <br>
                     Individual assignment Frontend 1
@@ -71,10 +74,10 @@
                     </span>
                 </p>
 
-                <a href="https://kicki-halmos.github.io/Quiz/">
+                <a id="quiz_img" href="https://kicki-halmos.github.io/Quiz/">
                     <img src="img/Screen Shot 2020-11-06 at 14.48.19.png" alt="image of quiz-api website">
                 </a>
-                <p>
+                <p id="acme_text">
                     Acme Events
                     <br>
                     Group assignment Frontend 2
@@ -86,7 +89,7 @@
                     </span>
                 </p>
 
-                <a href="https://github.com/Kicki-Halmos/Acme_Events">
+                <a id="acme_img" href="https://github.com/Kicki-Halmos/Acme_Events">
                     <img src="img/Screen Shot 2020-11-01 at 22.42.37.png" id="img_acme"
                         alt="image of acme-events website">
 

@@ -11,19 +11,45 @@ document.addEventListener("DOMContentLoaded", function (e) {
     let cv = document.getElementById("cv");
     let cv_content = document.getElementById("cv_content");
     //cv_content.style.setProperty("display", "none");
+
+    let about = document.getElementById("about");
+    let about_content = document.getElementById("about_content");
+
+    about.addEventListener("click", function (e) {
+        console.log("hej");
+        about.classList.toggle("animation");
+        if (about.classList.contains("animation")) {
+            about_content.classList.add("open");
+            //cv_content.style.removeProperty("display", "none");
+            about_content.classList.remove("close");
+           
+
+        } else {
+            about_content.classList.add("close");
+            about_content.classList.remove("open");
+            //cv_content.style.setProperty("display", "none")
+            timeOutRemoveClose();
+        }
+
+
+    });
     portfolio.addEventListener("click", function (e) {
         
         portfolio.classList.toggle("animation");
         if (portfolio.classList.contains("animation")) {
             portfolio_content.classList.add("open");
+           
+           
+
             //portfolio_content.style.removeProperty("display", "none");
             //portfolio_content.classList.remove("close");
            
-            console.log(music);
+            
 
         } else {
             portfolio_content.classList.add("close");
             portfolio_content.classList.remove("open");
+           
             timeOutRemoveClose();
 
             //portfolio_content.style.setProperty("display", "none")
@@ -34,8 +60,10 @@ document.addEventListener("DOMContentLoaded", function (e) {
     });
 
     music.addEventListener("click", function (e) {
-        console.log(music);
+        //console.log(music);
+   
 
+            
         music.classList.toggle("animation");
         if (music.classList.contains("animation")) {
             music_content.classList.add("open");
@@ -71,6 +99,9 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
 
     });
+
+   
+   
 
     let portfolio_mobile = document.getElementById("portfolio_mobile");
     let music_mobile = document.getElementById("music_mobile");
@@ -143,33 +174,21 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
     let theme = document.getElementById("theme");
     let body = document.getElementById("body");
-    let light = document.getElementById("light");
-    light.style.setProperty("display", "none");
-    let dark = document.getElementById("dark");
-    dark.style.setProperty("display", "none");
+  
+   
+  
 
     theme.addEventListener("click", function(){
-        light.classList.toggle("visible");
-        if(light.classList.contains("visible")){
-        light.style.removeProperty("display", "none");
-        dark.style.removeProperty("display", "none");
+        theme.classList.toggle("light");
+        if(theme.classList.contains("light")){
+            body.classList.remove("dark");
+            body.classList.add("light");
         }
         else{
-            light.style.setProperty("display", "none");
-            dark.style.setProperty("display", "none");
+            body.classList.remove("light");
+            body.classList.add("dark");
         }
       
-    });
-
-    light.addEventListener("click", function(){
-        body.classList.remove("dark");
-        body.classList.add("light");
-        
-    });
-
-    dark.addEventListener("click", function(){
-        body.classList.remove("light");
-        body.classList.add("dark");
     });
 
     let info = document.getElementById("info");
@@ -199,6 +218,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
             portfolio_content.classList.remove("close");
             music_content.classList.remove("close");
             cv_content.classList.remove("close");
+            about_content.classList.remove("close");
            
         }, 1000);
     }
