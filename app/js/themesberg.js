@@ -220,7 +220,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
             cv_content.classList.remove("close");
             about_content.classList.remove("close");
            
-        }, 1000);
+        }, 0);
     }
 
     let contact = document.getElementById("contact");
