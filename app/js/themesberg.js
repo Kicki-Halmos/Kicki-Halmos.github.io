@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
            
 
             //portfolio_content.style.removeProperty("display", "none");
-            //portfolio_content.classList.remove("close");
+            portfolio_content.classList.remove("close");
            
             
 
@@ -102,10 +102,38 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
    
    
-
+    let about_mobile = document.getElementById("about_mobile");
     let portfolio_mobile = document.getElementById("portfolio_mobile");
     let music_mobile = document.getElementById("music_mobile");
     let cv_mobile = document.getElementById("cv_mobile");
+
+    about_mobile.addEventListener("click", function(){
+        
+        
+        about_mobile.classList.toggle("animation");
+        console.log(about_mobile); 
+        if (about_mobile.classList.contains("animation")) {
+            about_content.classList.add("open");
+            console.log(about_content);
+            about_content.style.removeProperty("display", "none");
+            cv_content.style.setProperty("display", "none");
+            music_content.style.setProperty("display", "none");
+            music_mobile.classList.remove("animation");
+            cv_mobile.classList.remove("animation");
+            portfolio_content.style.setProperty("display", "none");
+            portfolio_content.classList.remove("animation");
+           
+            
+
+        } else {
+            about_content.classList.add("close");
+            about_content.classList.remove("open");
+            timeOutRemoveClose();
+
+            //portfolio_content.style.setProperty("display", "none")
+        }
+
+    });
     
 
     portfolio_mobile.addEventListener("click", function(){
@@ -119,6 +147,9 @@ document.addEventListener("DOMContentLoaded", function (e) {
             music_content.style.setProperty("display", "none");
             music_mobile.classList.remove("animation");
             cv_mobile.classList.remove("animation");
+            about_mobile.classList.remove("animation");
+            about_content.style.setProperty("display", "none");
+            
            
             
 
@@ -142,6 +173,10 @@ document.addEventListener("DOMContentLoaded", function (e) {
             portfolio_content.style.setProperty("display", "none");
             cv_mobile.classList.remove("animation");
             portfolio_mobile.classList.remove("animation");
+            about_mobile.classList.remove("animation");
+            about_content.style.setProperty("display", "none");
+            
+            
            
             
 
@@ -162,6 +197,9 @@ document.addEventListener("DOMContentLoaded", function (e) {
             portfolio_content.style.setProperty("display", "none");
             music_mobile.classList.remove("animation");
             portfolio_mobile.classList.remove("animation");
+            about_mobile.classList.remove("animation");
+            about_content.style.setProperty("display", "none");
+           
            
             
 
@@ -200,18 +238,39 @@ document.addEventListener("DOMContentLoaded", function (e) {
     nackademin.addEventListener("click", function(){
     console.log("hej");
      content.style.setProperty("display", "none");
-     sidebar.style.setProperty("display", "none");
+     
      info.style.removeProperty("display", "none");
+     about_content.classList.remove("open");
+     about_mobile.style.setProperty("display", "none");
+     portfolio_mobile.style.setProperty("display", "none");
+     music_mobile.style.setProperty("display","none");
+     cv_mobile.style.setProperty("display","none");
+     back_mobile.style.removeProperty("display","none");
         
     });
 
     let back = document.getElementById("back");
+    let back_mobile = document.getElementById("back_mobile");
+    back_mobile.style.setProperty("display", "none");
     
     back.addEventListener("click", function(){
         info.style.setProperty("display", "none");
-        sidebar.style.removeProperty("display", "none");
+       
         content.style.removeProperty("display", "none");
+
     });
+
+    back_mobile.addEventListener("click", function(){
+        info.style.setProperty("display", "none");
+        content.style.removeProperty("display", "none");
+        about_mobile.style.removeProperty("display", "none");
+        portfolio_mobile.style.removeProperty("display", "none");
+        music_mobile.style.removeProperty("display","none");
+        cv_mobile.style.removeProperty("display","none");
+        back_mobile.style.setProperty("display", "none");
+        
+    });
+
 
     function timeOutRemoveClose(){
         setTimeout(function() {

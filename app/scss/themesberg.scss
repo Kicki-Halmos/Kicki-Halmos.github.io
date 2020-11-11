@@ -183,10 +183,6 @@ $dark: (accent-color:white,
             grid-template-rows: auto auto;
             grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
            
-
-
-          
-            
         }
 
         #title {
@@ -217,20 +213,12 @@ $dark: (accent-color:white,
             margin-left: 50px;
             font-family: $font-stack-body;
             width: 70px;
-            min-height: 45%;
+            height: 35px;
             border: 1px solid map-get($map: $theme-map, $key:theme-color);
             font-size: 1em;
-            font-weight: bolder;
+            font-weight: normal;
             background-color: map-get($map: $theme-map, $key:body-background);
-            /*display: grid;
-            grid-template-columns: 50px;
-            grid-template-rows: auto;
-            align-content: center;
-            z-index: 0;
-            -webkit-appearance: none;
-            -moz-appearance: none;*/
-
-
+         
         }
 
         #theme:hover,
@@ -419,7 +407,7 @@ $dark: (accent-color:white,
         -moz-appearance: none;
         border: none;
         font-family: $font-stack-body;
-        font-size: 1.1em;
+        font-size: 1em;
         font-weight: bolder;
         background-color: map-get($map: $theme-map, $key: body-background);
         color: map-get($map: $theme-map, $key: accent-color);
@@ -795,7 +783,7 @@ $dark: (accent-color:white,
 
             display: grid;
             grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-            grid-template-rows: 0.2fr 10px 1fr 1fr 1fr 10px 0.2fr;
+            grid-template-rows: 150px 5px 1fr 1fr 1fr 5px 50px;
 
             grid-template-areas:
                 "header header header header header"
@@ -806,6 +794,7 @@ $dark: (accent-color:white,
                 "bar2 bar2 bar2 bar2 bar2"
                 "footer footer footer footer footer";
             font-size: 1em;
+            
 
 
         }
@@ -813,73 +802,89 @@ $dark: (accent-color:white,
 
 
         .header {
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: auto auto;
             align-content: center;
-            font-size: 1.3em;
+            width: 100%;
+            
         }
 
         p#title {
-            grid-column: 2/3;
+            grid-column: 1/3;
+            justify-self: start;
+            font-size: 3em;
+        }
 
+        #header_sub{
+            grid-column: 1/6;
+            grid-row: 2;
+            font-size: 1em;
         }
 
         #theme {
 
-            grid-column: 3/4;
-
+            grid-column: 5/6;
+            width: 50px;
+            height: 30px;   
             font-size: 0.8rem;
             align-self: center;
             padding: 0px;
-            color: map-get($map: $theme-map, $key:accent-color);
-
+            
         }
 
-        #dark {
-            width: 50%;
-            left: 0px;
+        .bar2{
+            display:none;
         }
-
-
 
         .content {
-            align-self: start;
             grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-            grid-template-rows: 33% 1fr 1fr 1fr;
-            align-items: start;
-            justify-items: start;
+            grid-template-rows: 1fr 1fr 1fr;
+            /*align-items: start;
+            justify-items: start;*/
             padding: 5px;
-            overflow: scroll;
-            
-
+            margin: 0px;
+            overflow:scroll;
         }
 
         #about {
-            grid-row: 1/2;
-            grid-column: 1/6;
-            text-align: center;
-
+        
+            display: none;
 
         }
 
-        /*#info {
-            grid-area: 3 / 1 / 6 / 6;
-        }*/
+       #about_content.open{
+        grid-column: 2/6;
+        grid-row: 1;
+        display: block;
+        align-self: start;
+       }
+
+       #about_content.close{
+        grid-column: 2/6;
+        grid-row: 1;
+        display: block;
+       }
+
+       #back{
+           display: none;
+       }
+
+       #back_mobile{
+        color: map-get($map: $theme-map, $key: content-color);
+        grid-row: 1;
+          
+       }
+
+       #info{
+           margin-top: -40px;
+       }
 
         .logos {
             justify-content: space-around;
         }
 
         #portfolio {
-            width: 100%;
-            height: 100%;
-            align-self: start;
-            text-align: start;
-            grid-column: 1/2;
-            grid-row: 2/3;
-
-            border: transparent;
-            color: map-get($map: $theme-map, $key:accent-color);
-            background-color: rgb(250, 235, 235);
+           
             display: none;
 
 
@@ -889,8 +894,9 @@ $dark: (accent-color:white,
 
             /*margin-top: -15px;*/
             grid-column: 2/6;
-            grid-row: 2;
+            grid-row: 1;
             display: block;
+           
 
 
         }
@@ -899,8 +905,9 @@ $dark: (accent-color:white,
 
             /*margin-top: -15px;*/
             grid-column: 2/6;
-            grid-row: 2;
+            grid-row: 1;
             display: block;
+            
 
 
         }
@@ -911,27 +918,25 @@ $dark: (accent-color:white,
 
         #music {
 
-            align-self: center;
-            grid-column: 1/2;
-            grid-row: 2/3;
-            text-align: start;
-            border: transparent;
+           
             display: none;
-        }
+        }   
 
         #music_content.open {
             /*margin-top: -15px;*/
             grid-column: 2/6;
-            grid-row: 2;
+            grid-row: 1;
             display: block;
+            
         }
 
         #music_content.close {
 
             /*margin-top: -15px;*/
             grid-column: 2/6;
-            grid-row: 2;
+            grid-row: 1;
             display: block;
+            
         }
 
         #music_content {
@@ -940,25 +945,21 @@ $dark: (accent-color:white,
 
         #cv {
 
-            align-self: end;
-            grid-column: 1/2;
-            grid-row: 2/3;
-            text-align: start;
-            border: transparent;
+        
             display: none;
         }
 
         #cv_content.open {
 
             grid-column: 2/6;
-            grid-row: 2/5;
+            grid-row: 1;
             display: block;
         }
 
         #cv_content.close {
 
             grid-column: 2/6;
-            grid-row: 2;
+            grid-row: 1;
             display: block;
         }
 
@@ -971,16 +972,39 @@ $dark: (accent-color:white,
 
 
         div#sidebar {
-            width: 100%;
-            height: 100%;
+            
             display: grid;
-            grid-area: 4 / 1 / 8 / 2;
-            align-content: start;
+            grid-area: 3 / 1 / 8 / 2;
+            grid-template-rows: 30px 30px 30px 30px 1fr;
+            grid-template-columns: 1fr;
+            /*align-content: start;*/
             padding-left: 5px;
-            background-color: map-get($map: $theme-map, $key: side-color);
-            color: map-get($map: $theme-map, $key:accent-color);
+            background-color: map-get($map: $theme-map, $key: bar-color);
+            color: map-get($map: $theme-map, $key:content-color);
             bottom: 0px;
             z-index: 0;
+        }
+
+        #contact{
+            grid-column: 2/6;
+            justify-self: start;
+           bottom: -20px;
+        }
+
+        #about_mobile{
+            grid-row: 1;
+        }
+
+        #portfolio_mobile{
+            grid-row: 2;
+        }
+
+        #music_mobile{
+            grid-row: 3;
+        }
+
+        #cv_mobile{
+            grid-row: 4;
         }
 
         #portfolio_mobile:hover,
