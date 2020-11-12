@@ -376,14 +376,7 @@
     /*-webkit-transform-origin: 100% 0%;
     -moz-transform-origin: 100% 0%;
     transform-origin: 100% 0%;*/
-    text-align: center;
-    /*
-            -webkit-animation: open 0.8s 0.5s normal forwards ease-in-out;
-            -moz-animation: open 0.8s 0.5s normal forwards ease-in-out;
-            animation: open 0.8s 0.5s normal forwards ease-in-out;
-            -webkit-transform-origin: 100% 0%;
-            -moz-transform-origin: 100% 0%;
-            transform-origin: 100% 0%;*/ }
+    text-align: center; }
   .dark #music_content.close {
     display: grid;
     position: relative;
@@ -967,14 +960,7 @@
     /*-webkit-transform-origin: 100% 0%;
     -moz-transform-origin: 100% 0%;
     transform-origin: 100% 0%;*/
-    text-align: center;
-    /*
-            -webkit-animation: open 0.8s 0.5s normal forwards ease-in-out;
-            -moz-animation: open 0.8s 0.5s normal forwards ease-in-out;
-            animation: open 0.8s 0.5s normal forwards ease-in-out;
-            -webkit-transform-origin: 100% 0%;
-            -moz-transform-origin: 100% 0%;
-            transform-origin: 100% 0%;*/ }
+    text-align: center; }
   .light #music_content.close {
     display: grid;
     position: relative;
