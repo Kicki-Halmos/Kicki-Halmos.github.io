@@ -8,18 +8,22 @@
     box-sizing: border-box;
 }
 
+/*=====================  VARIABLES  =========================*/
+
 $font-stack-header: Yeseva One;
 $font-stack-body: Public Sans;
 
+
+/*=====================  THEME-MAPS  =========================*/
 $light: (accent-color: rgb(255, 105, 74),
     border-color: grey,
     hover-color: rgb(128, 52, 37),
     body-background: white,
     body-color: black,
     side-color: rgb(255, 105, 74),
-    bar-color:  rgb(255, 105, 74),
+    bar-color: rgb(255, 105, 74),
     theme-color:rgb(22, 27, 23),
-    span-line:  rgb(255, 105, 74),
+    span-line: rgb(255, 105, 74),
     nackademin: rgb(255, 105, 74),
     content-color: white);
 
@@ -35,124 +39,228 @@ $dark: (accent-color:white,
     nackademin: white,
     content-color: white);
 
-@mixin animation_open ($name, $duration, $delay, $normal, $forwards, $ease-in-out) {
+/*=====================  ANIMATIONS  =========================*/
+
+@mixin animation($name, $duration, $delay, $normal, $forwards, $ease-in-out) {
     -webkit-animation: $name $duration $delay $normal $forwards $ease-in-out;
     -moz-animation: $name $duration $delay $normal $forwards $ease-in-out;
     animation: $name $duration $delay $normal $forwards $ease-in-out;
-    /*-webkit-transform-origin: 100% 0%;
-    -moz-transform-origin: 100% 0%;
-    transform-origin: 100% 0%;*/
 
+}
 
-
+@mixin shake_animation($name, $duration, $iteration-count) {
+    -webkit-animation: $name $duration $iteration-count;
+    -moz-animation: $name $duration $iteration-count;
+    animation: $name $duration $iteration-count;
 }
 
 @-webkit-keyframes open {
     from {
-        /*transform: scaleY(0);*/
         opacity: 0;
-
-
     }
 
     to {
-        /*transform: scaleY(1);*/
         opacity: 1;
-
-
     }
 }
 
 @-moz-keyframes open {
     from {
-        /*transform: scaleY(0);*/
         opacity: 0;
-
     }
 
     to {
-        /*transform: scaleY(1);*/
         opacity: 1;
     }
 }
 
 @keyframes open {
     from {
-        /*transform: scaleY(0);*/
         opacity: 0;
     }
 
     to {
-        /*transform: scaleY(1);*/
         opacity: 1;
     }
 }
 
-/*@mixin animation_delay($name, $duration, $delay, $normal, $forwards, $ease-in-out)){
+@-webkit-keyframes shake {
+    0% {
+        transform: translate(1px, 1px) rotate(0deg);
+    }
 
+    10% {
+        transform: translate(-1px, -2px) rotate(-1deg);
+    }
+
+    20% {
+        transform: translate(-3px, 0px) rotate(1deg);
+    }
+
+    30% {
+        transform: translate(3px, 2px) rotate(0deg);
+    }
+
+    40% {
+        transform: translate(1px, -1px) rotate(1deg);
+    }
+
+    50% {
+        transform: translate(-1px, 2px) rotate(-1deg);
+    }
+
+    60% {
+        transform: translate(-3px, 1px) rotate(0deg);
+    }
+
+    70% {
+        transform: translate(3px, 1px) rotate(-1deg);
+    }
+
+    80% {
+        transform: translate(-1px, -1px) rotate(1deg);
+    }
+
+    90% {
+        transform: translate(1px, 2px) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(1px, -2px) rotate(-1deg);
+    }
 }
 
 
+@-moz-keyframes shake {
+    0% {
+        transform: translate(1px, 1px) rotate(0deg);
+    }
 
-    /*-webkit-animation: close 0.8s normal forwards ease-in-out;
-    -moz-animation: close 0.8s normal forwards ease-in-out;
-    animation: close 0.8s normal forwards ease-in-out;
-    -webkit-transform-origin: 100% 0%;
-    -moz-transform-origin: 100% 0%;
-    transform-origin: 100% 0%;*/
+    10% {
+        transform: translate(-1px, -2px) rotate(-1deg);
+    }
 
-@-webkit-keyframes close {
+    20% {
+        transform: translate(-3px, 0px) rotate(1deg);
+    }
+
+    30% {
+        transform: translate(3px, 2px) rotate(0deg);
+    }
+
+    40% {
+        transform: translate(1px, -1px) rotate(1deg);
+    }
+
+    50% {
+        transform: translate(-1px, 2px) rotate(-1deg);
+    }
+
+    60% {
+        transform: translate(-3px, 1px) rotate(0deg);
+    }
+
+    70% {
+        transform: translate(3px, 1px) rotate(-1deg);
+    }
+
+    80% {
+        transform: translate(-1px, -1px) rotate(1deg);
+    }
+
+    90% {
+        transform: translate(1px, 2px) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(1px, -2px) rotate(-1deg);
+    }
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(1px, 1px) rotate(0deg);
+    }
+
+    10% {
+        transform: translate(-1px, -2px) rotate(-1deg);
+    }
+
+    20% {
+        transform: translate(-3px, 0px) rotate(1deg);
+    }
+
+    30% {
+        transform: translate(3px, 2px) rotate(0deg);
+    }
+
+    40% {
+        transform: translate(1px, -1px) rotate(1deg);
+    }
+
+    50% {
+        transform: translate(-1px, 2px) rotate(-1deg);
+    }
+
+    60% {
+        transform: translate(-3px, 1px) rotate(0deg);
+    }
+
+    70% {
+        transform: translate(3px, 1px) rotate(-1deg);
+    }
+
+    80% {
+        transform: translate(-1px, -1px) rotate(1deg);
+    }
+
+    90% {
+        transform: translate(1px, 2px) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(1px, -2px) rotate(-1deg);
+    }
+}
+
+/*@-webkit-keyframes close {
     from {
-        /*transform: scaleY(1);*/
         opacity: 1;
     }
-
     to {
-        /*transform: scaleY(0);*/
         opacity: 0;
     }
 }
 
 @-moz-keyframes close {
     from {
-        /*transform: scaleY(1);*/
         opacity: 1;
     }
-
     to {
-        /*transform: scaleY(0);*/
         opacity: 0;
     }
 }
 
 @keyframes close {
     from {
-        /*transform: scaleY(1);*/
         opacity: 1;
     }
-
     to {
-        /*transform: scaleY(0);*/
         opacity: 0;
     }
-}
+}*/
 
-
+/*=====================  FUNCTION FOR CHANGING THEME  =========================*/
 @mixin themable($theme-name, $theme-map) {
     .#{$theme-name} {
 
-      
+        /*=====================  THE PAGE  =========================*/
 
-       /* .body {
-            background-color: map-get($map: $theme-map, $key:body-background);
-            color: map-get($map: $theme-map, $key:body-color);
-        }*/
-
-
+        /*=====================  GRID CONTAINER =========================*/
         .grid_container {
             position: relative;
             padding: 0;
-            
+
             width: 100vw;
             height: 100vh;
             display: grid;
@@ -176,27 +284,28 @@ $dark: (accent-color:white,
 
         }
 
+        /*=====================  HEADER  =========================*/
         .header {
 
             grid-area: header;
             display: grid;
             grid-template-rows: auto auto;
             grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-           
+
         }
 
         #title {
             justify-self: start;
             grid-column: 2/5;
             grid-row: 1;
-            align-self:end;
+            align-self: end;
             color: map-get($map: $theme-map, $key: accent-color);
             font-family: $font-stack-header;
             font-size: 3em;
             font-weight: bold;
-
         }
-        #header_sub{
+
+        #header_sub {
             grid-column: 2/6;
             grid-row: 2;
             font-size: 1em;
@@ -204,12 +313,10 @@ $dark: (accent-color:white,
 
         #theme {
             grid-column: 9/10;
-
             color: map-get($map: $theme-map, $key:theme-color);
             box-sizing: border-box;
             align-self: end;
             justify-self: end;
-            
             margin-left: 50px;
             font-family: $font-stack-body;
             width: 70px;
@@ -218,25 +325,47 @@ $dark: (accent-color:white,
             font-size: 1em;
             font-weight: normal;
             background-color: map-get($map: $theme-map, $key:body-background);
-         
         }
 
+        /*=====================  HOVER FOCUS LINKS  =========================*/
         #theme:hover,
         #nackademin:hover,
         #back:hover,
         #contact:hover {
             cursor: pointer;
             color: map-get($map: $theme-map, $key: hover-color);
-            /*background-color: rgb(7, 136, 115);*/
         }
 
-        /*.btn-secondary{
-            background-color: map-get($map: $theme-map, $key:body-background);
-            color: map-get($map: $theme-map, $key: body-color);
-            border:none;
-            font-size: 1em;
-            font-family: $font-stack-header;
-        }*/
+        #theme:focus,
+        #nackademin:focus,
+        #back:focus {
+            outline: none;
+        }
+
+        #portfolio:hover,
+        #music:hover,
+        #cv:hover,
+        #about:hover,
+        a:hover {
+            color: map-get($map: $theme-map, $key:hover-color);
+            cursor: pointer;
+        }
+
+        a {
+            color: map-get($map: $theme-map, $key:accent-color);
+            text-decoration: none;
+        }
+
+        /*=====================  FOOTER  =========================*/
+
+        .footer {
+            grid-area: footer;
+            display: grid;
+            grid-column: 1/10;
+            justify-content: start;
+            align-content: center;
+            grid-template-columns: inherit;
+        }
 
         #contact {
             font-family: $font-stack-body;
@@ -255,655 +384,165 @@ $dark: (accent-color:white,
             text-align: center;
             padding: 5px 0;
             border-radius: 6px;
-
             font-family: $font-stack-body;
             font-weight: normal;
             font-size: 0.9rem;
-
-            /* Position the tooltip text */
             position: relative;
             z-index: 0;
             top: 100%;
             left: -150%;
             margin-left: -50%;
-
-            /* Fade in tooltip */
             opacity: 0;
             transition: opacity 0.3s;
         }
-
 
         #contact:hover+#tooltip {
             visibility: visible;
             opacity: 1;
         }
 
-        
         #tooltip::after {
             content: " ";
             position: absolute;
-            bottom: 100%;  /* At the top of the tooltip */
+            bottom: 100%;
             left: 50%;
             margin-left: -5px;
             border-width: 5px;
             border-style: solid;
             border-color: transparent transparent #555 transparent;
         }
-    
 
-    /*#tooltip {
-            visibility: hidden;
-            font-family: $font-stack-header;
-            font-weight: normal;
-            font-size: 1rem;
-        }*/
-
-
-    #theme:focus,
-    #nackademin:focus,
-    #back:focus {
-        outline: none;
-    }
-
-    p#light:hover,
-    p#dark:hover {
-        background-color: map-get($map: $theme-map, $key: theme-color);
-    }
-
-    p#light {
-
-        padding: 0px;
-        margin: 0px;
-
-        position: relative;
-        background-color: map-get($map: $theme-map, $key:side-color);
-        height: 100%;
-        width: 50px;
-        justify-self: start;
-
-
-    }
-
-    p#dark {
-
-        padding: 0px;
-        margin: 0px;
-
-        position: relative;
-        background-color: map-get($map: $theme-map, $key:side-color);
-        height: 100%;
-        width: 50px;
-        justify-self: start;
-
-
-
-    }
-
-    .footer {
-        grid-area: footer;
-        display: grid;
-        grid-column: 1/10;
-        justify-content: start;
-        align-content: center;
-        grid-template-columns: inherit;
-
-    }
-
-    .content {
-        grid-area: content;
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto auto auto auto auto auto;
-        align-items: end;
-        row-gap: 5px;
-        margin-top: 5px;
-
-
-    }
-
-    div#sidebar {
-        display: none;
-    }
-
-    #about {
-        
-        padding: 0;
-        grid-column: 1/4;
-        text-align: center;
-        background-color: map-get($map: $theme-map, $key:bar-color);
-        color: map-get($map: $theme-map, $key:content-color);
-
-
-    }
-    #about_content.open{
-        display: grid;
-        position: relative;
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto;
-        grid-auto-flow: column;
-        justify-items: center;
-        gap: 10px;
-        justify-self: start;
-        @include animation_open(open, 0.8s, 0s, normal, forwards, ease-in-out);
-
-    }
-    #about_content.close{
-        display: grid;
-        position: relative;
-        grid-template-columns: auto;
-        grid-template-rows: auto auto;
-        grid-auto-flow: column;
-        justify-items: center;
-        gap: 10px;
-        text-align: center;
-        @include animation_open(close, 0.8s, 0s, normal, forwards, ease-in-out);
-    }
-    #about_content {
-        display: none;
-    }
-
-    #nackademin {
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        border: none;
-        font-family: $font-stack-body;
-        font-size: 1em;
-        font-weight: bolder;
-        background-color: map-get($map: $theme-map, $key: body-background);
-        color: map-get($map: $theme-map, $key: accent-color);
-    }
-
-
-    #info {
-        grid-area: 3 / 2 / 6 / 9;
-        overflow: scroll;
-        padding: 5px;
-
-    }
-
-    #info::-webkit-scrollbar{
-        display: none;
-    }
-
-    #info{
-        -ms-overflow-style: none;  
-        scrollbar-width: none;
-    }
-
-    #back {
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        border: none;
-        font-family: $font-stack-body;
-        font-size: 1rem;
-        font-weight: bolder;
-        background-color: map-get($map: $theme-map, $key: body-background);
-        color: map-get($map: $theme-map, $key: nackademin);
-    }
-
-    #portfolio {
-
-
-        
-        padding: 0;
-        grid-column: 1/4;
-        text-align: center;
-        background-color: map-get($map: $theme-map, $key:bar-color);
-        color: map-get($map: $theme-map, $key:content-color);
-
-    }
-
-    #portfolio_content.open {
-        display: grid;
-        position: relative;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: auto auto;
-        grid-auto-flow: column;
-        justify-items: center;
-        gap: 10px;
-        text-align: center;
-        @include animation_open(open, 0.8s, 0s, normal, forwards, ease-in-out);
-
-
-    }
-
-    #portfolio_content.close {
-        display: grid;
-        position: relative;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: auto auto;
-        grid-auto-flow: column;
-        justify-items: center;
-        gap: 10px;
-        text-align: center;
-        @include animation_open(close, 0.8s, 0s, normal, forwards, ease-in-out);
-        /*@include animation_close(close, 0.8s, 0s, normal, forwards, ease-in-out);
-            -webkit-animation: close 0.8s normal forwards ease-in-out;
-            -moz-animation: close 0.8s normal forwards ease-in-out;
-            animation: close 0.8s normal forwards ease-in-out;
-            -webkit-transform-origin: 100% 0%;
-            -moz-transform-origin: 100% 0%;
-            transform-origin: 100% 0%;*/
-
-    }
-
-    #portfolio_content {
-        display: none;
-    }
-
-    /*#yatzy_text.open {
-            @include animation_open(open, 0.3s, 0s, normal, forwards, ease-in-out);
-            opacity: 0;
+        /*=====================  BARS  =========================*/
+        .bar {
+            grid-area: bar;
+            background-color: map-get($map: $theme-map, $key:bar-color);
 
         }
-        #quiz_text.open {
-            @include animation_open(open, 0.3s, 0.3s, normal, forwards, ease-in-out);
-            opacity: 0;
-            
-        }
-        #acme_text.open {
-            @include animation_open(open, 0.3s, 0.2s, normal, forwards, ease-in-out);
-            opacity: 0;
-        }
-        #yatzy_img.open{
-            @include animation_open(open, 0.3s, 0.4s, normal, forwards, ease-in-out);
-            opacity: 0;
-        }
-        #quiz_img.open{
-            @include animation_open(open, 0.3s, 0.1s, normal, forwards, ease-in-out);
-            opacity: 0;
-        }
-        #acme_img.open{
-            @include animation_open(open, 0.5s, 0.5s, normal, forwards, ease-in-out);
-            opacity: 0;
-        }*/
 
-
-
-
-    #music {
-
-        grid-column: 1/4;
-        text-align: center;
-
-        background-color: map-get($map: $theme-map, $key:bar-color);
-        color: map-get($map: $theme-map, $key:content-color);
-    }
-
-    #music_content.open {
-        display: grid;
-        position: relative;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: auto auto;
-        grid-auto-flow: column;
-        justify-items: center;
-        gap: 10px;
-        @include animation_open(open, 0.8s, 0s, normal, forwards, ease-in-out);
-
-        text-align: center;
-       
-
-    }
-
-    #music_content.close {
-        display: grid;
-        position: relative;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: auto auto;
-        grid-auto-flow: column;
-        justify-items: center;
-        gap: 10px;
-
-        text-align: center;
-        @include animation_open(close, 0.8s, 0s, normal, forwards, ease-in-out);
-
-    }
-
-    #music_content {
-        display: none;
-    }
-
-    #cv {
-
-        grid-column: 1/4;
-        text-align: center;
-
-        background-color: map-get($map: $theme-map, $key:bar-color);
-        color: map-get($map: $theme-map, $key:content-color);
-    }
-
-    #cv_content.open {
-        display: grid;
-        position: relative;
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto;
-        grid-auto-flow: column;
-        justify-items: center;
-        gap: 10px;
-        justify-self: start;
-        @include animation_open(open, 0.8s, 0s, normal, forwards, ease-in-out);
-        /*-webkit-animation: open 0.8s normal forwards ease-in-out;
-            -moz-animation: open 0.8s normal forwards ease-in-out;
-            animation: open 0.8s normal forwards ease-in-out;
-            -webkit-transform-origin: 100% 0%;
-            -moz-transform-origin: 100% 0%;
-            transform-origin: 100% 0%;*/
-
-    }
-
-    #cv_content.close {
-        display: grid;
-        position: relative;
-        grid-template-columns: auto;
-        grid-template-rows: auto auto;
-        grid-auto-flow: column;
-        justify-items: center;
-        gap: 10px;
-        text-align: center;
-        @include animation_open(close, 0.8s, 0s, normal, forwards, ease-in-out);
-        /*-webkit-animation: close 0.8s normal forwards ease-in-out;
-            -moz-animation: close 0.8s normal forwards ease-in-out;
-            animation: close 0.8s normal forwards ease-in-out;
-            -webkit-transform-origin: 100% 0%;
-            -moz-transform-origin: 100% 0%;
-            transform-origin: 100% 0%;*/
-    }
-
-    span.line {
-
-        color: map-get($map: $theme-map, $key: span-line);
-
-    }
-
-
-
-    #cv_content {
-        display: none;
-    }
-
-    img {
-
-        width: 100%;
-        transition: transform 0.2s;
-        /* Animation */
-
-        margin: 0 auto;
-
-    }
-
-    img:hover {
-
-
-        animation: shake 1s;
-        animation-iteration-count: infinite;
-        /*visibility: visible;*/
-    }
-
-    /*  img:hover + .hover_text{
-            visibility: visible;
-        }*/
-
-
-
-    @keyframes shake {
-        0% {
-            transform: translate(1px, 1px) rotate(0deg);
+        .bar2 {
+            grid-area: bar2;
+            background-color: map-get($map: $theme-map, $key:bar-color);
         }
 
-        10% {
-            transform: translate(-1px, -2px) rotate(-1deg);
-        }
-
-        20% {
-            transform: translate(-3px, 0px) rotate(1deg);
-        }
-
-        30% {
-            transform: translate(3px, 2px) rotate(0deg);
-        }
-
-        40% {
-            transform: translate(1px, -1px) rotate(1deg);
-        }
-
-        50% {
-            transform: translate(-1px, 2px) rotate(-1deg);
-        }
-
-        60% {
-            transform: translate(-3px, 1px) rotate(0deg);
-        }
-
-        70% {
-            transform: translate(3px, 1px) rotate(-1deg);
-        }
-
-        80% {
-            transform: translate(-1px, -1px) rotate(1deg);
-        }
-
-        90% {
-            transform: translate(1px, 2px) rotate(0deg);
-        }
-
-        100% {
-            transform: translate(1px, -2px) rotate(-1deg);
-        }
-    }
-
-    .hover_text {
-        position: relative;
-        display: inline;
-        transition: top 5s;
-
-
-        background-color: grey;
-        transition: opacity 0.2s;
-        opacity: 1;
-        visibility: hidden;
-        color: white;
-    }
-
-    .logos {
-        margin-bottom: 0px;
-        display: flex;
-        width: 100%;
-        justify-content: space-between;
-    }
-
-    .bx {
-        flex: 1;
-        color: map-get($map: $theme-map, $key: accent-color);
-    }
-
-    .bx:hover {
-        animation: shake 0.8s;
-        animation-iteration-count: infinite;
-        
-    }
-
-    .logos_git {
-        display: flex;
-        justify-content: center;
-        align-content: end;;
-    }
-
-
-
-    iframe {
-        max-width: 100%;
-
-    }
-
-
-
-
-    .bar {
-        grid-area: bar;
-        background-color: map-get($map: $theme-map, $key:bar-color);
-
-    }
-
-    .bar2 {
-        grid-area: bar2;
-        background-color: map-get($map: $theme-map, $key:bar-color);
-    }
-
-    a {
-        color: map-get($map: $theme-map, $key:accent-color);
-        text-decoration: none;
-
-    }
-
-
-
-    #portfolio:hover,
-    #music:hover,
-    #cv:hover,
-    #about:hover,
-    a:hover {
-        color: map-get($map: $theme-map, $key:hover-color);
-        cursor: pointer;
-    }
-
-
-
-
-
-    @media only screen and (max-width: 600px) {
-
-        .grid_container {
-
-
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-            grid-template-rows: 150px 5px 1fr 1fr 1fr 5px 50px;
-
-            grid-template-areas:
-                "header header header header header"
-                "bar bar bar bar bar"
-                "content content content content content "
-                "content content content content content "
-                "content content content content content "
-                "bar2 bar2 bar2 bar2 bar2"
-                "footer footer footer footer footer";
-            font-size: 1em;
-            
-
-
-        }
-
-
-
-        .header {
-            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-            grid-template-rows: auto auto;
-            align-content: center;
-            width: 100%;
-            
-        }
-
-        p#title {
-            grid-column: 1/3;
-            justify-self: start;
-            font-size: 3em;
-        }
-
-        #header_sub{
-            grid-column: 1/6;
-            grid-row: 2;
-            font-size: 1em;
-        }
-
-        #theme {
-
-            grid-column: 5/6;
-            width: 50px;
-            height: 30px;   
-            font-size: 0.8rem;
-            align-self: center;
-            padding: 0px;
-            
-        }
-
-        .bar2{
-            display:none;
-        }
-
+        /*=====================  CONTENT  =========================*/
         .content {
-            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-            grid-template-rows: 1fr 1fr 1fr;
-            /*align-items: start;
-            justify-items: start;*/
-            padding: 5px;
-            margin: 0px;
-            overflow:scroll;
+            grid-area: content;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto auto auto auto auto auto auto auto;
+            align-items: end;
+            row-gap: 5px;
+            margin-top: 5px;
+        }
+
+        div#sidebar {
+            display: none;
         }
 
         #about {
-        
-            display: none;
-
+            padding: 0;
+            grid-column: 1/4;
+            text-align: center;
+            background-color: map-get($map: $theme-map, $key:bar-color);
+            color: map-get($map: $theme-map, $key:content-color);
         }
 
-       #about_content.open{
-        grid-column: 2/6;
-        grid-row: 1;
-        display: block;
-        align-self: start;
-       }
+        #about_content.open {
+            display: grid;
+            position: relative;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto auto;
+            grid-auto-flow: column;
+            justify-items: center;
+            gap: 10px;
+            justify-self: start;
+            @include animation(open, 0.8s, 0s, normal, forwards, ease-in-out);
+        }
 
-       #about_content.close{
-        grid-column: 2/6;
-        grid-row: 1;
-        display: block;
-       }
+        #about_content.close {
+            display: grid;
+            position: relative;
+            grid-template-columns: auto;
+            grid-template-rows: auto auto;
+            grid-auto-flow: column;
+            justify-items: center;
+            gap: 10px;
+            text-align: center;
+            /*@include animation(close, 0.8s, 0s, normal, forwards, ease-in-out);*/
+        }
 
-       #back{
-           display: none;
-       }
+        #about_content {
+            display: none;
+        }
 
-       #back_mobile{
-        color: map-get($map: $theme-map, $key: content-color);
-        grid-row: 1;
-          
-       }
+        #nackademin {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            border: none;
+            font-family: $font-stack-body;
+            font-size: 1em;
+            font-weight: bolder;
+            background-color: map-get($map: $theme-map, $key: body-background);
+            color: map-get($map: $theme-map, $key: accent-color);
+        }
 
-       #info{
-           margin-top: -40px;
-       }
 
-        .logos {
-            justify-content: space-around;
+        #info {
+            grid-area: 3 / 2 / 6 / 9;
+            overflow: scroll;
+            padding: 5px;
+        }
+
+        #info::-webkit-scrollbar {
+            display: none;
+        }
+
+        #info {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        #back {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            border: none;
+            font-family: $font-stack-body;
+            font-size: 1rem;
+            font-weight: bolder;
+            background-color: map-get($map: $theme-map, $key: body-background);
+            color: map-get($map: $theme-map, $key: nackademin);
         }
 
         #portfolio {
-           
-            display: none;
-
-
+            padding: 0;
+            grid-column: 1/4;
+            text-align: center;
+            background-color: map-get($map: $theme-map, $key:bar-color);
+            color: map-get($map: $theme-map, $key:content-color);
         }
 
         #portfolio_content.open {
-
-            /*margin-top: -15px;*/
-            grid-column: 2/6;
-            grid-row: 1;
-            display: block;
-           
-
-
+            display: grid;
+            position: relative;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: auto auto;
+            grid-auto-flow: column;
+            justify-items: center;
+            gap: 10px;
+            text-align: center;
+            @include animation(open, 0.8s, 0s, normal, forwards, ease-in-out);
         }
 
         #portfolio_content.close {
-
-            /*margin-top: -15px;*/
-            grid-column: 2/6;
-            grid-row: 1;
-            display: block;
-            
-
-
+            display: grid;
+            position: relative;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: auto auto;
+            grid-auto-flow: column;
+            justify-items: center;
+            gap: 10px;
+            text-align: center;
+            /*@include animation(close, 0.8s, 0s, normal, forwards, ease-in-out);*/
         }
 
         #portfolio_content {
@@ -911,26 +550,34 @@ $dark: (accent-color:white,
         }
 
         #music {
-
-           
-            display: none;
-        }   
+            grid-column: 1/4;
+            text-align: center;
+            background-color: map-get($map: $theme-map, $key:bar-color);
+            color: map-get($map: $theme-map, $key:content-color);
+        }
 
         #music_content.open {
-            /*margin-top: -15px;*/
-            grid-column: 2/6;
-            grid-row: 1;
-            display: block;
-            
+            display: grid;
+            position: relative;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: auto auto;
+            grid-auto-flow: column;
+            justify-items: center;
+            gap: 10px;
+            @include animation(open, 0.8s, 0s, normal, forwards, ease-in-out);
+            text-align: center;
         }
 
         #music_content.close {
-
-            /*margin-top: -15px;*/
-            grid-column: 2/6;
-            grid-row: 1;
-            display: block;
-            
+            display: grid;
+            position: relative;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: auto auto;
+            grid-auto-flow: column;
+            justify-items: center;
+            gap: 10px;
+            text-align: center;
+            /*@include animation(close, 0.8s, 0s, normal, forwards, ease-in-out);*/
         }
 
         #music_content {
@@ -938,94 +585,283 @@ $dark: (accent-color:white,
         }
 
         #cv {
-
-        
-            display: none;
+            grid-column: 1/4;
+            text-align: center;
+            background-color: map-get($map: $theme-map, $key:bar-color);
+            color: map-get($map: $theme-map, $key:content-color);
         }
 
         #cv_content.open {
-
-            grid-column: 2/6;
-            grid-row: 1;
-            display: block;
+            display: grid;
+            position: relative;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto auto;
+            grid-auto-flow: column;
+            justify-items: center;
+            gap: 10px;
+            justify-self: start;
+            @include animation(open, 0.8s, 0s, normal, forwards, ease-in-out);
         }
 
         #cv_content.close {
-
-            grid-column: 2/6;
-            grid-row: 1;
-            display: block;
+            display: grid;
+            position: relative;
+            grid-template-columns: auto;
+            grid-template-rows: auto auto;
+            grid-auto-flow: column;
+            justify-items: center;
+            gap: 10px;
+            text-align: center;
+            /*@include animation(close, 0.8s, 0s, normal, forwards, ease-in-out);*/
         }
 
-
+        span.line {
+            color: map-get($map: $theme-map, $key: span-line);
+        }
 
         #cv_content {
             display: none;
         }
 
-
-
-        div#sidebar {
-            
-            display: grid;
-            grid-area: 3 / 1 / 8 / 2;
-            grid-template-rows: 30px 30px 30px 30px 1fr;
-            grid-template-columns: 1fr;
-            /*align-content: start;*/
-            padding-left: 5px;
-            background-color: map-get($map: $theme-map, $key: bar-color);
-            color: map-get($map: $theme-map, $key:content-color);
-            bottom: 0px;
-            z-index: 0;
-        }
-
-        #contact{
-            grid-column: 2/6;
-            justify-self: start;
-           bottom: -20px;
-        }
-
-        #about_mobile{
-            grid-row: 1;
-        }
-
-        #portfolio_mobile{
-            grid-row: 2;
-        }
-
-        #music_mobile{
-            grid-row: 3;
-        }
-
-        #cv_mobile{
-            grid-row: 4;
-        }
-
-        #portfolio_mobile:hover,
-        #music_mobile:hover,
-        #cv_mobile:hover {
-            color: map-get($map: $theme-map, $key: hover-color);
-            cursor: pointer;
-        }
+        /*=====================  IMG  ICONS VIDEOS  =========================*/
 
         img {
-
-            max-width: 100%;
-
+            width: 100%;
+            transition: transform 0.2s;
+            margin: 0 auto;
         }
 
+        img:hover {
+            @include shake_animation(shake, 1s, infinite);
+        }
 
+        .logos {
+            margin-bottom: 0px;
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        .bx {
+            flex: 1;
+            color: map-get($map: $theme-map, $key: accent-color);
+        }
+
+        .bx:hover {
+            animation: shake 0.8s;
+            animation-iteration-count: infinite;
+        }
+
+        .logos_git {
+            display: flex;
+            justify-content: center;
+            align-content: end;
+        }
 
         iframe {
             max-width: 100%;
+        }
+
+        /*=====================  MOBILE VERSION  =========================*/
+        @media only screen and (max-width: 600px) {
+
+
+            /*=====================  GRID CONTAINER MOBILE  =========================*/
+            .grid_container {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+                grid-template-rows: 150px 5px 1fr 1fr 1fr 5px 50px;
+                grid-template-areas:
+                    "header header header header header"
+                    "bar bar bar bar bar"
+                    "content content content content content "
+                    "content content content content content "
+                    "content content content content content "
+                    "bar2 bar2 bar2 bar2 bar2"
+                    "footer footer footer footer footer";
+                font-size: 1em;
+            }
+
+
+            /*=====================  HEADER MOBILE  =========================*/
+            .header {
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+                grid-template-rows: auto auto;
+                align-content: center;
+                width: 100%;
+            }
+
+            p#title {
+                grid-column: 1/3;
+                justify-self: start;
+                font-size: 3em;
+            }
+
+            #header_sub {
+                grid-column: 1/6;
+                grid-row: 2;
+                font-size: 1em;
+            }
+
+            #theme {
+                grid-column: 5/6;
+                width: 50px;
+                height: 30px;
+                font-size: 0.8rem;
+                align-self: center;
+                padding: 0px;
+            }
+
+            .bar2 {
+                display: none;
+            }
+
+            /*=====================  CONTENT MOBILE =========================*/
+            .content {
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+                grid-template-rows: 1fr 1fr 1fr;
+                /*align-items: start;
+                justify-items: start;*/
+                padding: 5px;
+                margin: 0px;
+                overflow: scroll;
+            }
+
+            #about_content.open {
+                grid-column: 2/6;
+                grid-row: 1;
+                display: block;
+                align-self: start;
+            }
+
+            #about_content.close {
+                grid-column: 2/6;
+                grid-row: 1;
+                display: block;
+            }
+
+            #back_mobile {
+                color: map-get($map: $theme-map, $key: content-color);
+                grid-row: 1;
+            }
+
+            #info {
+                display: flex;
+                align-items: flex-start;
+            }
+
+            .logos {
+                justify-content: space-around;
+            }
+
+            #portfolio_content.open {
+                grid-column: 2/6;
+                grid-row: 1;
+                display: block;
+            }
+
+            #portfolio_content.close {
+                grid-column: 2/6;
+                grid-row: 1;
+                display: block;
+            }
+
+            #portfolio_content {
+                display: none;
+            }
+
+            #music_content.open {
+                grid-column: 2/6;
+                grid-row: 1;
+                display: block;
+            }
+
+            #music_content.close {
+                grid-column: 2/6;
+                grid-row: 1;
+                display: block;
+            }
+
+            #cv_content.open {
+                grid-column: 2/6;
+                grid-row: 1;
+                display: block;
+            }
+
+            #cv_content.close {
+                grid-column: 2/6;
+                grid-row: 1;
+                display: block;
+            }
+
+            /*=====================  SIDEBAR  =========================*/
+            div#sidebar {
+                display: grid;
+                grid-area: 3 / 1 / 8 / 2;
+                grid-template-rows: 30px 30px 30px 30px 1fr;
+                grid-template-columns: 1fr;
+                /*align-content: start;*/
+                padding-left: 5px;
+                background-color: map-get($map: $theme-map, $key: bar-color);
+                color: map-get($map: $theme-map, $key:content-color);
+                bottom: 0px;
+                z-index: 0;
+            }
+
+            /*=====================  CONTENT TITLES MOBILE =========================*/
+            #about_mobile {
+                grid-row: 1;
+            }
+
+            #portfolio_mobile {
+                grid-row: 2;
+            }
+
+            #music_mobile {
+                grid-row: 3;
+            }
+
+            #cv_mobile {
+                grid-row: 4;
+            }
+
+            /*=====================  FOOTER  =========================*/
+
+            .footer {
+                display: flex;
+                justify-content: center;
+            }
+
+            #contact {
+                padding: 10px;
+                align-self: end;
+            }
+
+            /*=====================  DISPLAY NONE MOBILE  =========================*/
+
+            #about {
+                display: none;
+            }
+
+            #back {
+                display: none;
+            }
+
+            #portfolio {
+                display: none;
+            }
+
+            #cv {
+                display: none;
+            }
+
+            #music {
+                display: none;
+            }
 
         }
 
-
     }
-
-
-}
 }
 
 @include themable(dark, $dark);

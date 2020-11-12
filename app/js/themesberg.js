@@ -1,301 +1,135 @@
 document.addEventListener("DOMContentLoaded", function (e) {
+    
+
+    /*********** VARIABLES ************/
+    let reveal_content = new Reveal_content();
+    let functionality = new Functionality();
 
     let portfolio = document.getElementById("portfolio");
     let portfolio_content = document.getElementById("portfolio_content");
-    //portfolio_content.style.setProperty("display", "none");
 
     let music = document.getElementById("music");
     let music_content = document.getElementById("music_content");
-    //music_content.style.setProperty("display", "none");
 
     let cv = document.getElementById("cv");
     let cv_content = document.getElementById("cv_content");
-    //cv_content.style.setProperty("display", "none");
 
     let about = document.getElementById("about");
     let about_content = document.getElementById("about_content");
 
+    let info = document.getElementById("info");
+    info.style.setProperty("display", "none");
+
+    let back = document.getElementById("back");
+
+    let nackademin = document.getElementById("nackademin");
+    
+    let content = document.getElementById("id_content");
+
+    let contact = document.getElementById("contact");
+
+    let theme = document.getElementById("theme");
+
+
+    /*********** VARIABLES MOBILE VERSION ************/
+    let about_mobile = document.getElementById("about_mobile");
+
+    let portfolio_mobile = document.getElementById("portfolio_mobile");
+
+    let music_mobile = document.getElementById("music_mobile");
+
+    let cv_mobile = document.getElementById("cv_mobile");
+
+    let content_title = document.getElementById("content_titles");
+
+    let back_mobile = document.getElementById("back_mobile");
+    back_mobile.style.setProperty("display", "none");
+
+
+    /*********** EVENTLISTENERS ************/
     about.addEventListener("click", function (e) {
-        console.log("hej");
-        about.classList.toggle("animation");
-        if (about.classList.contains("animation")) {
-            about_content.classList.add("open");
-            //cv_content.style.removeProperty("display", "none");
-            about_content.classList.remove("close");
-           
-
-        } else {
-            about_content.classList.add("close");
-            about_content.classList.remove("open");
-            //cv_content.style.setProperty("display", "none")
-            timeOutRemoveClose();
-        }
-
-
+        reveal_content.open_accordion(about_content);
     });
+
     portfolio.addEventListener("click", function (e) {
-        
-        portfolio.classList.toggle("animation");
-        if (portfolio.classList.contains("animation")) {
-            portfolio_content.classList.add("open");
-           
-           
-
-            //portfolio_content.style.removeProperty("display", "none");
-            portfolio_content.classList.remove("close");
-           
-            
-
-        } else {
-            portfolio_content.classList.add("close");
-            portfolio_content.classList.remove("open");
-           
-            timeOutRemoveClose();
-
-            //portfolio_content.style.setProperty("display", "none")
-        }
-        
-
-
+        reveal_content.open_accordion(portfolio_content);
     });
 
     music.addEventListener("click", function (e) {
-        //console.log(music);
-   
-
-            
-        music.classList.toggle("animation");
-        if (music.classList.contains("animation")) {
-            music_content.classList.add("open");
-            //music_content.style.removeProperty("display", "none");
-            music_content.classList.remove("close");
-           
-
-        } else {
-            music_content.classList.add("close");
-            music_content.classList.remove("open");
-            //music_content.style.setProperty("display", "none")
-            timeOutRemoveClose();
-        }
-
-
+        reveal_content.open_accordion(music_content);
     });
 
     cv.addEventListener("click", function (e) {
+        reveal_content.open_accordion(cv_content);
+    });
 
-        cv.classList.toggle("animation");
-        if (cv.classList.contains("animation")) {
-            cv_content.classList.add("open");
-            //cv_content.style.removeProperty("display", "none");
-            cv_content.classList.remove("close");
-           
+    nackademin.addEventListener("click", function () {
+        reveal_content.display_none(content, content_title, info, back_mobile);
+    });
 
-        } else {
-            cv_content.classList.add("close");
-            cv_content.classList.remove("open");
-            //cv_content.style.setProperty("display", "none")
-            timeOutRemoveClose();
-        }
+    back.addEventListener("click", function () {
+        info.style.setProperty("display", "none");
+        content.style.removeProperty("display", "none");
+    });
 
+    theme.addEventListener("click", function () {   
+        functionality.theme();
+    });
+
+    contact.addEventListener("click", function () {
+        copyToClipboard("kickihalmos@gmail.com");
+    });
+
+
+    /*********** EVENTLISTENERS MOBILE VERSION************/
+    back_mobile.addEventListener("click", function () {
+       reveal_content.display_none(info, back_mobile, content, content_title)
+       about_content.classList.remove("open");
+    });
+
+
+    about_mobile.addEventListener("click", function () {
+        reveal_content.open_accordion_mobile(about_content, portfolio_content, music_content, cv_content);
+    });
+
+    portfolio_mobile.addEventListener("click", function () {
+        reveal_content.open_accordion_mobile(portfolio_content, about_content, music_content, cv_content);
+    });
+
+    music_mobile.addEventListener("click", function () {
+        reveal_content.open_accordion_mobile(music_content, about_content, portfolio_content, cv_content);
 
     });
 
-   
-   
-    let about_mobile = document.getElementById("about_mobile");
-    let portfolio_mobile = document.getElementById("portfolio_mobile");
-    let music_mobile = document.getElementById("music_mobile");
-    let cv_mobile = document.getElementById("cv_mobile");
-
-    about_mobile.addEventListener("click", function(){
-        
-        
-        about_mobile.classList.toggle("animation");
-        console.log(about_mobile); 
-        if (about_mobile.classList.contains("animation")) {
-            about_content.classList.add("open");
-            console.log(about_content);
-            about_content.style.removeProperty("display", "none");
-            cv_content.style.setProperty("display", "none");
-            music_content.style.setProperty("display", "none");
-            music_mobile.classList.remove("animation");
-            cv_mobile.classList.remove("animation");
-            portfolio_content.style.setProperty("display", "none");
-            portfolio_content.classList.remove("animation");
-           
-            
-
-        } else {
-            about_content.classList.add("close");
-            about_content.classList.remove("open");
-            timeOutRemoveClose();
-
-            //portfolio_content.style.setProperty("display", "none")
-        }
+    cv_mobile.addEventListener("click", function () {
+        reveal_content.open_accordion_mobile(cv_content, about_content, portfolio_content, music_content)
 
     });
+
     
-
-    portfolio_mobile.addEventListener("click", function(){
-        
-        
-        portfolio_mobile.classList.toggle("animation");
-        if (portfolio_mobile.classList.contains("animation")) {
-            portfolio_content.classList.add("open");
-            portfolio_content.style.removeProperty("display", "none");
-            cv_content.style.setProperty("display", "none");
-            music_content.style.setProperty("display", "none");
-            music_mobile.classList.remove("animation");
-            cv_mobile.classList.remove("animation");
-            about_mobile.classList.remove("animation");
-            about_content.style.setProperty("display", "none");
-            
-           
-            
-
-        } else {
-            portfolio_content.classList.add("close");
-            portfolio_content.classList.remove("open");
-            timeOutRemoveClose();
-
-            //portfolio_content.style.setProperty("display", "none")
-        }
-
-    });
-
-    music_mobile.addEventListener("click", function(){
-        console.log(music_mobile);
-        music_mobile.classList.toggle("animation");
-        if (music_mobile.classList.contains("animation")) {
-            music_content.classList.add("open");
-            music_content.style.removeProperty("display", "none");
-            cv_content.style.setProperty("display", "none");
-            portfolio_content.style.setProperty("display", "none");
-            cv_mobile.classList.remove("animation");
-            portfolio_mobile.classList.remove("animation");
-            about_mobile.classList.remove("animation");
-            about_content.style.setProperty("display", "none");
-            
-            
-           
-            
-
-        } else {
-            music_content.classList.add("close");
-            music_content.classList.remove("open");
-            timeOutRemoveClose();
-        }
-    });
-
-    cv_mobile.addEventListener("click", function(){
-        
-        cv_mobile.classList.toggle("animation");
-        if (cv_mobile.classList.contains("animation")) {
-            cv_content.classList.add("open");
-            cv_content.style.removeProperty("display", "none");
-            music_content.style.setProperty("display", "none");
-            portfolio_content.style.setProperty("display", "none");
-            music_mobile.classList.remove("animation");
-            portfolio_mobile.classList.remove("animation");
-            about_mobile.classList.remove("animation");
-            about_content.style.setProperty("display", "none");
-           
-           
-            
-
-        } else {
-            cv_content.classList.add("close");
-            cv_content.classList.remove("open");
-            timeOutRemoveClose();
-        }
-    });
-
-    let theme = document.getElementById("theme");
-    let body = document.getElementById("body");
-  
    
   
 
-    theme.addEventListener("click", function(){
-        theme.classList.toggle("light");
-        if(theme.classList.contains("light")){
-            body.classList.remove("dark");
-            body.classList.add("light");
-        }
-        else{
-            body.classList.remove("light");
-            body.classList.add("dark");
-        }
-      
-    });
-
-    let info = document.getElementById("info");
-    info.style.setProperty("display", "none");
-    let nackademin = document.getElementById("nackademin");
-    let content = document.getElementById("id_content");  
-    let sidebar = document.getElementById("sidebar");
-    
-    nackademin.addEventListener("click", function(){
-    console.log("hej");
-     content.style.setProperty("display", "none");
-     
-     info.style.removeProperty("display", "none");
-     about_content.classList.remove("open");
-     about_mobile.style.setProperty("display", "none");
-     portfolio_mobile.style.setProperty("display", "none");
-     music_mobile.style.setProperty("display","none");
-     cv_mobile.style.setProperty("display","none");
-     back_mobile.style.removeProperty("display","none");
-        
-    });
-
-    let back = document.getElementById("back");
-    let back_mobile = document.getElementById("back_mobile");
-    back_mobile.style.setProperty("display", "none");
-    
-    back.addEventListener("click", function(){
-        info.style.setProperty("display", "none");
-       
-        content.style.removeProperty("display", "none");
-
-    });
-
-    back_mobile.addEventListener("click", function(){
-        info.style.setProperty("display", "none");
-        content.style.removeProperty("display", "none");
-        about_mobile.style.removeProperty("display", "none");
-        portfolio_mobile.style.removeProperty("display", "none");
-        music_mobile.style.removeProperty("display","none");
-        cv_mobile.style.removeProperty("display","none");
-        back_mobile.style.setProperty("display", "none");
-        
-    });
 
 
-    function timeOutRemoveClose(){
-        setTimeout(function() {
+
+
+
+   
+
+
+    /*function timeOutRemoveClose() {
+        setTimeout(function () {
             portfolio_content.classList.remove("close");
             music_content.classList.remove("close");
             cv_content.classList.remove("close");
             about_content.classList.remove("close");
-           
+
         }, 0);
-    }
+    }*/
 
-    let contact = document.getElementById("contact");
-    
-    contact.addEventListener("click", function(){
-        copyToClipboard("kickihalmos@gmail.com");
-    });
+   
 
-    function copyToClipboard(text) {
-        var dummy = document.createElement("textarea");
-        dummy.value = text;
-        document.body.appendChild(dummy);
-        dummy.select();
-        document.execCommand("copy");
-        document.body.removeChild(dummy);
-    }
-    
+  
 
 });
