@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kicki Halmos</title>
     <link rel="stylesheet" href="css/themesberg.css">
-    
+
     <!---<link href="https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap" rel="stylesheet">--->
     <!---<link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200&display=swap" rel="stylesheet">--->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
@@ -15,34 +15,47 @@
 </head>
 
 <body class="light" id="body">
+    
+    
+    <!--------  GRID CONTAINER FOR THE WHOLE PAGE  --------->
+
     <div class="grid_container">
+
+        <!--------  HEADER  --------->
         <div class="header">
             <p id="title">Kicki Halmos</p>
             <span id="header_sub">
-            Music Producer <span class="line">//</span> Project Manager <span class="line">//</span> Librarian 
+                Music Producer <span class="line">//</span> Project Manager <span class="line">//</span> Librarian
             </span>
 
-            <button type="button" id="theme" class="light" aria-label="button to change color-theme of the page">Theme</button>
-
+            <button type="button" id="theme" class="light"
+                aria-label="button to change color-theme of the page">Theme</button>
         </div>
         <div class="bar"></div>
+
+        <!--------  CONTENT  --------->
         <div id="id_content" class="content">
+
+            <!--------  ABOUT  --------->
             <div id="about">
                 about
             </div>
             <div id="about_content">
                 <p>
                     Studying Full Stack Open Source Web Development at
-                    <button type="button" id="nackademin" aria-label="link to info-page about Nackademin Full stack open source web developer education">Nackademin</button>
+                    <button type="button" id="nackademin"
+                        aria-label="link to info-page about Nackademin Full stack open source web developer education">Nackademin</button>
                 </p>
             </div>
+
+            <!--------  PORTFOLIO  --------->
             <div id="portfolio">
                 portfolio
-            </div>
-            <div id="portfolio_content">
-                
+            </div> 
 
-                <p id="yatzy_text"> 
+            <div id="portfolio_content">
+
+                <p id="yatzy_text">
                     Yatzy
                     <br>
                     Group assignment Frontend 1
@@ -54,15 +67,10 @@
                         </a>
                     </span>
                 </p>
-               
-                    
-                        <a id="yatzy_img" href="https://kicki-halmos.github.io/Yatzy" aria-label="link to Yatzy website">
+                <a id="yatzy_img" href="https://kicki-halmos.github.io/Yatzy" aria-label="link to Yatzy website">
+                    <img src="img/Screen Shot 2020-11-01 at 22.33.57.png" id="yatzy" alt="image of yatzy website">
+                </a>
 
-                            <img src="img/Screen Shot 2020-11-01 at 22.33.57.png" id="yatzy" alt="image of yatzy website">
-                            
-                        </a>
-                   
-              
                 <p id="quiz_text">
                     Quiz
                     <br>
@@ -75,10 +83,10 @@
                         </a>
                     </span>
                 </p>
-
                 <a id="quiz_img" href="https://kicki-halmos.github.io/Quiz/" aria-label="link to Quiz website">
                     <img src="img/Screen Shot 2020-11-06 at 14.48.19.png" alt="image of quiz-api website">
                 </a>
+
                 <p id="acme_text">
                     Acme Events
                     <br>
@@ -86,22 +94,24 @@
                     <br>
                     <br>
                     <span class="logos_git">
-                        <a href="https://github.com/Kicki-Halmos/Acme_Events" aria-label="link to Acme-events project at GitHub">
+                        <a href="https://github.com/Kicki-Halmos/Acme_Events"
+                            aria-label="link to Acme-events project at GitHub">
                             <i class='bx bxl-github' aria-label="GitHub icon"></i>
                         </a>
                     </span>
                 </p>
-
-                <a id="acme_img" href="https://github.com/Kicki-Halmos/Acme_Events" aria-label="link to Acme-events project at GitHub">
+                <a id="acme_img" href="https://github.com/Kicki-Halmos/Acme_Events"
+                    aria-label="link to Acme-events project at GitHub">
                     <img src="img/Screen Shot 2020-11-01 at 22.42.37.png" id="img_acme"
                         alt="image of acme-events website">
-
                 </a>
-
             </div>
+
+            <!--------  MUSIC  --------->
             <div id="music">
                 music
             </div>
+
             <div id="music_content">
                 <p>
                     Kiki
@@ -110,10 +120,12 @@
                     <br>
                     <br>
                     <span class="logos">
-                        <a href="https://open.spotify.com/artist/3egKljtAbR7CjQCcvTfGld?si=f2VZuo6yS6aT6UJZXmGqCQ" aria-label="link to Kiki artist page at Spotify">
+                        <a href="https://open.spotify.com/artist/3egKljtAbR7CjQCcvTfGld?si=f2VZuo6yS6aT6UJZXmGqCQ"
+                            aria-label="link to Kiki artist page at Spotify">
                             <i class='bx bxl-spotify' aria-label="Spotify icon"></i>
                         </a>
-                        <a href="https://www.facebook.com/kikikimusic/" aria-label="link to Kiki artist page at Facebook">
+                        <a href="https://www.facebook.com/kikikimusic/"
+                            aria-label="link to Kiki artist page at Facebook">
                             <i class='bx bxl-facebook' aria-label="Facebook icon"></i>
 
                         </a>
@@ -125,8 +137,9 @@
                 <div class="video-responsive">
                     <iframe width="320" src="https://www.youtube.com/embed/nzT_NRj2lXc" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen aria-label="Music video of artist Kiki, song Birds"></iframe>
+                        allowfullscreen aria-label="Music video of Kiki song Birds"></iframe>
                 </div>
+
                 <p>
                     Masquer
                     <br>
@@ -134,34 +147,37 @@
                     <br>
                     <br>
                     <span class="logos">
-                        <a href="https://open.spotify.com/artist/4DsqMBB1CcYRrccjTV8rxB?si=FpapqxMAT66q_puMtZsiwA" aria-label="link to Masquer artist page at Spotify">
+                        <a href="https://open.spotify.com/artist/4DsqMBB1CcYRrccjTV8rxB?si=FpapqxMAT66q_puMtZsiwA"
+                            aria-label="link to Masquer artist page at Spotify">
                             <i class='bx bxl-spotify' aria-label="Spotify icon"></i>
                         </a>
-                        <a href="https://www.facebook.com/masquerstockholm/" aria-label="link to Masquer artist page on Facebook">
+                        <a href="https://www.facebook.com/masquerstockholm/"
+                            aria-label="link to Masquer artist page on Facebook">
                             <i class='bx  bxl-facebook' aria-label="Facebook icon"></i>
                         </a>
-                        <a href="https://www.youtube.com/user/Masquerstockholm" aria-label="link to Masquer channel on YouTube">
+                        <a href="https://www.youtube.com/user/Masquerstockholm"
+                            aria-label="link to Masquer channel on YouTube">
                             <i class='bx  bxl-youtube' aria-label="YouTube icon"></i>
                         </a>
                     </span>
-
                 </p>
                 <div class="video-responsive">
                     <iframe width="320" src="https://www.youtube.com/embed/WCLuaBcRKLY" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
+                        allowfullscreen aria-label="Music video of Masquer song Happiness"></iframe>
                 </div>
 
                 <p>
                     Film music
-
                 </p>
                 <div class="video-responsive">
                     <iframe src="https://open.spotify.com/embed/playlist/6on6aEgtQun5sFk3NKzchq" width="300"
-                        height="200" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-
+                        height="200" frameborder="0" allowtransparency="true" allow="encrypted-media"
+                        aria-label="Embedded Spotify playlist of Kicki Halmos film music productions"></iframe>
                 </div>
             </div>
+
+            <!--------  CV  --------->
             <div id="cv">
                 cv
             </div>
@@ -192,15 +208,14 @@
                     Freelance
                     <br>
                     <br>
-                    <a href="download/Kicki Halmos CV.pdf">Get full CV</a>
-
+                    <a href="download/Kicki Halmos CV.pdf" aria-label="link to download CV">Get full CV</a>
                 </span>
 
             </div>
 
-
-
         </div>
+
+        <!--------  INFO  --------->
         <div id="info">
             <button type=button id="back">back</button>
             <br>
@@ -247,6 +262,8 @@
             </div>
 
         </div>
+
+        <!--------  MOBILE VERSION CONTENT TITLES--------->
         <div id="sidebar">
             <p id="about_mobile">about</p>
             <br>
@@ -260,15 +277,14 @@
         </div>
 
         <div class="bar2"></div>
+
+        <!--------  FOOTER  --------->
         <div class="footer">
             <p id="contact">
                 Contact: kickihalmos@gmail.com
             </p>
             <span id="tooltip">click to copy</span>
         </div>
-
-
-
     </div>
     <!----- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
