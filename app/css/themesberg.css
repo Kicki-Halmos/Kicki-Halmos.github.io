@@ -1,5 +1,3 @@
-/*@import '../../node_modules/bootstrap/scss/bootstrap.scss';*/
-/*@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');*/
 @import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@200&family=Yeseva+One&display=swap");
 * {
   margin: 0;
@@ -188,7 +186,7 @@
   .dark #back:hover,
   .dark #contact:hover {
     cursor: pointer;
-    color: #2a332b; }
+    color: grey; }
   .dark #theme:focus,
   .dark #nackademin:focus,
   .dark #back:focus {
@@ -198,7 +196,7 @@
   .dark #cv:hover,
   .dark #about:hover,
   .dark a:hover {
-    color: #2a332b;
+    color: grey;
     cursor: pointer; }
   .dark a {
     color: white;
@@ -210,43 +208,43 @@
     justify-content: start;
     align-content: center;
     grid-template-columns: inherit; }
-  .dark #contact {
-    font-family: Public Sans;
-    grid-column: 2/5;
-    font-weight: normal;
-    position: relative;
-    display: inline-block;
-    font-size: 0.9em; }
-  .dark #tooltip {
-    visibility: hidden;
-    width: 120px;
-    background-color: #555;
-    color: #fff;
-    text-align: center;
-    padding: 5px 0;
-    border-radius: 6px;
-    font-family: Public Sans;
-    font-weight: normal;
-    font-size: 0.9rem;
-    position: relative;
-    z-index: 0;
-    top: 100%;
-    left: -150%;
-    margin-left: -50%;
-    opacity: 0;
-    transition: opacity 0.3s; }
-  .dark #contact:hover + #tooltip {
-    visibility: visible;
-    opacity: 1; }
-  .dark #tooltip::after {
-    content: " ";
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: transparent transparent #555 transparent; }
+    .dark .footer #contact {
+      font-family: Public Sans;
+      grid-column: 2/5;
+      font-weight: normal;
+      position: relative;
+      display: inline-block;
+      font-size: 0.9em; }
+    .dark .footer #tooltip {
+      visibility: hidden;
+      width: 120px;
+      background-color: #555;
+      color: #fff;
+      text-align: center;
+      padding: 5px 0;
+      border-radius: 6px;
+      font-family: Public Sans;
+      font-weight: normal;
+      font-size: 0.9rem;
+      position: relative;
+      z-index: 0;
+      top: 100%;
+      left: -150%;
+      margin-left: -50%;
+      opacity: 0;
+      transition: opacity 0.3s; }
+    .dark .footer #contact:hover + #tooltip {
+      visibility: visible;
+      opacity: 1; }
+    .dark .footer #tooltip::after {
+      content: " ";
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: transparent transparent #555 transparent; }
   .dark .bar {
     grid-area: bar;
     background-color: #576d5c; }
@@ -437,13 +435,13 @@
     max-width: 100%; }
   @media only screen and (max-width: 600px) {
     .dark {
-      /*=====================  GRID CONTAINER MOBILE  =========================*/
-      /*=====================  HEADER MOBILE  =========================*/
-      /*=====================  CONTENT MOBILE =========================*/
-      /*=====================  SIDEBAR  =========================*/
+      /*=====================  GRID CONTAINER MOBILE VERSION =========================*/
+      /*=====================  HEADER MOBILE VERSION =========================*/
+      /*=====================  CONTENT MOBILE VERSION  =========================*/
+      /*=====================  SIDEBAR MOBILE VERSION =========================*/
       /*=====================  CONTENT TITLES MOBILE =========================*/
-      /*=====================  FOOTER  =========================*/
-      /*=====================  DISPLAY NONE MOBILE  =========================*/ }
+      /*=====================  FOOTER MOBILE VERSION =========================*/
+      /*=====================  DISPLAY NONE MOBILE VERSION =========================*/ }
       .dark .grid_container {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -473,12 +471,11 @@
       .dark .bar2 {
         display: none; }
       .dark .content {
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
-        /*align-items: start;
-                justify-items: start;*/
+        grid-area: 3 / 2 / 6 / 6;
         padding: 5px;
         margin: 0px;
+        display: flex;
+        flex-direction: column;
         overflow: scroll; }
       .dark #about_content.open {
         grid-column: 2/6;
@@ -510,7 +507,8 @@
       .dark #music_content.open {
         grid-column: 2/6;
         grid-row: 1;
-        display: block; }
+        display: block;
+        align-self: start; }
       .dark #music_content.close {
         grid-column: 2/6;
         grid-row: 1;
@@ -621,7 +619,7 @@
   .light #back:hover,
   .light #contact:hover {
     cursor: pointer;
-    color: #803425; }
+    color: grey; }
   .light #theme:focus,
   .light #nackademin:focus,
   .light #back:focus {
@@ -631,7 +629,7 @@
   .light #cv:hover,
   .light #about:hover,
   .light a:hover {
-    color: #803425;
+    color: grey;
     cursor: pointer; }
   .light a {
     color: #ff694a;
@@ -643,43 +641,43 @@
     justify-content: start;
     align-content: center;
     grid-template-columns: inherit; }
-  .light #contact {
-    font-family: Public Sans;
-    grid-column: 2/5;
-    font-weight: normal;
-    position: relative;
-    display: inline-block;
-    font-size: 0.9em; }
-  .light #tooltip {
-    visibility: hidden;
-    width: 120px;
-    background-color: #555;
-    color: #fff;
-    text-align: center;
-    padding: 5px 0;
-    border-radius: 6px;
-    font-family: Public Sans;
-    font-weight: normal;
-    font-size: 0.9rem;
-    position: relative;
-    z-index: 0;
-    top: 100%;
-    left: -150%;
-    margin-left: -50%;
-    opacity: 0;
-    transition: opacity 0.3s; }
-  .light #contact:hover + #tooltip {
-    visibility: visible;
-    opacity: 1; }
-  .light #tooltip::after {
-    content: " ";
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: transparent transparent #555 transparent; }
+    .light .footer #contact {
+      font-family: Public Sans;
+      grid-column: 2/5;
+      font-weight: normal;
+      position: relative;
+      display: inline-block;
+      font-size: 0.9em; }
+    .light .footer #tooltip {
+      visibility: hidden;
+      width: 120px;
+      background-color: #555;
+      color: #fff;
+      text-align: center;
+      padding: 5px 0;
+      border-radius: 6px;
+      font-family: Public Sans;
+      font-weight: normal;
+      font-size: 0.9rem;
+      position: relative;
+      z-index: 0;
+      top: 100%;
+      left: -150%;
+      margin-left: -50%;
+      opacity: 0;
+      transition: opacity 0.3s; }
+    .light .footer #contact:hover + #tooltip {
+      visibility: visible;
+      opacity: 1; }
+    .light .footer #tooltip::after {
+      content: " ";
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: transparent transparent #555 transparent; }
   .light .bar {
     grid-area: bar;
     background-color: #ff694a; }
@@ -870,13 +868,13 @@
     max-width: 100%; }
   @media only screen and (max-width: 600px) {
     .light {
-      /*=====================  GRID CONTAINER MOBILE  =========================*/
-      /*=====================  HEADER MOBILE  =========================*/
-      /*=====================  CONTENT MOBILE =========================*/
-      /*=====================  SIDEBAR  =========================*/
+      /*=====================  GRID CONTAINER MOBILE VERSION =========================*/
+      /*=====================  HEADER MOBILE VERSION =========================*/
+      /*=====================  CONTENT MOBILE VERSION  =========================*/
+      /*=====================  SIDEBAR MOBILE VERSION =========================*/
       /*=====================  CONTENT TITLES MOBILE =========================*/
-      /*=====================  FOOTER  =========================*/
-      /*=====================  DISPLAY NONE MOBILE  =========================*/ }
+      /*=====================  FOOTER MOBILE VERSION =========================*/
+      /*=====================  DISPLAY NONE MOBILE VERSION =========================*/ }
       .light .grid_container {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -906,12 +904,11 @@
       .light .bar2 {
         display: none; }
       .light .content {
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
-        /*align-items: start;
-                justify-items: start;*/
+        grid-area: 3 / 2 / 6 / 6;
         padding: 5px;
         margin: 0px;
+        display: flex;
+        flex-direction: column;
         overflow: scroll; }
       .light #about_content.open {
         grid-column: 2/6;
@@ -943,7 +940,8 @@
       .light #music_content.open {
         grid-column: 2/6;
         grid-row: 1;
-        display: block; }
+        display: block;
+        align-self: start; }
       .light #music_content.close {
         grid-column: 2/6;
         grid-row: 1;

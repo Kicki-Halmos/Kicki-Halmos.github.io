@@ -1,5 +1,4 @@
-/*@import '../../node_modules/bootstrap/scss/bootstrap.scss';*/
-/*@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');*/
+
 @import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@200&family=Yeseva+One&display=swap');
 
 * {
@@ -16,27 +15,21 @@ $font-stack-body: Public Sans;
 
 /*=====================  THEME-MAPS  =========================*/
 $light: (accent-color: rgb(255, 105, 74),
-    border-color: grey,
-    hover-color: rgb(128, 52, 37),
+    hover-color: grey,
     body-background: white,
-    body-color: black,
-    side-color: rgb(255, 105, 74),
+    body-color: black, 
     bar-color: rgb(255, 105, 74),
     theme-color:rgb(22, 27, 23),
-    span-line: rgb(255, 105, 74),
-    nackademin: rgb(255, 105, 74),
+    span-line: rgb(255, 105, 74), 
     content-color: white);
 
-$dark: (accent-color:white,
-    border-color: rgb(83, 83, 83),
-    hover-color:rgb(42, 51, 43),
+$dark: (accent-color:white, 
+    hover-color:grey,
     body-background:rgb(22, 27, 23),
     body-color: white,
-    side-color: rgb(83, 83, 83),
     bar-color:rgb(87, 109, 92),
     theme-color: white,
     span-line: white,
-    nackademin: white,
     content-color: white);
 
 /*=====================  ANIMATIONS  =========================*/
@@ -260,14 +253,12 @@ $dark: (accent-color:white,
         .grid_container {
             position: relative;
             padding: 0;
-
             width: 100vw;
             height: 100vh;
             display: grid;
             margin: collapse;
             grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
             grid-template-rows: 110px 10px auto auto auto 10px 80px;
-
             grid-template-areas:
                 "header header header header header header header header header"
                 "bar bar bar bar bar bar bar bar bar"
@@ -365,7 +356,7 @@ $dark: (accent-color:white,
             justify-content: start;
             align-content: center;
             grid-template-columns: inherit;
-        }
+
 
         #contact {
             font-family: $font-stack-body;
@@ -411,6 +402,8 @@ $dark: (accent-color:white,
             border-style: solid;
             border-color: transparent transparent #555 transparent;
         }
+        }
+
 
         /*=====================  BARS  =========================*/
         .bar {
@@ -510,7 +503,7 @@ $dark: (accent-color:white,
             font-size: 1rem;
             font-weight: bolder;
             background-color: map-get($map: $theme-map, $key: body-background);
-            color: map-get($map: $theme-map, $key: nackademin);
+            color: map-get($map: $theme-map, $key: accent-color);
         }
 
         #portfolio {
@@ -661,12 +654,13 @@ $dark: (accent-color:white,
         iframe {
             max-width: 100%;
         }
+        
 
         /*=====================  MOBILE VERSION  =========================*/
         @media only screen and (max-width: 600px) {
 
 
-            /*=====================  GRID CONTAINER MOBILE  =========================*/
+            /*=====================  GRID CONTAINER MOBILE VERSION =========================*/
             .grid_container {
                 display: grid;
                 grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -683,7 +677,7 @@ $dark: (accent-color:white,
             }
 
 
-            /*=====================  HEADER MOBILE  =========================*/
+            /*=====================  HEADER MOBILE VERSION =========================*/
             .header {
                 grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
                 grid-template-rows: auto auto;
@@ -716,14 +710,13 @@ $dark: (accent-color:white,
                 display: none;
             }
 
-            /*=====================  CONTENT MOBILE =========================*/
+            /*=====================  CONTENT MOBILE VERSION  =========================*/
             .content {
-                grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-                grid-template-rows: 1fr 1fr 1fr;
-                /*align-items: start;
-                justify-items: start;*/
+                grid-area: 3 / 2 / 6 / 6;
                 padding: 5px;
                 margin: 0px;
+                display:flex;
+                flex-direction: column;
                 overflow: scroll;
             }
 
@@ -758,12 +751,14 @@ $dark: (accent-color:white,
                 grid-column: 2/6;
                 grid-row: 1;
                 display: block;
+               
             }
 
             #portfolio_content.close {
                 grid-column: 2/6;
                 grid-row: 1;
                 display: block;
+               
             }
 
             #portfolio_content {
@@ -774,6 +769,7 @@ $dark: (accent-color:white,
                 grid-column: 2/6;
                 grid-row: 1;
                 display: block;
+                align-self: start;
             }
 
             #music_content.close {
@@ -786,6 +782,7 @@ $dark: (accent-color:white,
                 grid-column: 2/6;
                 grid-row: 1;
                 display: block;
+                
             }
 
             #cv_content.close {
@@ -794,7 +791,7 @@ $dark: (accent-color:white,
                 display: block;
             }
 
-            /*=====================  SIDEBAR  =========================*/
+            /*=====================  SIDEBAR MOBILE VERSION =========================*/
             div#sidebar {
                 display: grid;
                 grid-area: 3 / 1 / 8 / 2;
@@ -825,7 +822,7 @@ $dark: (accent-color:white,
                 grid-row: 4;
             }
 
-            /*=====================  FOOTER  =========================*/
+            /*=====================  FOOTER MOBILE VERSION =========================*/
 
             .footer {
                 display: flex;
@@ -837,7 +834,7 @@ $dark: (accent-color:white,
                 align-self: end;
             }
 
-            /*=====================  DISPLAY NONE MOBILE  =========================*/
+            /*=====================  DISPLAY NONE MOBILE VERSION =========================*/
 
             #about {
                 display: none;

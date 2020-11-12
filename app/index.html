@@ -20,7 +20,7 @@
     <!--------  GRID CONTAINER FOR THE WHOLE PAGE  --------->
     <div class="grid_container">
 
-       
+
         <!--------  HEADER  --------->
         <div class="header">
             <p id="title">Kicki Halmos</p>
@@ -39,24 +39,24 @@
 
 
             <!--------  ABOUT  --------->
-            <div id="about">
+            <div id="about" aria-expanded="false">
                 about
             </div>
-            <div id="about_content">
+            <div id="about_content" aria-expanded="true">
                 <p>
                     Studying Full Stack Open Source Web Development at
                     <button type="button" id="nackademin"
-                        aria-label="link to info-page about Nackademin Full stack open source web developer education">Nackademin</button>
+                        aria-expanded="false">Nackademin</button>
                 </p>
             </div>
 
 
             <!--------  PORTFOLIO  --------->
-            <div id="portfolio">
+            <div id="portfolio" aria-expanded="false">
                 portfolio
             </div>
 
-            <div id="portfolio_content">
+            <div id="portfolio_content" aria-expanded="true">
 
                 <p id="yatzy_text">
                     Yatzy
@@ -112,11 +112,11 @@
 
 
             <!--------  MUSIC  --------->
-            <div id="music">
+            <div id="music" aria-expanded="false">
                 music
             </div>
 
-            <div id="music_content">
+            <div id="music_content" aria-expanded="true">
                 <p>
                     Kiki
                     <br>
@@ -183,11 +183,11 @@
 
 
             <!--------  CV  --------->
-            <div id="cv">
+            <div id="cv" aria-expanded="false">
                 cv
             </div>
 
-            <div id="cv_content">
+            <div id="cv_content" aria-expanded="true">
                 <span>
                     Mar 2015 - ongoing <span class="line">//</span>
                     Stockholms stadsbibliotek <span class="line">//</span>
@@ -222,11 +222,11 @@
 
 
         <!--------  INFO  --------->
-        <div id="info">
+        <div id="info" aria-expanded="true">
             <button type=button id="back">back</button>
             <br>
             <br>
-            <div id="info_text">
+            <div lang="sv" id="info_text">
                 <h3>Utbildningen</h3>
                 <p>Utbildningen Webbutvecklare fullstack open source ger dig en bred programmeringskompetens inom både
                     backend och frontend. Du kommer att kunna utveckla interaktiva webbapplikationer i bland annat
@@ -284,19 +284,19 @@
         <!--------  MOBILE VERSION CONTENT TITLES--------->
         <div id="sidebar">
             <div id="content_titles">
-                <p id="about_mobile">about</p>
+                <p id="about_mobile" aria-expanded="false">about</p>
                 <br>
-                <p id="portfolio_mobile">portfolio</p>
+                <p id="portfolio_mobile" aria-expanded="false">portfolio</p>
                 <br>
-                <p id="music_mobile">music</p>
+                <p id="music_mobile" aria-expanded="false">music</p>
                 <br>
-                <p id="cv_mobile">cv</p>
+                <p id="cv_mobile" aria-expanded="false">cv</p>
             </div>
-            <p id="back_mobile">back</p>
+            <p id="back_mobile" aria-expanded="false">back</p>
         </div>
 
         <div class="bar2"></div>
-        
+
 
         <!--------  FOOTER  --------->
         <div class="footer">
@@ -306,12 +306,7 @@
             <span id="tooltip">click to copy</span>
         </div>
     </div>
-    <!----- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
-        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous">
-    </script>----->
+ 
     <script src="js/themesberg.js"></script>
     <script src="js/reveal_content.js"></script>
     <script src="js/functionality.js"></script>
