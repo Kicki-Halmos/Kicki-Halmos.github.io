@@ -1,11 +1,11 @@
 class Reveal_content{
 
-    //function for collapse-accordion
+    //function collapse-accordion
     open_accordion(title){
         title.classList.toggle("open");
     }
 
-    // function for collapse-accortion mobile version
+    // function collapse-accortion mobile version
     open_accordion_mobile(title, content_1, content_2, content_3){
         title.classList.toggle("open");
         content_1.classList.remove("open");

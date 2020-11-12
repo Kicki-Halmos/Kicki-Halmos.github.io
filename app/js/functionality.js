@@ -1,6 +1,6 @@
 class Functionality{
 
-    //function for changing theme
+    //function changing theme
     theme(){
         let body = document.getElementById("body");
         if(body.classList.contains("light")){
@@ -13,7 +13,7 @@ class Functionality{
         }
     }
 
-    //function for copy text to clipboard
+    //function copy text to clipboard
     copyToClipboard(text) {
         var dummy = document.createElement("textarea");
         dummy.value = text;
