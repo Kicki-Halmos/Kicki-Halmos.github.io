@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function (e) {
-    
+
 
     /*********** VARIABLES ************/
     let reveal_content = new Reveal_content();
@@ -17,13 +17,26 @@ document.addEventListener("DOMContentLoaded", function (e) {
     let about = document.getElementById("about");
     let about_content = document.getElementById("about_content");
 
-    let info = document.getElementById("info");
-    info.style.setProperty("display", "none");
+    let info_text = document.getElementById("info_text");
+    info_text.style.setProperty("display", "none");
+
+    let info_frontend1 = document.getElementById("info_frontend1");
+    info_frontend1.style.setProperty("display", "none");
+
+    let info_frontend2 = document.getElementById("info_frontend2");
+    info_frontend2.style.setProperty("display", "none");
 
     let back = document.getElementById("back");
+    back.style.setProperty("display","none");
+
+    let frontend1_1 =document.getElementById("frontend1_1");
+    let frontend1_2 =document.getElementById("frontend1_2");
+
+    let frontend2_1 =document.getElementById("frontend2_1");
+    let frontend2_2 =document.getElementById("frontend2_2");
 
     let nackademin = document.getElementById("nackademin");
-    
+
     let content = document.getElementById("id_content");
 
     let contact = document.getElementById("contact");
@@ -64,15 +77,30 @@ document.addEventListener("DOMContentLoaded", function (e) {
     });
 
     nackademin.addEventListener("click", function () {
-        reveal_content.display_none(content, content_title, info, back_mobile);
+        reveal_content.display_none(content, content_title, info_text, back, back_mobile);
+    });
+
+    frontend1_1.addEventListener("click", function(){
+        reveal_content.display_none(content, content_title, info_frontend1, back, back_mobile);
+    });
+
+    frontend1_2.addEventListener("click", function(){
+        reveal_content.display_none(content, content_title, info_frontend1, back, back_mobile);
+    });
+
+    frontend2_1.addEventListener("click", function(){
+        reveal_content.display_none(content, content_title, info_frontend2, back, back_mobile);
+    });
+
+    frontend2_2.addEventListener("click", function(){
+        reveal_content.display_none(content, content_title, info_frontend2, back, back_mobile);
     });
 
     back.addEventListener("click", function () {
-        info.style.setProperty("display", "none");
-        content.style.removeProperty("display", "none");
+        reveal_content.display(info_text, info_frontend1, info_frontend2, back, back_mobile, content, content_title);
     });
 
-    theme.addEventListener("click", function () {   
+    theme.addEventListener("click", function () {
         functionality.theme();
     });
 
@@ -83,8 +111,9 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
     /*********** EVENTLISTENERS MOBILE VERSION************/
     back_mobile.addEventListener("click", function () {
-       reveal_content.display_none(info, back_mobile, content, content_title)
-       about_content.classList.remove("open");
+        reveal_content.display(info_text, info_frontend1, info_frontend2, back, back_mobile, content, content_title)
+        about_content.classList.remove("open");
+        portfolio_content.classList.remove("open");
     });
 
 
@@ -106,16 +135,16 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
     });
 
-    
-   
-  
 
 
 
 
 
 
-   
+
+
+
+
 
 
     /*function timeOutRemoveClose() {
@@ -128,8 +157,8 @@ document.addEventListener("DOMContentLoaded", function (e) {
         }, 0);
     }*/
 
-   
 
-  
+
+
 
 });

@@ -24,7 +24,7 @@ $light: (accent-color: rgb(255, 105, 74),
     content-color: white);
 
 $dark: (accent-color:white, 
-    hover-color:grey,
+    hover-color:rgb(202, 201, 201),
     body-background:rgb(22, 27, 23),
     body-color: white,
     bar-color:rgb(87, 109, 92),
@@ -252,9 +252,10 @@ $dark: (accent-color:white,
         /*=====================  GRID CONTAINER =========================*/
         .grid_container {
             position: relative;
-            padding: 0;
+            padding: 0; 
             width: 100vw;
-            height: 100vh;
+            min-height: 100vh;
+            max-height: 160vh;
             display: grid;
             margin: collapse;
             grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -322,14 +323,23 @@ $dark: (accent-color:white,
         #theme:hover,
         #nackademin:hover,
         #back:hover,
-        #contact:hover {
+        #contact:hover, 
+        #frontend1_1:hover,
+        #frontend1_2:hover,
+        #frontend2_1:hover,
+        #frontend2_2:hover
+        {
             cursor: pointer;
             color: map-get($map: $theme-map, $key: hover-color);
         }
 
         #theme:focus,
         #nackademin:focus,
-        #back:focus {
+        #back:focus,
+        #frontend1_1:focus,
+        #frontend1_2:focus,
+        #frontend2_1:focus,
+        #frontend2_2:focus {
             outline: none;
         }
 
@@ -468,13 +478,13 @@ $dark: (accent-color:white,
             display: none;
         }
 
-        #nackademin {
+        #nackademin, #frontend1_1, #frontend1_2, #frontend2_1, #frontend2_2 {
             -webkit-appearance: none;
             -moz-appearance: none;
             border: none;
             font-family: $font-stack-body;
             font-size: 1em;
-            font-weight: bolder;
+            font-weight: normal;
             background-color: map-get($map: $theme-map, $key: body-background);
             color: map-get($map: $theme-map, $key: accent-color);
         }
@@ -713,11 +723,20 @@ $dark: (accent-color:white,
             /*=====================  CONTENT MOBILE VERSION  =========================*/
             .content {
                 grid-area: 3 / 2 / 6 / 6;
-                padding: 5px;
+                padding: 5px 5px 0px 0px;
                 margin: 0px;
                 display:flex;
                 flex-direction: column;
                 overflow: scroll;
+            }
+
+            .content::-webkit-scrollbar {
+                display: none;
+            }
+    
+            .content {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
             }
 
             #about_content.open {
@@ -725,6 +744,7 @@ $dark: (accent-color:white,
                 grid-row: 1;
                 display: block;
                 align-self: start;
+                padding-left: 5px;
             }
 
             #about_content.close {
@@ -782,6 +802,7 @@ $dark: (accent-color:white,
                 grid-column: 2/6;
                 grid-row: 1;
                 display: block;
+                padding-left: 5px;
                 
             }
 

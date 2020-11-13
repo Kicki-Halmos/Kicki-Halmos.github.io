@@ -45,8 +45,11 @@
             <div id="about_content" aria-expanded="true">
                 <p>
                     Studying Full Stack Open Source Web Development at
-                    <button type="button" id="nackademin"
-                        aria-expanded="false">Nackademin</button>
+                    <button type="button" id="nackademin" aria-expanded="false">Nackademin</button>
+                    <br>
+                    <br>
+                    This website is the result of the individual assignment for the <button type="button"
+                        id="frontend2_1" aria-expanded="false">Frontend 2</button> course.
                 </p>
             </div>
 
@@ -61,7 +64,7 @@
                 <p id="yatzy_text">
                     Yatzy
                     <br>
-                    Group assignment Frontend 1
+                    Group assignment <button type="button" id="frontend1_1" aria-expanded="false">Frontend 1</button>
                     <br>
                     <br>
                     <span class="logos_git">
@@ -77,7 +80,8 @@
                 <p id="quiz_text">
                     Quiz
                     <br>
-                    Individual assignment Frontend 1
+                    Individual assignment <button type="button" id="frontend1_2" aria-expanded="false">Frontend
+                        1</button>
                     <br>
                     <br>
                     <span class=logos_git>
@@ -93,7 +97,7 @@
                 <p id="acme_text">
                     Acme Events
                     <br>
-                    Group assignment Frontend 2
+                    Group assignment <button type="button" id="frontend2_2" aria-expanded="false">Frontend 2</button>
                     <br>
                     <br>
                     <span class="logos_git">
@@ -221,12 +225,12 @@
         </div>
 
 
-        <!--------  INFO  --------->
-        <div id="info" aria-expanded="true">
+        <!--------  INFO EDUCATION --------->
+        <div id="info">
             <button type=button id="back">back</button>
             <br>
             <br>
-            <div lang="sv" id="info_text">
+            <div lang="sv" id="info_text" aria-expanded="true">
                 <h3>Utbildningen</h3>
                 <p>Utbildningen Webbutvecklare fullstack open source ger dig en bred programmeringskompetens inom både
                     backend och frontend. Du kommer att kunna utveckla interaktiva webbapplikationer i bland annat
@@ -278,6 +282,40 @@
                 </div>
             </div>
 
+            <!--------  INFO FRONTEND 1 --------->
+
+            <div lang="sv" id="info_frontend1" aria-expanded="true">
+                <h3>Frontend 1 - JavaScript</h3>
+
+                <p>Syftet med kursen är att ge dig förståelse för grundläggande programmering och kompetensen att
+                    utveckla programmeringslösningar i JavaScript. Du kommer även ges en förståelse för vad yrkesrollen
+                    innebär, relationen mellan frontend, backend och fullstack samt en förståelse för begreppet open
+                    source.
+                    <br>
+                    <br>
+                    Målet är att du ska kunna göra enklare applikationer i JavaScript och kunna skriva, testa och
+                    felsöka kod. Du lär dig hur språket skrivs, hur det exekveras samt om språkets olika möjligheter och
+                    begränsningar.</p>
+            </div>
+
+
+
+            <!--------  INFO FRONTEND 2 --------->
+
+            <div lang="sv" id="info_frontend2" aria-expanded="true">
+                <h3>Frontend - HTML & CSS</h3>
+
+                <p>Syftet med kursen är att ge dig kunskaper och färdigheter om HTML och CSS så du kan skapa en
+                    interaktiv upplevelse med ett dynamiskt innehåll på en webbsida. Du lär dig att anpassa webbsidor
+                    efter olika förutsättningar genom responsiv webbdesign. Målet är att du genom praktiska övningar ska
+                    lära sig koda i HTML och CSS och kunna konvertera en designskiss till HTML och CSS. Utöver det lär
+                    du dig vikten av användbarhet och hur en applikation kan utvecklas på olika sätt med hänsyn till
+                    användbarhet och tillgänglighetsstandarder.
+                    <br>
+                    <br>
+                    Under kursen kommer du bl.a. få jobba med ett projekt där du skapar en interaktiv upplevelse med ett
+                    dynamiskt innehåll som ska kunna tillgängliggöras för externa användare.</p>
+            </div>
         </div>
 
 
@@ -306,10 +344,12 @@
             <span id="tooltip">click to copy</span>
         </div>
     </div>
- 
+
     <script src="js/themesberg.js"></script>
     <script src="js/reveal_content.js"></script>
     <script src="js/functionality.js"></script>
+
+
 
 </body>
 
