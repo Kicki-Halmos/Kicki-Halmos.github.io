@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
     });
 
     nackademin.addEventListener("click", function () {
-        reveal_content.display_none(content, content_title, info_text, back, back_mobile);
+        reveal_content.display_none(content, content_title, info_text, back, back_mobile,);
     });
 
     frontend1_1.addEventListener("click", function(){

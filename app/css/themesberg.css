@@ -452,6 +452,7 @@
       /*=====================  FOOTER MOBILE VERSION =========================*/
       /*=====================  DISPLAY NONE MOBILE VERSION =========================*/ }
       .dark .grid_container {
+        max-height: 100vh;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
         grid-template-rows: 150px 5px 1fr 1fr 1fr 5px 50px;
@@ -542,7 +543,6 @@
         grid-area: 3 / 1 / 8 / 2;
         grid-template-rows: 30px 30px 30px 30px 1fr;
         grid-template-columns: 1fr;
-        /*align-content: start;*/
         padding-left: 5px;
         background-color: #576d5c;
         color: white;
@@ -901,6 +901,7 @@
       /*=====================  FOOTER MOBILE VERSION =========================*/
       /*=====================  DISPLAY NONE MOBILE VERSION =========================*/ }
       .light .grid_container {
+        max-height: 100vh;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
         grid-template-rows: 150px 5px 1fr 1fr 1fr 5px 50px;
@@ -991,7 +992,6 @@
         grid-area: 3 / 1 / 8 / 2;
         grid-template-rows: 30px 30px 30px 30px 1fr;
         grid-template-columns: 1fr;
-        /*align-content: start;*/
         padding-left: 5px;
         background-color: #ff694a;
         color: white;

@@ -671,7 +671,9 @@ $dark: (accent-color:white,
 
 
             /*=====================  GRID CONTAINER MOBILE VERSION =========================*/
+        
             .grid_container {
+                max-height: 100vh;
                 display: grid;
                 grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
                 grid-template-rows: 150px 5px 1fr 1fr 1fr 5px 50px;
@@ -721,6 +723,7 @@ $dark: (accent-color:white,
             }
 
             /*=====================  CONTENT MOBILE VERSION  =========================*/
+            
             .content {
                 grid-area: 3 / 2 / 6 / 6;
                 padding: 5px 5px 0px 0px;
@@ -778,7 +781,6 @@ $dark: (accent-color:white,
                 grid-column: 2/6;
                 grid-row: 1;
                 display: block;
-               
             }
 
             #portfolio_content {
@@ -818,7 +820,6 @@ $dark: (accent-color:white,
                 grid-area: 3 / 1 / 8 / 2;
                 grid-template-rows: 30px 30px 30px 30px 1fr;
                 grid-template-columns: 1fr;
-                /*align-content: start;*/
                 padding-left: 5px;
                 background-color: map-get($map: $theme-map, $key: bar-color);
                 color: map-get($map: $theme-map, $key:content-color);
