@@ -673,7 +673,7 @@ $dark: (accent-color:white,
             /*=====================  GRID CONTAINER MOBILE VERSION =========================*/
         
             .grid_container {
-                max-height: 100vh;
+                max-height: 736px;
                 display: grid;
                 grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
                 grid-template-rows: 150px 5px 1fr 1fr 1fr 5px 50px;
@@ -725,6 +725,7 @@ $dark: (accent-color:white,
             /*=====================  CONTENT MOBILE VERSION  =========================*/
             
             .content {
+                
                 grid-area: 3 / 2 / 6 / 6;
                 padding: 5px 5px 0px 0px;
                 margin: 0px;
@@ -774,6 +775,7 @@ $dark: (accent-color:white,
                 grid-column: 2/6;
                 grid-row: 1;
                 display: block;
+                
                
             }
 
@@ -781,6 +783,7 @@ $dark: (accent-color:white,
                 grid-column: 2/6;
                 grid-row: 1;
                 display: block;
+                
             }
 
             #portfolio_content {
@@ -792,12 +795,14 @@ $dark: (accent-color:white,
                 grid-row: 1;
                 display: block;
                 align-self: start;
+                
             }
 
             #music_content.close {
                 grid-column: 2/6;
                 grid-row: 1;
                 display: block;
+               
             }
 
             #cv_content.open {

@@ -452,7 +452,7 @@
       /*=====================  FOOTER MOBILE VERSION =========================*/
       /*=====================  DISPLAY NONE MOBILE VERSION =========================*/ }
       .dark .grid_container {
-        max-height: 100vh;
+        max-height: 736px;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
         grid-template-rows: 150px 5px 1fr 1fr 1fr 5px 50px;
@@ -901,7 +901,7 @@
       /*=====================  FOOTER MOBILE VERSION =========================*/
       /*=====================  DISPLAY NONE MOBILE VERSION =========================*/ }
       .light .grid_container {
-        max-height: 100vh;
+        max-height: 736px;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
         grid-template-rows: 150px 5px 1fr 1fr 1fr 5px 50px;
